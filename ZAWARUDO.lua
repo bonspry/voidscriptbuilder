@@ -244,7 +244,6 @@ local delays = false
 local play = true
 local Time = 7
 local targetted = nil
-local Torsovelocity = (RootPart.Velocity * Vector3.new(1, 0, 1)).magnitude
 local velocity = RootPart.Velocity.y
 local sine = 0
 local change = 1
