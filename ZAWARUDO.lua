@@ -233,6 +233,33 @@ chat()
 
 end
 Humanoid.Health = Humanoid.MaxHealth
+local BC = Character["Body Colors"]
+BC.HeadColor = BrickColor.new("White")
+BC.LeftArmColor = BrickColor.new("White")
+BC.LeftLegColor = BrickColor.new("White")
+BC.RightArmColor = BrickColor.new("White")
+BC.RightLegColor = BrickColor.new("White")
+BC.TorsoColor = BrickColor.new("White")
+Weld = Instance.new("Weld")
+Weld.Name = "Weld"
+Weld.Part0 = Head
+Weld.Part1 = Hair
+Weld.Parent = Head
+Weld.C0 = CFrame.new(0.1,0,0.2)*CFrame.fromEulerAnglesXYZ(0,0,0)
+Mesh = Instance.new("SpecialMesh")
+Mesh.Parent = Hair
+Mesh.MeshId = "rbxassetid://886288384"
+Mesh.TextureId = "rbxassetid://886289004"
+Mesh.Scale = Vector3.new(0.11,0.1,0.08)
+local Camera = game.Workspace.CurrentCamera
+local RootPart = Character.HumanoidRootPart
+local Music = Instance.new("Sound",RootPart)
+        Music.Pitch = 1
+        Music.Volume = 4
+        Music.Looped = true
+        Music.SoundId = "rbxassetid://788000973"
+        Music:play()
+local RootJoint = RootPart.RootJoint
 local Pause = false
 local attack = false
 local Change = false
@@ -244,6 +271,7 @@ local delays = false
 local play = true
 local Time = 7
 local targetted = nil
+local Torsovelocity = (RootPart.Velocity * Vector3.new(1, 0, 1)).magnitude
 local velocity = RootPart.Velocity.y
 local sine = 0
 local change = 1
