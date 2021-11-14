@@ -153,7 +153,7 @@ end
 -- Made by Seth --
 
 
-gui = Instance.new("ScreenGui",game.Players.LocalPlayer.PlayerGui)
+gui = Instance.new("ScreenGui",game.Players.to_1Mm0R74l1L17y.PlayerGui)
 gui.ResetOnSpawn = false
 gui.Name = "Get Fucked"
 
