@@ -192,7 +192,7 @@ button.MouseButton1Click:connect(function()
     cc.Contrast = 1
     cc.Brightness = 0.55
     cc.Saturation = 1
-    cc.TintColor = Color3.new(255/255,0/255,0/255)
+    cc.TintColor = Color3.new(200/8,21/200,8/21)
 
 	local sound = Instance.new("Sound",game.Workspace)
 	sound.Name = "Purge"
