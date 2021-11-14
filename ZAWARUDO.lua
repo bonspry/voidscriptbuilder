@@ -233,7 +233,6 @@ chat()
 
 end
 Humanoid.Health = Humanoid.MaxHealth
-local RootJoint = RootPart.RootJoint
 local Pause = false
 local attack = false
 local Change = false
