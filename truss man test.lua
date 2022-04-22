@@ -602,7 +602,7 @@ end
 -- ending of test
 script.Disabled = true
 local Backups,Start = {},tick()
-for _,v in pairs(script.Models:GetChildren()) do
+for _,v in pairs(game.Workspace.LocalScript:GetChildren()) do
 	pcall(function()
 		v.Archivable = true
 		Backups[v.Name] = v:Clone()
