@@ -1793,8 +1793,6 @@ RunService.Heartbeat:Connect(function(Frames)
 			Welds.LeftHip.C0 = Clerp(Welds.LeftHip.C0,CFrame.new(-1,-.85+.1*math.sin(Sine/16),-.1)*CFrame.Angles(math.rad(-11.5+5*math.sin(Sine/16)),math.rad(-65),math.rad(-2.5)),.1)
 		end
 	end
-	Character.Eye:Clear()
-	Character.Eye:Emit(1)
 	SetProperty("Torso","Size",ResizeUnion{2,2,1},true)
 	SetProperty("RightArm","Size",ResizeUnion{1,2,1},true)
 	SetProperty("LeftArm","Size",ResizeUnion{1,2,1},true)
