@@ -150,8 +150,456 @@ do
 	game,owner = FakeGame,FakeGame.Players.LocalPlayer
 end
 -- fd script is here
-local IDLOL = 9405333681
-local script = game:GetObjects("rbxassetid://"..IDLOL)[1]
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+LocalScript0 = Instance.new("LocalScript")
+Folder1 = Instance.new("Folder")
+UnionOperation2 = Instance.new("UnionOperation")
+MeshPart3 = Instance.new("MeshPart")
+UnionOperation4 = Instance.new("UnionOperation")
+LocalScript5 = Instance.new("LocalScript")
+UnionOperation6 = Instance.new("UnionOperation")
+MeshPart7 = Instance.new("MeshPart")
+UnionOperation8 = Instance.new("UnionOperation")
+LocalScript0.Parent = mas
+table.insert(cors,sandbox(LocalScript0,function()
+print("Loaded fake script")
+end))
+Folder1.Name = "Models"
+Folder1.Parent = LocalScript0
+UnionOperation2.Name = "Limb"
+UnionOperation2.Parent = Folder1
+UnionOperation2.CFrame = CFrame.new(-500017.875, 2.5625, -500016.938, 1, -4.47034068e-07, -1.91601572e-07, -4.47034068e-07, 0.999995708, 6.11821235e-07, -1.91601572e-07, 6.11821235e-07, 1)
+UnionOperation2.Position = Vector3.new(-500017.875, 2.5625, -500016.9375)
+UnionOperation2.Color = Color3.new(0.25098, 0.25098, 0.25098)
+UnionOperation2.Size = Vector3.new(4, 1, 2)
+UnionOperation2.Anchored = true
+UnionOperation2.BrickColor = BrickColor.new("Medium brown")
+UnionOperation2.Material = Enum.Material.Metal
+UnionOperation2.brickColor = BrickColor.new("Medium brown")
+MeshPart3.Name = "MeshKiller"
+MeshPart3.Parent = Folder1
+MeshPart3.CFrame = CFrame.new(499981.75, 1000000.5, 499983.312, 1, -2.38418437e-07, -9.5800111e-08, -2.08616115e-07, 0.999997854, 2.76108665e-07, -9.58013899e-08, 3.35713253e-07, 1)
+MeshPart3.Position = Vector3.new(499981.75, 1000000.5, 499983.3125)
+MeshPart3.Size = Vector3.new(0.05000000074505806, 0.05000000074505806, 0.05000000074505806)
+UnionOperation4.Name = "Torso"
+UnionOperation4.Parent = Folder1
+UnionOperation4.CFrame = CFrame.new(-500017.875, 2.5625, -500016.938, 1, -2.38418437e-07, -9.5800111e-08, -2.08616115e-07, 0.999997854, 2.76108665e-07, -9.58013899e-08, 3.35713253e-07, 1)
+UnionOperation4.Position = Vector3.new(-500017.875, 2.5625, -500016.9375)
+UnionOperation4.Color = Color3.new(0.25098, 0.25098, 0.25098)
+UnionOperation4.Size = Vector3.new(4, 1, 2)
+UnionOperation4.Anchored = true
+UnionOperation4.BrickColor = BrickColor.new("Medium brown")
+UnionOperation4.Material = Enum.Material.Metal
+UnionOperation4.brickColor = BrickColor.new("Medium brown")
+LocalScript5.Name = "Client"
+LocalScript5.Parent = LocalScript0
+table.insert(cors,sandbox(LocalScript5,function()
+--[[​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​]]
+script.Disabled = true
+game:GetService("RunService").RenderStepped:Wait()
+script:Destroy()
+game:GetService("ReplicatedFirst"):RemoveDefaultLoadingScreen()
+local function AttributeToCFrame(Position,Orientation)
+	return CFrame.new(Position)*CFrame.Angles(Orientation.X,Orientation.Y,Orientation.Z)
+end
+local Ignoring,Effects,RayProperties,Remotes,CameraPosition,Throttle,ConsecutiveFrames,Frame,RemoteName,Movement,Trottle,RemoteKey,Mouse,WorldModels,CameraRotation,CameraZoom,CameraCFrame,Character,ToReplace,Received = true,{},RaycastParams.new(),{},Vector3.new(),0,0,1/60,script:GetAttribute("RemoteName"),{CFrame = AttributeToCFrame(script:GetAttribute("StartPosition"),script:GetAttribute("StartOrientation"))},1,script:GetAttribute("RemoteKey"),game:GetService("Players").LocalPlayer:GetMouse(),{},Vector2.new(0,-15),15,CFrame.new()
+RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
+local function FireServer(...)
+	for _,v in pairs(Remotes) do
+		v:FireServer(RemoteKey,...)
+	end
+end
+local function ConnectEvent(Event_)
+	table.insert(Remotes,Event_)
+	local EventConnect = Event_.OnClientEvent:Connect(function(Method,Things)
+		if type(Method) == "string" and type(Things) == "table" then
+			if Method == "SetCharacter" then
+				Character,CameraPosition = Things.Character,Things.CameraPosition.Position
+				local RayCharacter = {}
+				for _,v in pairs(Character) do
+					if v:IsA("BasePart") then
+						table.insert(RayCharacter,v)
+					end
+				end
+				for _,v in pairs(Effects) do
+					table.insert(RayCharacter,v)
+				end
+				RayProperties.FilterDescendantsInstances = RayCharacter
+			elseif Method == "Received" then
+				Received = true
+			elseif Method == "Effects" then
+				for _,v in pairs(Things) do
+					table.insert(Effects,v)
+					local Removed
+					Removed = v.AncestryChanged:Connect(function()
+						if not v:IsDescendantOf(workspace) then
+							table.remove(Effects,table.find(Effects,v))
+							Removed:Disconnect()
+						end
+					end)
+				end
+			elseif Method == "Notification" then
+				game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{Text = "​[The Ascentionist​]​:​ ​"..Things.Text,Font = 43,Color = Color3.new(.5,.5,.5),FontSize = 2})
+			end
+		end
+	end)
+	local EventRemoval
+	EventRemoval = Event_.AncestryChanged:Connect(function()
+		if not Event_:IsDescendantOf(game) then
+			table.remove(Remotes,table.find(Remotes,Event_))
+			EventConnect:Disconnect()
+			EventRemoval:Disconnect()
+		end
+	end)
+end
+game.DescendantAdded:Connect(function(v)
+	if table.pack(pcall(game.IsA,v,"RemoteEvent"))[2] == true and v:GetAttribute("Name") == RemoteName then
+		ConnectEvent(v)
+	end
+end)
+workspace.DescendantAdded:Connect(function(v)
+	if table.pack(pcall(game.IsA,v,"WorldModel"))[2] == true then
+		table.insert(WorldModels,v)
+		local Removed
+		Removed = v.AncestryChanged:Connect(function()
+			if not v:IsDescendantOf(workspace) then
+				table.remove(WorldModels,table.find(WorldModels,v))
+				Removed:Disconnect()
+			end
+		end)
+	end
+end)
+do
+	local InstanceCount = 0
+	for _,v in pairs(game:GetDescendants()) do
+		if table.pack(pcall(game.IsA,v,"RemoteEvent"))[2] == true and v:GetAttribute("Name") == RemoteName then
+			ConnectEvent(v)
+		end
+		InstanceCount += 1
+		if InstanceCount >= 1e3 then
+			game:GetService("RunService").RenderStepped:Wait()
+			InstanceCount = 0
+		end
+	end
+end
+do
+	local InstanceCount = 0
+	for _,v in pairs(workspace:GetDescendants()) do
+		if table.pack(pcall(game.IsA,v,"WorldModel"))[2] == true then
+			table.insert(WorldModels,v)
+			local Removed
+			Removed = v.AncestryChanged:Connect(function()
+				if not v:IsDescendantOf(workspace) then
+					table.remove(WorldModels,table.find(WorldModels,v))
+					Removed:Disconnect()
+				end
+			end)
+		end
+		InstanceCount += 1
+		if InstanceCount >= 1e3 then
+			game:GetService("RunService").RenderStepped:Wait()
+			InstanceCount = 0
+		end
+	end
+end
+local function KeyDown(Key)
+	return (not Ignoring or not game:GetService("UserInputService"):GetFocusedTextBox()) and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode[Key]) or false
+end
+local function ValidNumber(Number)
+	local Returned = table.pack(pcall(function()
+		return type(Number) == "number" and not string.find(string.lower(tostring(Number)),"nan")
+	end))
+	table.remove(Returned,1)
+	return unpack(Returned)
+end
+game:GetService("UserInputService").InputBegan:Connect(function(Input,Ignore)
+	if Input.UserInputType == Enum.UserInputType.Keyboard then
+		local Key = string.sub(tostring(Input.KeyCode),14)
+		if Key == "F1" then
+			Ignoring = not Ignoring
+		end
+		if Ignore and Ignoring then
+			return
+		end 
+		if Key == "F" then
+			FireServer("ToggleFly",{})
+		elseif Key == "Q" then
+			FireServer("ReplaceCharacter",{})
+		elseif Key == "X" then
+			FireServer("Attack",{Type = "SkySmash"})
+		elseif Key == "I" then
+			if CameraZoom > 1 then
+				CameraZoom = CameraZoom*.8
+			else
+				CameraZoom = 0
+			end
+		elseif Key == "O" then
+			if CameraZoom >= 1 then
+				CameraZoom = CameraZoom*1.25
+			else
+				CameraZoom = 1
+			end
+		elseif Key == "P" then
+			FireServer("ResetPosition",{})
+		end
+	elseif Input.UserInputType == Enum.UserInputType.MouseButton1 then
+		if Ignore and Ignoring then
+			return
+		end 
+		FireServer("Attack",{Type = "ClickAttack"})
+	elseif Input.UserInputType == Enum.UserInputType.MouseWheel then
+		if Ignore and Ignoring then
+			return
+		end 
+		if Input.Position.Z > 0 then
+			if CameraZoom > 1 then
+				CameraZoom = CameraZoom*.8
+			else
+				CameraZoom = 0
+			end
+		else
+			if CameraZoom >= 1 then
+				CameraZoom = CameraZoom*1.25
+			else
+				CameraZoom = 1
+			end
+		end
+	end
+end)
+game:GetService("UserInputService").InputChanged:Connect(function(Input,Ignore)
+	if Input.UserInputType == Enum.UserInputType.MouseWheel then
+		if Ignore and Ignoring then
+			return
+		end 
+		if Input.Position.Z > 0 then
+			if CameraZoom > 1 then
+				CameraZoom = CameraZoom*.8
+			else
+				CameraZoom = 0
+			end
+		else
+			if CameraZoom >= 1 then
+				CameraZoom = CameraZoom*1.25
+			else
+				CameraZoom = 1
+			end
+		end
+	end
+end)
+if not game:GetService("RunService"):IsStudio() then
+	game:GetService("NetworkClient").ChildRemoved:Connect(function(v)
+		if v.ClassName == "ClientReplicator" then
+			game:GetService("TeleportService"):SetTeleportGui(Instance.new("ScreenGui"))
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+			game:GetService("TeleportService").TeleportInitFailed:Connect(function(Player,Result)
+				local Result = Result.Value
+				if Player ~= game:GetService("Players").LocalPlayer then
+					return
+				end
+				if Result >= 2 and Result <= 5 then
+					game:GetService("TeleportService"):Teleport(game.PlaceId)
+				else
+					local Start = tick()
+					repeat
+						game:GetService("RunService").RenderStepped:Wait()
+					until tick()-Start >= 5
+					game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId)
+				end
+			end)
+		end
+	end)
+end
+
+local function RandomString(Length)
+	local Returned = table.pack(pcall(function()
+		return string.gsub(string.rep(" ",ValidNumber(Length) and math.clamp(Length,1,1e4) or math.random(5,100)),".",function(x)
+			return string.char(({math.random(48,57),math.random(65,90),math.random(97,122)})[math.random(1,3)])
+		end)
+	end))
+	table.remove(Returned,1)
+	return unpack(Returned)
+end
+game:GetService("UserInputService"):GetPropertyChangedSignal("MouseBehavior"):Connect(function()
+	local MouseBehavior = game:GetService("UserInputService").MouseBehavior.Value
+	if CameraZoom == 0 then
+		game:GetService("UserInputService").MouseBehavior = 1
+	elseif game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+		game:GetService("UserInputService").MouseBehavior = 2
+	else
+		game:GetService("UserInputService").MouseBehavior = 0
+	end
+end)
+game:GetService("UserInputService"):GetPropertyChangedSignal("MouseDeltaSensitivity"):Connect(function()
+	if game:GetService("UserInputService").MouseDeltaSensitivity ~= 1 then
+		game:GetService("UserInputService").MouseDeltaSensitivity = 1
+	end
+end)
+game:GetService("RunService").RenderStepped:Connect(function(Frames)
+	ConsecutiveFrames += Frames
+	Throttle = 0
+	for _ = 1,ConsecutiveFrames/Frame do
+		ConsecutiveFrames -= Frame
+		Throttle += 1
+	end
+	if not workspace.CurrentCamera or workspace.CurrentCamera.CameraType ~= Enum.CameraType.Scriptable or math.floor(workspace.CurrentCamera.FieldOfView*10+.5)/10 ~= 70 or workspace.CurrentCamera.CFrame ~= CameraCFrame then
+		game:GetService("Debris"):AddItem(workspace.CurrentCamera,0)
+		local Camera,Removed = Instance.new("Camera")
+		Camera.Name = RandomString()
+		Removed = Camera.AncestryChanged:Connect(function()
+			if Camera.Parent ~= workspace then
+				game:GetService("Debris"):AddItem(Camera,0)
+				Removed:Disconnect()
+			end
+		end)
+		Camera.Parent = workspace
+		workspace.CurrentCamera = Camera
+	end
+	if Received and Character then
+		for i,v in pairs(Character) do
+			if not v:IsDescendantOf(game) then
+				Received = false
+				FireServer("ReplaceCharacter",{})
+				break
+			end
+		end
+	end
+	workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+	workspace.CurrentCamera.FieldOfView = 70
+	local MouseDelta = game:GetService("UserInputService"):GetMouseDelta()*(UserSettings():GetService("UserGameSettings").MouseSensitivity/2)
+	if CameraZoom == 0 then
+		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
+		CameraRotation -= Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+	elseif game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCurrentPosition
+		CameraRotation -= Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+	else
+		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.Default
+	end
+	if KeyDown("Left") then
+		CameraRotation += Vector2.new(2.5*Throttle,0)
+	end
+	if KeyDown("Right") then
+		CameraRotation -= Vector2.new(2.5*Throttle,0)
+	end
+	if KeyDown("Up") then
+		CameraRotation += Vector2.new(0,2.5*Throttle)
+	end
+	if KeyDown("Down") then
+		CameraRotation -= Vector2.new(0,2.5*Throttle)
+	end
+	CameraRotation = Vector2.new(CameraRotation.X > 180 and CameraRotation.X-360 or CameraRotation.X < -180 and CameraRotation.X+360 or CameraRotation.X,math.clamp(CameraRotation.Y,-81,81))
+	local NewAngles = CFrame.Angles(0,math.rad(CameraRotation.X),0)*CFrame.Angles(math.rad(CameraRotation.Y),0,0)
+	CameraCFrame = NewAngles+CameraPosition+NewAngles*Vector3.new(0,0,CameraZoom)
+	workspace.CurrentCamera.CFrame = CameraCFrame
+	workspace.CurrentCamera.Focus = CameraCFrame*CFrame.new(0,0,-CameraZoom)
+	if CameraZoom == 0 then
+		if Character then
+			for _,v in pairs(Character) do
+				if typeof(v) == "Instance" then
+					if v:IsA("BasePart") then
+						v.Transparency = 1
+					end
+				end
+			end
+		end
+	else
+		if Character then
+			for _,v in pairs(Character) do
+				if typeof(v) == "Instance" then
+					if v:IsA("BasePart") then
+						v.Transparency = 0
+					end
+				end
+			end
+		end
+	end
+	local UnitRay = workspace.CurrentCamera:ScreenPointToRay(Mouse.X,Mouse.Y)
+	local Closest,Rays,Ray_ = math.huge,{},nil
+	table.insert(Rays,workspace:Raycast(UnitRay.Origin,UnitRay.Direction*1e3,RayProperties))
+	for _,v in pairs(WorldModels) do
+		table.insert(Rays,v:Raycast(UnitRay.Origin,UnitRay.Direction*1e3,RayProperties))
+	end
+	for _,v in pairs(Rays) do
+		local Magnitude = (UnitRay.Origin-v.Position).Magnitude
+		if Magnitude < Closest then
+			Closest,Ray_ = Magnitude,v
+		end
+	end
+	FireServer("Movement",{CFrame = CameraCFrame,Rotation = CameraRotation,Angles = NewAngles,Zoom = CameraZoom,W = KeyDown("W"),A = KeyDown("A"),S = KeyDown("S"),D = KeyDown("D"),Hit = Ray_ and CFrame.new(Ray_.Position) or CFrame.new(UnitRay.Origin,UnitRay.Origin+UnitRay.Direction)*CFrame.new(0,0,-1e3),PlaybackLoudness = Character and Character.Music and Character.Music.PlaybackLoudness or 0})
+end)
+end))
+LocalScript5.Disabled = true
+UnionOperation6.Name = "Limb"
+UnionOperation6.Parent = LocalScript0
+UnionOperation6.CFrame = CFrame.new(-500017.875, 2.5625, -500016.938, 1, -4.47034068e-07, -1.91601572e-07, -4.47034068e-07, 0.999995708, 6.11821235e-07, -1.91601572e-07, 6.11821235e-07, 1)
+UnionOperation6.Position = Vector3.new(-500017.875, 2.5625, -500016.9375)
+UnionOperation6.Color = Color3.new(0.25098, 0.25098, 0.25098)
+UnionOperation6.Size = Vector3.new(4, 1, 2)
+UnionOperation6.Anchored = true
+UnionOperation6.BrickColor = BrickColor.new("Medium brown")
+UnionOperation6.Material = Enum.Material.Metal
+UnionOperation6.brickColor = BrickColor.new("Medium brown")
+MeshPart7.Name = "MeshKiller"
+MeshPart7.Parent = LocalScript0
+MeshPart7.CFrame = CFrame.new(499981.75, 1000000.5, 499983.312, 1, -2.38418437e-07, -9.5800111e-08, -2.08616115e-07, 0.999997854, 2.76108665e-07, -9.58013899e-08, 3.35713253e-07, 1)
+MeshPart7.Position = Vector3.new(499981.75, 1000000.5, 499983.3125)
+MeshPart7.Size = Vector3.new(0.05000000074505806, 0.05000000074505806, 0.05000000074505806)
+UnionOperation8.Name = "Torso"
+UnionOperation8.Parent = LocalScript0
+UnionOperation8.CFrame = CFrame.new(-500017.875, 2.5625, -500016.938, 1, -2.38418437e-07, -9.5800111e-08, -2.08616115e-07, 0.999997854, 2.76108665e-07, -9.58013899e-08, 3.35713253e-07, 1)
+UnionOperation8.Position = Vector3.new(-500017.875, 2.5625, -500016.9375)
+UnionOperation8.Color = Color3.new(0.25098, 0.25098, 0.25098)
+UnionOperation8.Size = Vector3.new(4, 1, 2)
+UnionOperation8.Anchored = true
+UnionOperation8.BrickColor = BrickColor.new("Medium brown")
+UnionOperation8.Material = Enum.Material.Metal
+UnionOperation8.brickColor = BrickColor.new("Medium brown")
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+-- ending of test
 script.Disabled = true
 local Backups,Start = {},tick()
 for _,v in pairs(script.Models:GetChildren()) do
