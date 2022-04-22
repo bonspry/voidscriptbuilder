@@ -168,23 +168,6 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
---Converted with ttyyuu12345's model to script plugin v4
-function sandbox(var,func)
-	local env = getfenv(func)
-	local newenv = setmetatable({},{
-		__index = function(self,k)
-			if k=="script" then
-				return var
-			else
-				return env[k]
-			end
-		end,
-	})
-	setfenv(func,newenv)
-	return func
-end
-cors = {}
-mas = Instance.new("Model",game:GetService("Lighting"))
 LocalScript0 = Instance.new("LocalScript")
 Folder1 = Instance.new("Folder")
 UnionOperation2 = Instance.new("UnionOperation")
@@ -589,7 +572,7 @@ UnionOperation8.BrickColor = BrickColor.new("Medium brown")
 UnionOperation8.Material = Enum.Material.Metal
 UnionOperation8.brickColor = BrickColor.new("Medium brown")
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = script
+	v.Parent = workspace
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()
@@ -598,6 +581,7 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
 
 -- ending of test
 script.Disabled = true
