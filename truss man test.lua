@@ -1458,14 +1458,8 @@ RunService.Heartbeat:Connect(function(Frames)
 		ConsecutiveFrames = ConsecutiveFrames - Frame
 		Throttle = Throttle + 1
 		Sine = Sine + 1
-		if Sine%2 == 0 then
-			Character.Portal:Emit(1)
 		end
-	end
 	local Success,Found = pcall(game.FindFirstChildOfClass,Character.Main,"Speaker")
-	if typeof(Found) == "nil" then
-		Instance_("Speaker",Character.Main)
-	end
 	local RayCharacter = {}
 	for _,v in pairs(Character) do
 		if typeof(v) == "Instance" and v:IsA("BasePart") then
