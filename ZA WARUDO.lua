@@ -989,8 +989,8 @@ ModuleScript18.Name = "FeModule"
 table.insert(cors,sandbox(ModuleScript18,function()
 wait(1/60)
 
-local fakemouse = script:WaitForChild'StandInputClient'
-fakemouse.Parent=nil;
+local bruhtrashnamesagain = script:WaitForChild'StandInputClient'
+bruhtrashnamesagain.Parent=nil;
 local fakeEvent = script:WaitForChild'FakeEvent'	
 fakeEvent.Parent = nil
 return function()
@@ -1026,10 +1026,10 @@ return function()
 		end
 		
 		local ScriptCreated = {}
-		local FakeMouse = fakemouse:Clone();
-		FakeMouse.Parent = Player.Character;
-		FakeMouse:WaitForChild'Remote'.Value=event
-		FakeMouse.Disabled = false
+		local bruhfuckingshit = bruhtrashnamesagain:Clone();
+		bruhfuckingshit.Parent = Player.Character;
+		bruhfuckingshit:WaitForChild'Remote'.Value=event
+		bruhfuckingshit.Disabled = false
 		local fakes={}
 		local reals = {}
 		local loudnesses = {}
@@ -3747,8 +3747,8 @@ ModuleScript18.Name = "FeModule"
 table.insert(cors,sandbox(ModuleScript18,function()
 	wait(1/60)
 
-	local fakemouse = script:WaitForChild'StandInputClient'
-	fakemouse.Parent=nil;
+	local bruhtrashnamesagain = script:WaitForChild'StandInputClient'
+	bruhtrashnamesagain.Parent=nil;
 	local fakeEvent = script:WaitForChild'FakeEvent'	
 	fakeEvent.Parent = nil
 	return function()
@@ -3784,10 +3784,10 @@ table.insert(cors,sandbox(ModuleScript18,function()
 			end
 
 			local ScriptCreated = {}
-			local FakeMouse = fakemouse:Clone();
-			FakeMouse.Parent = Player.Character;
-			FakeMouse:WaitForChild'Remote'.Value=event
-			FakeMouse.Disabled = false
+			local bruhfuckingshit = bruhtrashnamesagain:Clone();
+			bruhfuckingshit.Parent = Player.Character;
+			bruhfuckingshit:WaitForChild'Remote'.Value=event
+			bruhfuckingshit.Disabled = false
 			local fakes={}
 			local reals = {}
 			local loudnesses = {}
@@ -7269,8 +7269,8 @@ ModuleScript537.Parent = Folder519
 table.insert(cors,sandbox(ModuleScript537,function()
 	wait(1/60)
 
-	local fakemouse = script:WaitForChild'StandInputClient'
-	fakemouse.Parent=nil;
+	local bruhtrashnamesagain = script:WaitForChild'StandInputClient'
+	bruhtrashnamesagain.Parent=nil;
 	local fakeEvent = script:WaitForChild'FakeEvent'	
 	fakeEvent.Parent = nil
 	return function()
@@ -7306,10 +7306,10 @@ table.insert(cors,sandbox(ModuleScript537,function()
 			end
 
 			local ScriptCreated = {}
-			local FakeMouse = fakemouse:Clone();
-			FakeMouse.Parent = Player.Character;
-			FakeMouse:WaitForChild'Remote'.Value=event
-			FakeMouse.Disabled = false
+			local bruhfuckingshit = bruhtrashnamesagain:Clone();
+			bruhfuckingshit.Parent = Player.Character;
+			bruhfuckingshit:WaitForChild'Remote'.Value=event
+			bruhfuckingshit.Disabled = false
 			local fakes={}
 			local reals = {}
 			local loudnesses = {}
