@@ -17,31 +17,216 @@ end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
 Tool0 = Instance.new("Tool")
-Script1 = Instance.new("Script")
-RemoteEvent2 = Instance.new("RemoteEvent")
-LocalScript3 = Instance.new("LocalScript")
-MeshPart4 = Instance.new("MeshPart")
-Weld5 = Instance.new("Weld")
-BillboardGui6 = Instance.new("BillboardGui")
-TextLabel7 = Instance.new("TextLabel")
-Script8 = Instance.new("Script")
-Script9 = Instance.new("Script")
+MeshPart1 = Instance.new("MeshPart")
+Weld2 = Instance.new("Weld")
+BillboardGui3 = Instance.new("BillboardGui")
+TextLabel4 = Instance.new("TextLabel")
+Script5 = Instance.new("Script")
+Script6 = Instance.new("Script")
+SpecialMesh7 = Instance.new("SpecialMesh")
+UnionOperation8 = Instance.new("UnionOperation")
+Weld9 = Instance.new("Weld")
 UnionOperation10 = Instance.new("UnionOperation")
 Weld11 = Instance.new("Weld")
-UnionOperation12 = Instance.new("UnionOperation")
+Part12 = Instance.new("Part")
 Weld13 = Instance.new("Weld")
 Part14 = Instance.new("Part")
-Weld15 = Instance.new("Weld")
-Part16 = Instance.new("Part")
-Part17 = Instance.new("Part")
-Weld18 = Instance.new("Weld")
+Part15 = Instance.new("Part")
+Weld16 = Instance.new("Weld")
+LocalScript17 = Instance.new("LocalScript")
 Tool0.Name = "Solid LC"
 Tool0.Parent = mas
 Tool0.Grip = CFrame.new(-0, -0, -0.0635003671, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(-0, -0, -0.06350036710500717)
-Script1.Name = "stuff idk"
-Script1.Parent = Tool0
-table.insert(cors,sandbox(Script1,function()
+MeshPart1.Name = "Base"
+MeshPart1.Parent = Tool0
+MeshPart1.CFrame = CFrame.new(-28.9251995, 4.87861633, -167.249969, 8.62758043e-09, -1.83384614e-08, -1.00000024, -1.00000048, 0, 4.78732787e-09, -5.96046448e-08, 1, 3.40250033e-08)
+MeshPart1.Orientation = Vector3.new(0, -90, -90)
+MeshPart1.Position = Vector3.new(-28.925199508666992, 4.8786163330078125, -167.24996948242188)
+MeshPart1.Rotation = Vector3.new(90, -90, 0)
+MeshPart1.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+MeshPart1.Size = Vector3.new(9.324540138244629, 8.58290958404541, 1.4686700105667114)
+MeshPart1.BrickColor = BrickColor.new("Really black")
+MeshPart1.CanCollide = false
+MeshPart1.Locked = true
+MeshPart1.Material = Enum.Material.Glass
+MeshPart1.Reflectance = -1
+MeshPart1.brickColor = BrickColor.new("Really black")
+Weld2.Parent = MeshPart1
+Weld2.C1 = CFrame.new(2.41373444, 0.567920685, 0, 1.12379617e-08, -0.707106829, 0.707106829, -7.30561709e-08, 0.707106829, 0.707106829, -1, -5.96049574e-08, -4.3712074e-08)
+Weld2.Part0 = Part14
+Weld2.Part1 = MeshPart1
+Weld2.part1 = MeshPart1
+BillboardGui3.Parent = MeshPart1
+BillboardGui3.Size = UDim2.new(10, 0, 4, 0)
+BillboardGui3.Active = true
+BillboardGui3.ClipsDescendants = true
+BillboardGui3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+BillboardGui3.AlwaysOnTop = true
+BillboardGui3.StudsOffset = Vector3.new(0, 4, 0)
+TextLabel4.Parent = BillboardGui3
+TextLabel4.Size = UDim2.new(1, 0, 1, 0)
+TextLabel4.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel4.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel4.BackgroundTransparency = 1
+TextLabel4.Font = Enum.Font.Arcade
+TextLabel4.FontSize = Enum.FontSize.Size96
+TextLabel4.Text = "Solid LC"
+TextLabel4.TextColor = BrickColor.new("Really black")
+TextLabel4.TextColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
+TextLabel4.TextScaled = true
+TextLabel4.TextSize = 100
+TextLabel4.TextStrokeTransparency = 0
+TextLabel4.TextWrap = true
+TextLabel4.TextWrapped = true
+Script5.Name = "TextLabelScript"
+Script5.Parent = TextLabel4
+table.insert(cors,sandbox(Script5,function()
+wait(0.5)
+
+local ran = math.random()
+
+function Lights2 ()
+
+	script.Parent.TextColor3 = Color3.new(255/255,0/255,0/255)
+	for i = 0,255,10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(255/255,i/255,0/255)
+	end
+	for i = 255,0,-10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(i/255,255/255,0/255)
+	end
+	for i = 0,255,10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(0/255,255/255,i/255)
+	end
+	for i = 255,0,-10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(0/255,i/255,255/255)
+	end
+	for i = 0,255,10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(i/255,0/255,255/255)
+	end
+	for i = 255,0,-10 do
+		wait()
+		script.Parent.TextColor3 = Color3.new(255/255,0/255,i/255)
+	end
+
+end
+
+while true do		-- This just loops the Light
+
+	Lights2()
+
+end					-- This just loops the Light
+
+end))
+Script6.Parent = MeshPart1
+SpecialMesh7.Parent = MeshPart1
+SpecialMesh7.MeshId = "rbxassetid://6080721391"
+SpecialMesh7.MeshType = Enum.MeshType.FileMesh
+UnionOperation8.Name = "GunAdditions"
+UnionOperation8.Parent = Tool0
+UnionOperation8.CFrame = CFrame.new(-28.9265938, 2.64302731, -165.295715, -1.2954697e-05, -3.70293856e-06, -1.00000024, -0.965924025, -0.258827388, 1.34850852e-05, -0.258827269, 0.965923667, -1.71363354e-07)
+UnionOperation8.Orientation = Vector3.new(0, -90, -105)
+UnionOperation8.Position = Vector3.new(-28.926593780517578, 2.6430273056030273, -165.29571533203125)
+UnionOperation8.Rotation = Vector3.new(105, -90, 0)
+UnionOperation8.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+UnionOperation8.Size = Vector3.new(4.125401496887207, 5.02734375, 1.2096824645996094)
+UnionOperation8.BrickColor = BrickColor.new("Really black")
+UnionOperation8.CanCollide = false
+UnionOperation8.Locked = true
+UnionOperation8.Material = Enum.Material.Glass
+UnionOperation8.brickColor = BrickColor.new("Really black")
+UnionOperation8.UsePartColor = true
+Weld9.Parent = UnionOperation8
+Weld9.C1 = CFrame.new(0.530899048, -1.29299164, -0.0013961792, -1.29380087e-05, -0.86602962, 0.499992669, -3.75511445e-06, 0.499992639, 0.86602962, -1, 9.32717012e-06, -9.7209504e-06)
+Weld9.Part0 = Part14
+Weld9.Part1 = UnionOperation8
+Weld9.part1 = UnionOperation8
+UnionOperation10.Name = "NeonParts"
+UnionOperation10.Parent = Tool0
+UnionOperation10.CFrame = CFrame.new(-28.9490967, 4.32372046, -166.604523, -0.772622883, 0.634865582, 3.68452184e-08, -0.448917866, -0.546326995, -0.707107067, -0.448917627, -0.546326876, 0.707106769)
+UnionOperation10.Orientation = Vector3.new(45, 0, -140.58999633789062)
+UnionOperation10.Position = Vector3.new(-28.9490966796875, 4.323720455169678, -166.60452270507812)
+UnionOperation10.Rotation = Vector3.new(45, 0, -140.58999633789062)
+UnionOperation10.Color = Color3.new(0.972549, 0.972549, 0.972549)
+UnionOperation10.Size = Vector3.new(2.001274824142456, 2.2143592834472656, 8.92722225189209)
+UnionOperation10.CanCollide = false
+UnionOperation10.Locked = true
+UnionOperation10.Material = Enum.Material.Neon
+UnionOperation10.UsePartColor = true
+Weld11.Parent = UnionOperation10
+Weld11.C1 = CFrame.new(0.850805283, 1.07305908, 1.2595787, -0.772622705, -0.634865463, -1.78418952e-13, 0.634865463, -0.772622705, 1.46607159e-13, -2.30926389e-13, -1.37642127e-20, 1)
+Weld11.Part0 = Part14
+Weld11.Part1 = UnionOperation10
+Weld11.part1 = UnionOperation10
+Part12.Name = "Caster"
+Part12.Parent = Tool0
+Part12.CFrame = CFrame.new(-28.9263077, 10.0170221, -172.058929, -6.86594959e-09, 4.05370884e-08, -1.00000024, -0.707107067, 0.707107067, 4.6933927e-08, 0.707106769, 0.707106829, 7.61725545e-08)
+Part12.Orientation = Vector3.new(0, -90, -45)
+Part12.Position = Vector3.new(-28.926307678222656, 10.017022132873535, -172.05892944335938)
+Part12.Rotation = Vector3.new(45, -90, 0)
+Part12.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part12.Transparency = 1
+Part12.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.BrickColor = BrickColor.new("Really black")
+Part12.CanCollide = false
+Part12.Locked = true
+Part12.Material = Enum.Material.Glass
+Part12.Reflectance = -1
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.brickColor = BrickColor.new("Really black")
+Weld13.Parent = Part12
+Weld13.C1 = CFrame.new(9.14218998, -1.53814697, -0.00110816956, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08)
+Weld13.Part0 = Part14
+Weld13.Part1 = Part12
+Weld13.part1 = Part12
+Part14.Name = "Handle"
+Part14.Parent = Tool0
+Part14.CFrame = CFrame.new(-28.9251995, 2.4648807, -166.682053, 1.00000024, 4.05370884e-08, 3.68454494e-08, -1.60252966e-08, 0.707107067, -0.707107067, -1.07081178e-07, 0.707106829, 0.707106769)
+Part14.Orientation = Vector3.new(45, 0, 0)
+Part14.Position = Vector3.new(-28.925199508666992, 2.4648807048797607, -166.6820526123047)
+Part14.Rotation = Vector3.new(45, 0, 0)
+Part14.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part14.Transparency = 1
+Part14.Size = Vector3.new(1.0039602518081665, 1.0039602518081665, 1.0039602518081665)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.BrickColor = BrickColor.new("Really black")
+Part14.CanCollide = false
+Part14.Locked = true
+Part14.Material = Enum.Material.Glass
+Part14.Reflectance = -1
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.brickColor = BrickColor.new("Really black")
+Part15.Name = "Hole"
+Part15.Parent = Tool0
+Part15.CFrame = CFrame.new(-28.9263077, 5.91578865, -167.957687, -6.86594959e-09, 4.05370884e-08, -1.00000024, -0.707107067, 0.707107067, 4.6933927e-08, 0.707106769, 0.707106829, 7.61725545e-08)
+Part15.Orientation = Vector3.new(0, -90, -45)
+Part15.Position = Vector3.new(-28.926307678222656, 5.915788650512695, -167.9576873779297)
+Part15.Rotation = Vector3.new(45, -90, 0)
+Part15.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part15.Transparency = 1
+Part15.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.BrickColor = BrickColor.new("Really black")
+Part15.CanCollide = false
+Part15.Locked = true
+Part15.Material = Enum.Material.Glass
+Part15.Reflectance = -1
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.brickColor = BrickColor.new("Really black")
+Weld16.Parent = Part15
+Weld16.C1 = CFrame.new(3.34217167, -1.53814697, -0.00110816956, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08)
+Weld16.Part0 = Part14
+Weld16.Part1 = Part15
+Weld16.part1 = Part15
+LocalScript17.Name = "hahaha"
+LocalScript17.Parent = Tool0
+table.insert(cors,sandbox(LocalScript17,function()
 --[[
 \\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 
@@ -80,9 +265,9 @@ function Cube(cframe,size,color,orientation,tweenedorientation,transparency,ends
 	cube.Orientation = orientation
 	cube.CFrame = cframe
 	cube.Material = Enum.Material.Neon
-	
+
 	debris:AddItem(cube,debtime)
-	
+
 	tweenservice:Create(cube,TweenInfo.new(ttime),{Orientation=tweenedorientation,Transparency=transparency,Size=endsize}):Play()
 end
 
@@ -102,7 +287,7 @@ script.Parent.Equipped:Connect(function()
 	Character = plr.Character
 	equipped = true
 	music:Resume()
-	
+
 	while equipped do
 		script.Parent.NeonParts.Color = Color3.fromHSV((tick()%5)/5,1,1)
 		music.Volume = 10
@@ -282,13 +467,11 @@ function CastProperRay(Start,Direction,Distance,Ignore)
 	return RaycastResult.Instance,RaycastResult.Position,RaycastResult.Normal
 end
 
-local remote = script.Parent:WaitForChild("thefunnyshoot")
-
 --def not stolen from lost hope :flushed: (not me!)
 function Lightning(From,To,Number,Offset,Color,Time,StartSize,transparency)
 	local magnitude = (From-To).magnitude
 	local Table = {-Offset,Offset}
-	
+
 	for i=1,Number do
 		local lightning = Instance.new("Part",Character)
 		lightning.Anchored = true
@@ -296,12 +479,12 @@ function Lightning(From,To,Number,Offset,Color,Time,StartSize,transparency)
 		lightning.Material = Enum.Material.Neon
 		lightning.Color = Color
 		lightning.Size = Vector3.new(2,2,magnitude/Number)
-		
+
 		local Offset = Vector3.new(Table[math.random(1, 2)], Table[math.random(1, 2)], Table[math.random(1, 2)])
 		local pos = CFrame.new(To,From) * CFrame.new(0,0,magnitude/Number).p + Offset
-		
+
 		lightning.CFrame = CFrame.new(To,pos) * CFrame.new(0,0,magnitude/Number/2)
-		
+
 		if Number == i then
 			local magnitude2 = (To-From).magnitude
 			lightning.Size = Vector3.new(2,2,magnitude2)
@@ -324,84 +507,19 @@ function ShootEffect(cfram,color)
 		lol.Size = Vector3.new(0,0,0)
 		lol.Color = color
 		lol.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
-		
+
 		local gaming = Instance.new("SpecialMesh",lol)
 		gaming.MeshId = "rbxassetid://662586858"
 		gaming.Scale = Vector3.new(0,0,0)
-		
+
 		debris:AddItem(lol,5)
-		
+
 		tweenservice:Create(lol,TweenInfo.new(1.1),{Transparency=1,Orientation=Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))}):Play()
 		tweenservice:Create(gaming,TweenInfo.new(1,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Scale=Vector3.new(.1,.001,.1)}):Play()
 	end
 end
 
 local mid = script.Parent.Caster
-
-remote.OnServerEvent:Connect(function(player,FromP,ToP)
-	
-	local shoot1 = Instance.new("Sound", mid)
-	shoot1.SoundId = "rbxassetid://642890855"
-	shoot1.Volume = 10
-	shoot1.PlaybackSpeed = .45
-	shoot1:Play()
-	
-	debris:AddItem(shoot1,5)	
-	local Dist = (FromP-ToP.Position).magnitude
-	if Dist > 2048 then Dist = 2048 end
-	local Part,Position,Normal = CastProperRay(FromP,(ToP.Position-FromP).unit*1000,Dist,{workspace:FindFirstChildOfClass("Terrain"),Character})
-	if Dist < 50 then
-		coroutine.wrap(function()
-			for i=1,5 do
-				Lightning(FromP,ToP.Position,4,1,Color3.fromHSV((tick()%5)/5,1,1),1,Vector3.new(0.5,3,0),1,false)
-			end
-		end)()
-	else
-		coroutine.wrap(function()
-			for i=1,5 do
-				Lightning(FromP,ToP.Position,10,2,Color3.fromHSV((tick()%5)/5,1,1),1,Vector3.new(0.5,3,0),1,false)
-			end
-		end)()
-	end
-
-	ShootEffect(script.Parent.Caster.CFrame,Color3.fromHSV((tick()%5)/5,1,1))
-	ShootEffect(script.Parent.Caster.CFrame,Color3.fromRGB(255,255,255))
-	
-	local StartSquare = Instance.new("Part",Character)
-	StartSquare.Color = Color3.fromHSV((tick()%5)/5,1,1)
-	StartSquare.CanCollide = false
-	StartSquare.Anchored = true
-	StartSquare.CFrame = mid.CFrame
-	StartSquare.Size = Vector3.new(0,0,0)
-	StartSquare.Material = Enum.Material.Neon
-	
-	local EndSquare = Instance.new("Part",Character)
-	EndSquare.Color = StartSquare.Color
-	EndSquare.CanCollide = false
-	EndSquare.Anchored = true
-	EndSquare.CFrame = ToP
-	EndSquare.Size = Vector3.new(0,0,0)
-	EndSquare.Material = Enum.Material.Neon
-	
-	tweenservice:Create(StartSquare,TweenInfo.new(.7),{Size=Vector3.new(2,2,2),Transparency=1,Orientation=Vector3.new(MRANDOM(-360,360),MRANDOM(-360,360),MRANDOM(-360,360))}):Play()
-	tweenservice:Create(EndSquare,TweenInfo.new(.7),{Size=Vector3.new(2,2,2),Transparency=1,Orientation=Vector3.new(MRANDOM(-360,360),MRANDOM(-360,360),MRANDOM(-360,360))}):Play()
-	ShootEffect(EndSquare.CFrame,Color3.fromHSV((tick()%5)/5,1,1))
-	ShootEffect(EndSquare.CFrame,Color3.fromRGB(255,255,255))
-	debris:AddItem(StartSquare,1)
-	debris:AddItem(EndSquare,1)
-	
-	if Part then
-		if Part.Parent.ClassName == "Model" then
-			if Part.Parent:FindFirstChildOfClass("Humanoid") then
-				Kill(Part.Parent)
-			end
-		elseif Part.Parent.Parent.ClassName == "Model" then
-			if Part.Parent.Parent:FindFirstChildOfClass("Humanoid") then
-				Kill(Part.Parent.Parent)
-			end
-		end
-	end
-end)
 
 
 function Lights2 ()
@@ -434,26 +552,20 @@ function Lights2 ()
 
 end
 
-while true do		-- This just loops the Light
+spawn(function()
+	while true do		-- This just loops the Light
 
-	Lights2()
+		Lights2()
 
-end					-- This just loops the Light
+	end					-- This just loops the Light
+end)
 
-end))
-RemoteEvent2.Name = "thefunnyshoot"
-RemoteEvent2.Parent = Tool0
-LocalScript3.Name = "uis"
-LocalScript3.Parent = RemoteEvent2
-table.insert(cors,sandbox(LocalScript3,function()
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 
 local uis = game:GetService("UserInputService")
 
-local shotlol = script.Parent
-
-local gun = script.Parent.Parent
+local gun = script.Parent
 
 local ClickConnection
 
@@ -471,208 +583,86 @@ function Swait(num)
 	end
 end
 
-script.Parent.Parent.Equipped:Connect(function()
+script.Parent.Equipped:Connect(function()
 	ClickConnection = uis.InputBegan:Connect(function(input,istyping)
 		if istyping then
 			return
 		elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
 			local FromP = gun.Caster.CFrame.Position
 			local ToP = mouse.Hit
-			shotlol:FireServer(FromP, ToP)			
+			
+			local shoot1 = Instance.new("Sound", mid)
+			shoot1.SoundId = "rbxassetid://642890855"
+			shoot1.Volume = 10
+			shoot1.PlaybackSpeed = .45
+			shoot1:Play()
+
+			debris:AddItem(shoot1,5)	
+			local Dist = (FromP-ToP.Position).magnitude
+			if Dist > 2048 then Dist = 2048 end
+			local Part,Position,Normal = CastProperRay(FromP,(ToP.Position-FromP).unit*1000,Dist,{workspace:FindFirstChildOfClass("Terrain"),Character})
+			if Dist < 50 then
+				coroutine.wrap(function()
+					for i=1,5 do
+						Lightning(FromP,ToP.Position,4,1,Color3.fromHSV((tick()%5)/5,1,1),1,Vector3.new(0.5,3,0),1,false)
+					end
+				end)()
+			else
+				coroutine.wrap(function()
+					for i=1,5 do
+						Lightning(FromP,ToP.Position,10,2,Color3.fromHSV((tick()%5)/5,1,1),1,Vector3.new(0.5,3,0),1,false)
+					end
+				end)()
+			end
+
+			ShootEffect(script.Parent.Caster.CFrame,Color3.fromHSV((tick()%5)/5,1,1))
+			ShootEffect(script.Parent.Caster.CFrame,Color3.fromRGB(255,255,255))
+
+			local StartSquare = Instance.new("Part",Character)
+			StartSquare.Color = Color3.fromHSV((tick()%5)/5,1,1)
+			StartSquare.CanCollide = false
+			StartSquare.Anchored = true
+			StartSquare.CFrame = mid.CFrame
+			StartSquare.Size = Vector3.new(0,0,0)
+			StartSquare.Material = Enum.Material.Neon
+
+			local EndSquare = Instance.new("Part",Character)
+			EndSquare.Color = StartSquare.Color
+			EndSquare.CanCollide = false
+			EndSquare.Anchored = true
+			EndSquare.CFrame = ToP
+			EndSquare.Size = Vector3.new(0,0,0)
+			EndSquare.Material = Enum.Material.Neon
+
+			tweenservice:Create(StartSquare,TweenInfo.new(.7),{Size=Vector3.new(2,2,2),Transparency=1,Orientation=Vector3.new(MRANDOM(-360,360),MRANDOM(-360,360),MRANDOM(-360,360))}):Play()
+			tweenservice:Create(EndSquare,TweenInfo.new(.7),{Size=Vector3.new(2,2,2),Transparency=1,Orientation=Vector3.new(MRANDOM(-360,360),MRANDOM(-360,360),MRANDOM(-360,360))}):Play()
+			ShootEffect(EndSquare.CFrame,Color3.fromHSV((tick()%5)/5,1,1))
+			ShootEffect(EndSquare.CFrame,Color3.fromRGB(255,255,255))
+			debris:AddItem(StartSquare,1)
+			debris:AddItem(EndSquare,1)
+
+			if Part then
+				if Part.Parent.ClassName == "Model" then
+					if Part.Parent:FindFirstChildOfClass("Humanoid") then
+						Kill(Part.Parent)
+					end
+				elseif Part.Parent.Parent.ClassName == "Model" then
+					if Part.Parent.Parent:FindFirstChildOfClass("Humanoid") then
+						Kill(Part.Parent.Parent)
+					end
+				end
+			end
 		end
 	end)
 end)
 
-script.Parent.Parent.Unequipped:Connect(function()
+script.Parent.Unequipped:Connect(function()
 	ClickConnection:Disconnect()
 end)
 
 end))
-MeshPart4.Name = "Base"
-MeshPart4.Parent = Tool0
-MeshPart4.CFrame = CFrame.new(-83.4935379, 21.8652077, 17.8238068, -0.156527206, -0.0747540444, -0.984840751, -0.984385014, 0.0931135118, 0.149386987, 0.0805346966, 0.992845297, -0.0881615058)
-MeshPart4.Orientation = Vector3.new(-8.59000015258789, -95.12000274658203, -84.5999984741211)
-MeshPart4.Position = Vector3.new(-83.49353790283203, 21.86520767211914, 17.823806762695312)
-MeshPart4.Rotation = Vector3.new(-120.55000305175781, -80.01000213623047, 154.47000122070312)
-MeshPart4.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
-MeshPart4.Size = Vector3.new(9.324540138244629, 8.58290958404541, 1.4686700105667114)
-MeshPart4.BrickColor = BrickColor.new("Really black")
-MeshPart4.CanCollide = false
-MeshPart4.Locked = true
-MeshPart4.Material = Enum.Material.Glass
-MeshPart4.Reflectance = -1
-MeshPart4.brickColor = BrickColor.new("Really black")
-Weld5.Parent = MeshPart4
-Weld5.C1 = CFrame.new(2.41373444, 0.567920685, 0, 1.12379617e-08, -0.707106829, 0.707106829, -7.30561709e-08, 0.707106829, 0.707106829, -1, -5.96049574e-08, -4.3712074e-08)
-Weld5.Part0 = Part16
-Weld5.Part1 = MeshPart4
-Weld5.part1 = MeshPart4
-BillboardGui6.Parent = MeshPart4
-BillboardGui6.Size = UDim2.new(10, 0, 4, 0)
-BillboardGui6.Active = true
-BillboardGui6.ClipsDescendants = true
-BillboardGui6.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-BillboardGui6.AlwaysOnTop = true
-BillboardGui6.StudsOffset = Vector3.new(0, 4, 0)
-TextLabel7.Parent = BillboardGui6
-TextLabel7.Size = UDim2.new(1, 0, 1, 0)
-TextLabel7.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel7.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel7.BackgroundTransparency = 1
-TextLabel7.Font = Enum.Font.Arcade
-TextLabel7.FontSize = Enum.FontSize.Size96
-TextLabel7.Text = "Solid LC"
-TextLabel7.TextColor = BrickColor.new("Really black")
-TextLabel7.TextColor3 = Color3.new(0.0666667, 0.0666667, 0.0666667)
-TextLabel7.TextScaled = true
-TextLabel7.TextSize = 100
-TextLabel7.TextStrokeTransparency = 0
-TextLabel7.TextWrap = true
-TextLabel7.TextWrapped = true
-Script8.Name = "TextLabelScript"
-Script8.Parent = TextLabel7
-table.insert(cors,sandbox(Script8,function()
-wait(0.5)
-
-local ran = math.random()
-
-function Lights2 ()
-
-	script.Parent.TextColor3 = Color3.new(255/255,0/255,0/255)
-	for i = 0,255,10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(255/255,i/255,0/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(i/255,255/255,0/255)
-	end
-	for i = 0,255,10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(0/255,255/255,i/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(0/255,i/255,255/255)
-	end
-	for i = 0,255,10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(i/255,0/255,255/255)
-	end
-	for i = 255,0,-10 do
-		wait()
-		script.Parent.TextColor3 = Color3.new(255/255,0/255,i/255)
-	end
-
-end
-
-while true do		-- This just loops the Light
-
-	Lights2()
-
-end					-- This just loops the Light
-
-end))
-Script9.Parent = MeshPart4
-UnionOperation10.Name = "GunAdditions"
-UnionOperation10.Parent = Tool0
-UnionOperation10.CFrame = CFrame.new(-83.9909363, 19.8467045, 19.9440079, -0.131857708, -0.112723812, -0.984838605, -0.974939108, -0.164844602, 0.149400234, -0.179186165, 0.979856968, -0.0881628022)
-UnionOperation10.Orientation = Vector3.new(-8.59000015258789, -95.12000274658203, -99.5999984741211)
-UnionOperation10.Position = Vector3.new(-83.99093627929688, 19.846704483032227, 19.944007873535156)
-UnionOperation10.Rotation = Vector3.new(-120.55000305175781, -80.01000213623047, 139.47000122070312)
-UnionOperation10.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
-UnionOperation10.Size = Vector3.new(4.125401496887207, 5.02734375, 1.2096824645996094)
-UnionOperation10.BrickColor = BrickColor.new("Really black")
-UnionOperation10.CanCollide = false
-UnionOperation10.Locked = true
-UnionOperation10.Material = Enum.Material.Glass
-UnionOperation10.brickColor = BrickColor.new("Really black")
-UnionOperation10.UsePartColor = true
-Weld11.Parent = UnionOperation10
-Weld11.C1 = CFrame.new(0.530899048, -1.29299164, -0.0013961792, -1.29380087e-05, -0.86602962, 0.499992669, -3.75511445e-06, 0.499992639, 0.86602962, -1, 9.32717012e-06, -9.7209504e-06)
-Weld11.Part0 = Part16
-Weld11.Part1 = UnionOperation10
-Weld11.part1 = UnionOperation10
-UnionOperation12.Name = "NeonParts"
-UnionOperation12.Parent = Tool0
-UnionOperation12.CFrame = CFrame.new(-83.6521835, 21.3826447, 18.5072174, -0.79761982, 0.580566466, -0.163540483, -0.368288279, -0.683506846, -0.630224109, -0.477667838, -0.442448974, 0.758994222)
-UnionOperation12.Orientation = Vector3.new(39.06999969482422, -12.15999984741211, -151.67999267578125)
-UnionOperation12.Position = Vector3.new(-83.65218353271484, 21.382644653320312, 18.507217407226562)
-UnionOperation12.Rotation = Vector3.new(39.70000076293945, -9.40999984741211, -143.9499969482422)
-UnionOperation12.Color = Color3.new(0.972549, 0.972549, 0.972549)
-UnionOperation12.Size = Vector3.new(2.001274824142456, 2.2143592834472656, 8.92722225189209)
-UnionOperation12.CanCollide = false
-UnionOperation12.Locked = true
-UnionOperation12.Material = Enum.Material.Neon
-UnionOperation12.UsePartColor = true
-Weld13.Parent = UnionOperation12
-Weld13.C1 = CFrame.new(0.850805283, 1.07305908, 1.2595787, -0.772622705, -0.634865463, -1.78418952e-13, 0.634865463, -0.772622705, 1.46607159e-13, -2.30926389e-13, -1.37642127e-20, 1)
-Weld13.Part0 = Part16
-Weld13.Part1 = UnionOperation12
-Weld13.part1 = UnionOperation12
-Part14.Name = "Caster"
-Part14.Parent = Tool0
-Part14.CFrame = CFrame.new(-82.3308411, 26.4757614, 12.6353474, -0.163540527, 0.0578224175, -0.984840751, -0.630224109, 0.761906445, 0.149387032, 0.758994222, 0.645100951, -0.0881614685)
-Part14.Orientation = Vector3.new(-8.59000015258789, -95.12000274658203, -39.599998474121094)
-Part14.Position = Vector3.new(-82.33084106445312, 26.47576141357422, 12.635347366333008)
-Part14.Rotation = Vector3.new(-120.55000305175781, -80.01000213623047, -160.52999877929688)
-Part14.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
-Part14.Transparency = 1
-Part14.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
-Part14.BottomSurface = Enum.SurfaceType.Smooth
-Part14.BrickColor = BrickColor.new("Really black")
-Part14.CanCollide = false
-Part14.Locked = true
-Part14.Material = Enum.Material.Glass
-Part14.Reflectance = -1
-Part14.TopSurface = Enum.SurfaceType.Smooth
-Part14.brickColor = BrickColor.new("Really black")
-Weld15.Parent = Part14
-Weld15.C1 = CFrame.new(9.14218998, -1.53814697, -0.00110816956, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08)
-Weld15.Part0 = Part16
-Weld15.Part1 = Part14
-Weld15.part1 = Part14
-Part16.Name = "Handle"
-Part16.Parent = Tool0
-Part16.CFrame = CFrame.new(-83.9138107, 19.5420437, 18.5820541, 0.984840751, 0.0578224175, -0.163540483, -0.149387002, 0.761906445, -0.630224109, 0.0881614387, 0.645100951, 0.758994222)
-Part16.Orientation = Vector3.new(39.06999969482422, -12.15999984741211, -11.09000015258789)
-Part16.Position = Vector3.new(-83.91381072998047, 19.542043685913086, 18.582054138183594)
-Part16.Rotation = Vector3.new(39.70000076293945, -9.40999984741211, -3.359999895095825)
-Part16.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
-Part16.Transparency = 1
-Part16.Size = Vector3.new(1.0039602518081665, 1.0039602518081665, 1.0039602518081665)
-Part16.BottomSurface = Enum.SurfaceType.Smooth
-Part16.BrickColor = BrickColor.new("Really black")
-Part16.CanCollide = false
-Part16.Locked = true
-Part16.Material = Enum.Material.Glass
-Part16.Reflectance = -1
-Part16.TopSurface = Enum.SurfaceType.Smooth
-Part16.brickColor = BrickColor.new("Really black")
-Part17.Name = "Hole"
-Part17.Parent = Tool0
-Part17.CFrame = CFrame.new(-83.2793808, 22.8204498, 17.0375271, -0.163540527, 0.0578224175, -0.984840751, -0.630224109, 0.761906445, 0.149387032, 0.758994222, 0.645100951, -0.0881614685)
-Part17.Orientation = Vector3.new(-8.59000015258789, -95.12000274658203, -39.599998474121094)
-Part17.Position = Vector3.new(-83.27938079833984, 22.820449829101562, 17.037527084350586)
-Part17.Rotation = Vector3.new(-120.55000305175781, -80.01000213623047, -160.52999877929688)
-Part17.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
-Part17.Transparency = 1
-Part17.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
-Part17.BottomSurface = Enum.SurfaceType.Smooth
-Part17.BrickColor = BrickColor.new("Really black")
-Part17.CanCollide = false
-Part17.Locked = true
-Part17.Material = Enum.Material.Glass
-Part17.Reflectance = -1
-Part17.TopSurface = Enum.SurfaceType.Smooth
-Part17.brickColor = BrickColor.new("Really black")
-Weld18.Parent = Part17
-Weld18.C1 = CFrame.new(3.34217167, -1.53814697, -0.00110816956, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08)
-Weld18.Part0 = Part16
-Weld18.Part1 = Part17
-Weld18.part1 = Part17
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = workspace
+	v.Parent = game:GetService("Players").LocalPlayer.Backpack
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()
