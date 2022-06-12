@@ -148,6 +148,7 @@ do
 	--Changing owner to fake player object to support owner:GetMouse()
 	game,owner = FakeGame,FakeGame.Players.LocalPlayer
 end
+
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
