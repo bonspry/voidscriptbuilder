@@ -1147,8 +1147,6 @@ for i,v in pairs(cors) do
 	end)
 end
 wait(2)
-local script = game:GetObjects("rbxassetid://9526699214")[1]
-
 local Player = game:GetService("Players").LocalPlayer
 local remote = {}
 local clientevent = false
