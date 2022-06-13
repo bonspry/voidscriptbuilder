@@ -723,7 +723,12 @@ run.RenderStepped:Connect(function()
 		if table.find(partexclusion,c) then
 			table.remove(partexclusion,table.find(partexclusion,c))
 		end
-		debris:AddItem(c,0)
+		function debris:AddItem(c,0)
+coroutine.resume(coroutine.create(function()
+        wait(0)
+        item:Destroy()
+    end))
+end
 		c = Instance.new("Part")
 		c.Transparency = 1
 		c.Name = randomstring()
