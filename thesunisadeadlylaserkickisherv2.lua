@@ -1150,7 +1150,6 @@ wait(2)
 local Player = game:GetService("Players").LocalPlayer
 local remote = {}
 local clientevent = false
-script.LoadLibrary.Parent = game:GetService("ReplicatedStorage")
 local Mouse,mouse,UserInputService,ContextActionService
 do
 	script.Parent = Player.Character
