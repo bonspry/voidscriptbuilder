@@ -1,3 +1,5 @@
+local remote = {}
+local clientevent = false
 wait(.1)
 local Player = game:GetService("Players").LocalPlayer
 local Mouse,mouse,UserInputService,ContextActionService
@@ -112,7 +114,7 @@ do
 	end
 	m.TrigEvent = te
 	UsIS.TrigEvent = te
-	Event.OnServerEvent:Connect(function(plr,io)
+	clientevent = function(plr,io)
 	    if plr~=Player then return end
 		if io.Mouse then
 			m.Target = io.Target
@@ -143,9 +145,9 @@ do
 				UsIS:TrigEvent("InputEnded",io,false)
 	        end
 	    end
-	end)
+	end
 		
-	Func.OnServerInvoke = function(plr,inst,play)
+	clientevent = function(plr,inst,play)
 		if plr~=Player then return end
 		if(inst and typeof(inst) == 'Instance' and inst:IsA'Sound')then
 			loudnesses[inst]=play	
