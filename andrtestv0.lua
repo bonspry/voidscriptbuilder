@@ -1,4 +1,3 @@
-script.Disabled = true
 --[[
 get real 
 ]]
