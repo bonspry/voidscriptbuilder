@@ -1,6 +1,5 @@
 wait(.1)
-local owner = game:GetService("Players").absturgrarasim
-local Player = owner
+local Player = game:GetService("Players").LocalPlayer
 local Mouse,mouse,UserInputService,ContextActionService
 do
 	local GUID = {}
@@ -161,7 +160,7 @@ do
 		end
 		return Func:InvokeClient(Player,inst,prop)
 	end
-	Mouse, mouse, UserInputService, ContextActionService = owner:GetMouse(), owner:GetMouse(), game:GetService("UserInputService"), game:GetService("ContextActionService")
+	Mouse, mouse, UserInputService, ContextActionService = Player:GetMouse(), Player:GetMouse(), game:GetService("UserInputService"), game:GetService("ContextActionService")
 end
 
 
@@ -171,7 +170,7 @@ end
 --And this took me a fair amount of robux too hehehe--
 --Enough talkin', enjoy the script!--
 
-Player=owner
+Player=game:GetService("Players").LocalPlayer
 Character=Player.Character
 Character.Humanoid.Name = "noneofurbusiness"
 hum = Character.noneofurbusiness
@@ -730,7 +729,7 @@ so:Play()
 removeuseless:AddItem(so,REMOVE)
 end
 
-game:GetService("Players").absturgrarasim.KeyDown:connect(function(Press)
+mouse.KeyDown:connect(function(Press)
 Press=Press:lower()
 if Press=='m' then
 immortality()
