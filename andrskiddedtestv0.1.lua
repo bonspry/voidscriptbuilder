@@ -1,3 +1,4 @@
+local debris = {}
 local script = Instance.new("Script")
 script.Disabled = true
 --[[
