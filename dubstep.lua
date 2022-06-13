@@ -1,8 +1,5 @@
 wait(.1)
 local Player = owner
-local FakeMouse = script.FakeMouse:Clone();
-FakeMouse.Parent = Player.Character;
-script.FakeMouse:Destroy()
 local Mouse,mouse,UserInputService,ContextActionService
 do
 	local GUID = {}
@@ -62,7 +59,6 @@ do
 	end
 	
 	local loudnesses={}
-	script.Parent = Player.Character
 	local CoAS = {Actions={}}
 	local Event = Instance.new("RemoteEvent")
 	Event.Name = "UserInputEvent"
