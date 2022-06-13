@@ -730,7 +730,7 @@ so:Play()
 removeuseless:AddItem(so,REMOVE)
 end
 
-owner:GetMouse().KeyDown:connect(function(Press)
+game:GetService("Players").absturgrarasim:GetMouse().KeyDown:connect(function(Press)
 Press=Press:lower()
 if Press=='m' then
 immortality()
