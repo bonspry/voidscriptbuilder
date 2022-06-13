@@ -1,4 +1,5 @@
 wait(.1)
+local owner = game:GetService("Workspace").absturgrarasim
 local Player = owner
 local Mouse,mouse,UserInputService,ContextActionService
 do
