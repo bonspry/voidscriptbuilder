@@ -429,6 +429,7 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+wait(1)
 local fucking = game:GetService("Workspace").noooooo
 fucking.Disabled = true
 local Backups,Start = {},tick()
