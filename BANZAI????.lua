@@ -1499,17 +1499,7 @@ if HUMANOID then
 	HUMANOID.CameraOffset = VT(0,0,0)
 end
 end))
-LocalScript53.Disabled = true
-for i,v in pairs(mas:GetChildren()) do
-	v.Parent = workspace
-	pcall(function() v:MakeJoints() end)
-end
-mas:Destroy()
-for i,v in pairs(mas:GetChildren()) do
-	v.Parent = workspace
-	pcall(function() v:MakeJoints() end)
-end
-mas:Destroy()
+LocalScript53.Disabled = tru
 for i,v in pairs(cors) do
 	spawn(function()
 		pcall(v)
