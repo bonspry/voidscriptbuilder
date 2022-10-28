@@ -1,4 +1,154 @@
+--https://github.com/Mokiros/roblox-FE-compatibility
+if game:GetService("RunService"):IsClient() then error("Script must be server-side in order to work; use h/ and not hl/") end
+local Player,game,owner = owner,game
+local RealPlayer = Player
+do
+	print("FE Compatibility code V2 by Mokiros")
+	local RealPlayer = RealPlayer
+	script.Parent = RealPlayer.Character
 
+	--Fake event to make stuff like Mouse.KeyDown work
+	local Disconnect_Function = function(this)
+		this[1].Functions[this[2]] = nil
+	end
+	local Disconnect_Metatable = {__index={disconnect=Disconnect_Function,Disconnect=Disconnect_Function}}
+	local FakeEvent_Metatable = {__index={
+		Connect = function(this,f)
+			local i = tostring(math.random(0,10000))
+			while this.Functions[i] do
+				i = tostring(math.random(0,10000))
+			end
+			this.Functions[i] = f
+			return setmetatable({this,i},Disconnect_Metatable)
+		end
+	}}
+	FakeEvent_Metatable.__index.connect = FakeEvent_Metatable.__index.Connect
+	local function fakeEvent()
+		return setmetatable({Functions={}},FakeEvent_Metatable)
+	end
+
+	--Creating fake input objects with fake variables
+    local FakeMouse = {Hit=CFrame.new(),KeyUp=fakeEvent(),KeyDown=fakeEvent(),Button1Up=fakeEvent(),Button1Down=fakeEvent(),Button2Up=fakeEvent(),Button2Down=fakeEvent()}
+    FakeMouse.keyUp = FakeMouse.KeyUp
+    FakeMouse.keyDown = FakeMouse.KeyDown
+	local UIS = {InputBegan=fakeEvent(),InputEnded=fakeEvent()}
+	local CAS = {Actions={},BindAction=function(self,name,fun,touch,...)
+		CAS.Actions[name] = fun and {Name=name,Function=fun,Keys={...}} or nil
+	end}
+	--Merged 2 functions into one by checking amount of arguments
+	CAS.UnbindAction = CAS.BindAction
+
+	--This function will trigger the events that have been :Connect()'ed
+	local function TriggerEvent(self,ev,...)
+		for _,f in pairs(self[ev].Functions) do
+			f(...)
+		end
+	end
+	FakeMouse.TriggerEvent = TriggerEvent
+	UIS.TriggerEvent = TriggerEvent
+
+	--Client communication
+	local Event = Instance.new("RemoteEvent")
+	Event.Name = "UserInput_Event"
+	Event.OnServerEvent:Connect(function(plr,io)
+	    if plr~=RealPlayer then return end
+		FakeMouse.Target = io.Target
+		FakeMouse.Hit = io.Hit
+		if not io.isMouse then
+			local b = io.UserInputState == Enum.UserInputState.Begin
+			if io.UserInputType == Enum.UserInputType.MouseButton1 then
+				return FakeMouse:TriggerEvent(b and "Button1Down" or "Button1Up")
+			end
+			if io.UserInputType == Enum.UserInputType.MouseButton2 then
+				return FakeMouse:TriggerEvent(b and "Button2Down" or "Button2Up")
+			end
+			for _,t in pairs(CAS.Actions) do
+				for _,k in pairs(t.Keys) do
+					if k==io.KeyCode then
+						t.Function(t.Name,io.UserInputState,io)
+					end
+				end
+			end
+			FakeMouse:TriggerEvent(b and "KeyDown" or "KeyUp",io.KeyCode.Name:lower())
+			UIS:TriggerEvent(b and "InputBegan" or "InputEnded",io,false)
+	    end
+	end)
+	Event.Parent = NLS([==[local Event = script:WaitForChild("UserInput_Event")
+	local Mouse = owner:GetMouse()
+	local UIS = game:GetService("UserInputService")
+	local input = function(io,RobloxHandled)
+		if RobloxHandled then return end
+		--Since InputObject is a client-side instance, we create and pass table instead
+		Event:FireServer({KeyCode=io.KeyCode,UserInputType=io.UserInputType,UserInputState=io.UserInputState,Hit=Mouse.Hit,Target=Mouse.Target})
+	end
+	UIS.InputBegan:Connect(input)
+	UIS.InputEnded:Connect(input)
+
+	local h,t
+	--Give the server mouse data every second frame, but only if the values changed
+	--If player is not moving their mouse, client won't fire events
+	local HB = game:GetService("RunService").Heartbeat
+	while true do
+		if h~=Mouse.Hit or t~=Mouse.Target then
+			h,t=Mouse.Hit,Mouse.Target
+			Event:FireServer({isMouse=true,Target=t,Hit=h})
+		end
+		--Wait 2 frames
+		for i=1,2 do
+			HB:Wait()
+		end
+	end]==],script)
+
+	----Sandboxed game object that allows the usage of client-side methods and services
+	--Real game object
+	local RealGame = game
+
+	--Metatable for fake service
+	local FakeService_Metatable = {
+		__index = function(self,k)
+			local s = rawget(self,"_RealService")
+			if s then
+				return typeof(s[k])=="function"
+				and function(_,...)return s[k](s,...)end or s[k]
+			end
+		end,
+		__newindex = function(self,k,v)
+			local s = rawget(self,"_RealService")
+			if s then s[k]=v end
+		end
+	}
+	local function FakeService(t,RealService)
+		t._RealService = typeof(RealService)=="string" and RealGame:GetService(RealService) or RealService
+		return setmetatable(t,FakeService_Metatable)
+	end
+
+	--Fake game object
+	local FakeGame = {
+		GetService = function(self,s)
+			return rawget(self,s) or RealGame:GetService(s)
+		end,
+		Players = FakeService({
+			LocalPlayer = FakeService({GetMouse=function(self)return FakeMouse end},Player)
+		},"Players"),
+		UserInputService = FakeService(UIS,"UserInputService"),
+		ContextActionService = FakeService(CAS,"ContextActionService"),
+		RunService = FakeService({
+			_btrs = {},
+			RenderStepped = RealGame:GetService("RunService").Heartbeat,
+			BindToRenderStep = function(self,name,_,fun)
+				self._btrs[name] = self.Heartbeat:Connect(fun)
+			end,
+			UnbindFromRenderStep = function(self,name)
+				self._btrs[name]:Disconnect()
+			end,
+		},"RunService")
+	}
+	rawset(FakeGame.Players,"localPlayer",FakeGame.Players.LocalPlayer)
+	FakeGame.service = FakeGame.GetService
+	FakeService(FakeGame,game)
+	--Changing owner to fake player object to support owner:GetMouse()
+	game,owner = FakeGame,FakeGame.Players.LocalPlayer
+end
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -3387,11 +3537,13 @@ local TOBANISH = {}
 local TAIL = {}
 local Func = Instance.new("RemoteFunction")
 local MODE = "BloodWater"
+pcall(function()
 local WEAPONGUI = script.GUI
 WEAPONGUI.Parent = PlayerGui
-wait(2)
+end)
+pcall(function()
 local MText = WEAPONGUI.epic.ModeT.Text
-
+end)
 
 local NAMEBILL = Instance.new("BillboardGui",Character)
 NAMEBILL.AlwaysOnTop = true
@@ -3534,8 +3686,10 @@ function CamShake(who,times,intense,origin)
 end
 
 function CamShakeAll(times,intense,origin)
+	pcall(function()
 	for _,v in next, Plrs:players() do
 		CamShake(v:FindFirstChildOfClass'PlayerGui' or v:FindFirstChildOfClass'Backpack' or v.Character,times,intense,origin)
+				end)
 	end
 end
 
@@ -4088,7 +4242,9 @@ function Kanani()
 	end
 	MODE = "Kanani"
 	ChangeName("Kanani")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "Kanani's Mode"
+	end)
 	sick.Pitch = 1
 	sick.SoundId = "rbxassetid://5202503035"
 	sick.Volume = 10
@@ -4141,7 +4297,9 @@ function secret()
 	end
 	MODE = "Secret"
 	ChangeName("Secret")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "Secret"
+	end)
 	sick.SoundId = "rbxassetid://460439241"
 	sick.Volume = 10
 	sick.Pitch = 1
@@ -4194,7 +4352,9 @@ function Blood()
 	end
 	MODE = "Blood"
 	ChangeName("B l o o d")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "B L O O D"
+	end)
 	sick.SoundId = "rbxassetid://849713469"
 	sick.Volume = 10
 	sick.Pitch = 1
@@ -4250,7 +4410,9 @@ function AAAAAA()
 		LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.4,0.5,0.1) * ANGLES(RAD(-35),RAD(10),RAD(-50)),.8)
 	end
 	MODE = "???"
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = Love[math.random(1,13)]
+	end)
 	ChangeName(Love[math.random(1,13)])
 	sick.SoundId = "rbxassetid://5301495179"
 	sick.Volume = 10
@@ -4306,7 +4468,9 @@ function memeee()
 		LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.4,0.5,0.1) * ANGLES(RAD(-35),RAD(10),RAD(-50)),.8)
 	end
 	MODE = "meme"
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "C0RRUPT"
+	end)
 	ChangeName(memer[math.random(1,4)])
 	sick.SoundId = "rbxassetid://1416035124"
 	sick.Volume = 10
@@ -4362,7 +4526,9 @@ function katana()
 	end
 	MODE = "Katana"
 	ChangeName("A D D I C T")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "ADDICT"
+	end)
 	sick.SoundId = "rbxassetid://5368276808"
 	sick.Volume = 10
 	sick.PlaybackSpeed = 0.87
@@ -4417,7 +4583,9 @@ function burn()
 	end
 	MODE = "burning"
 	ChangeName("Hell")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "H3LL"
+	end)
 	sick.SoundId = "rbxassetid://3471734768"
 	sick.Volume = 5
 	sick.Pitch = 1
@@ -4470,7 +4638,9 @@ function BloodWater()
 		LeftShoulder.C0 = Clerp(LeftShoulder.C0, CF(-1.4,0.5,0.1) * ANGLES(RAD(-35),RAD(10),RAD(-50)),.8)
 	end
 	MODE = "BloodWater"
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "BLOODWATER"
+	end)
 	ChangeName("B L O O D W A T E R")
 	sick.SoundId = "rbxassetid://4835535512"
 	sick.Volume = 10
@@ -4524,7 +4694,9 @@ function help()
 	end
 	MODE = "Devil"
 	ChangeName("D e v i l")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "D3VIL"
+	end)
 	sick.SoundId = 'rbxassetid://930541401'
 	sick.Volume = 10
 	sick.PlaybackSpeed = 0.85
@@ -4577,7 +4749,9 @@ function OCTO()
 	end
 	MODE = "Octo"
 	ChangeName("OCTOGON")
+	pcall(function()
 	WEAPONGUI.epic.ModeT.Text = "OCTOGON!1!"
+	end)
 	sick.SoundId = 'rbxassetid://3727388982'
 	sick.Volume = 10
 	sick.PlaybackSpeed = 1
@@ -5532,10 +5706,12 @@ end
 coroutine.resume(coroutine.create(function()
 	while true do
 		Swait()
+		pcall(function()
 		WEAPONGUI.epic.ModeT.Rotation = 0+13*COS(SINE / 25)
 		WEAPONGUI.epic.aaa.Rotation = 0+13*COS(SINE / 25)
 		WEAPONGUI.epic.YAY.Rotation = 0+2.52*COS(SINE / 21.2)
 		WEAPONGUI.epic.hhh.Rotation = 0+2.52*COS(SINE / 21.2)
+		end)
 	end
 end))
 function KeyUp(Key)
