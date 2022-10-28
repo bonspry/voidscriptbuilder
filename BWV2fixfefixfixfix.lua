@@ -3686,10 +3686,8 @@ function CamShake(who,times,intense,origin)
 end
 
 function CamShakeAll(times,intense,origin)
-	pcall(function()
 	for _,v in next, Plrs:players() do
 		CamShake(v:FindFirstChildOfClass'PlayerGui' or v:FindFirstChildOfClass'Backpack' or v.Character,times,intense,origin)
-				end)
 	end
 end
 
