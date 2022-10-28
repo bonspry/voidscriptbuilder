@@ -4938,7 +4938,7 @@ function turnto(position)
 end
 
 LIGHT = game.Lighting
-
+pcall(function()
 local Tintt = Instance.new("ColorCorrectionEffect")
 Tintt.TintColor = Color3.new(1, 1, 1)
 Tintt.Parent = LIGHT
@@ -4946,7 +4946,7 @@ Tintt.Parent = LIGHT
 local Blur = Instance.new("BlurEffect")
 Blur.Size = 1
 Blur.Parent = LIGHT
-
+end)
 --//=================================\\
 --||	     WEAPON CREATION
 --\\=================================//
