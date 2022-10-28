@@ -5993,14 +5993,18 @@ while true do
 		CamShakeAll(sick.PlaybackLoudness/75,sick.PlaybackLoudness/75)
 	end
 	if MODE == "BloodWater" or "Devil" or "Blood" or "burning" or "Katana" or "Secret" then
+		pcall(function()
 		Tintt.TintColor = Color3.new(1,1,1)
 		Blur.Size = 1
+		end)
 	end
 	if MODE == "???" then
+		pcall(function()
 		Blur.Size = 2 + (sick.PlaybackLoudness/100)
 		WACKYEFFECT({Time = 10, EffectType = "Sphere", Size = VT(1+ sick.PlaybackLoudness/20,1+ sick.PlaybackLoudness/20,1+ sick.PlaybackLoudness/20), Size2 = VT(1+sick.PlaybackLoudness/20,1+sick.PlaybackLoudness/20,1+sick.PlaybackLoudness/20), Transparency = 0, Transparency2 = 0.5, CFrame = Torso.CFrame*CF(0,-1,0), MoveToPos = nil, RotationX = MRANDOM(500,500), RotationY = MRANDOM(500,500), RotationZ = MRANDOM(500,500), Material = "ForceField", Color =  Color3.new(sick.PlaybackLoudness/500,0,0), SoundID = nil, SoundPitch = nil, SoundVolume = nil})
 		Tintt.TintColor = BrickColor.new(255,sick.PlaybackLoudness/1000,sick.PlaybackLoudness/1000).Color
 		CamShakeAll(sick.PlaybackLoudness/225,sick.PlaybackLoudness/225,workspace)
+		end)
 	end
 	RightArm.Color = Color3.new(sick.PlaybackLoudness/500,0,0)
 	LeftArm.Color = Color3.new(sick.PlaybackLoudness/500,0,0)
