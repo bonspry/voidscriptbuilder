@@ -3539,6 +3539,7 @@ local Func = Instance.new("RemoteFunction")
 local MODE = "BloodWater"
 local WEAPONGUI = script.GUI
 WEAPONGUI.Parent = PlayerGui
+wait(2)
 local MText = WEAPONGUI.epic.ModeT.Text
 
 
