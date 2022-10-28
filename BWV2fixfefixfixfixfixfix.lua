@@ -4131,7 +4131,7 @@ KATSRightAWeld.Part0 = RightArm
 KATSRightAWeld.Part1 = KatanaWeld
 KATSRightAWeld.Name = "Katana"
 KATSRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local Katana = script.Folder.Folder.Katana
+local Katana = script.Folder.Katana
 local KatanaHit = Katana.Weapon.Hitbox
 Katana.Parent = nil
 
