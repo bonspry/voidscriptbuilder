@@ -3538,7 +3538,7 @@ local TAIL = {}
 local Func = Instance.new("RemoteFunction")
 local MODE = "BloodWater"
 pcall(function()
-local WEAPONGUI = script.GUI
+local WEAPONGUI = script.Folder.GUI
 WEAPONGUI.Parent = PlayerGui
 end)
 pcall(function()
@@ -3667,7 +3667,7 @@ NewInstance = function(instance,parent,properties)
 	return inst;
 end
 
-FXFolder = script.Effects
+FXFolder = script.Folder.Effects
 FXFolder.Parent = nil
 
 function CamShake(who,times,intense,origin) 
@@ -4024,8 +4024,8 @@ end
 
 -- 1x_0c Weld Weapons, bruh.
 
-local AKWeld = script.AK.RightArm:WaitForChild'REF'
-for i,v in pairs(script.AK.RightArm:GetChildren()) do
+local AKWeld = script.Folder.AK.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.AK.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local SRightAWeld = IT("Weld")
@@ -4034,12 +4034,12 @@ SRightAWeld.Part0 = RightArm
 SRightAWeld.Part1 = AKWeld
 SRightAWeld.Name = "AK47"
 SRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local BanishGun = script.AK
+local BanishGun = script.Folder.AK
 local Hole = BanishGun.Weapon.Hole
 BanishGun.Parent = Character
 
-local PistolWeld = script.Pistol.RightArm:WaitForChild'REF'
-for i,v in pairs(script.Pistol.RightArm:GetChildren()) do
+local PistolWeld = script.Folder.Pistol.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.Pistol.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local SRightAWeld = IT("Weld")
@@ -4048,13 +4048,13 @@ SRightAWeld.Part0 = RightArm
 SRightAWeld.Part1 = PistolWeld
 SRightAWeld.Name = "Pistol"
 SRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local PistolGun = script.Pistol
+local PistolGun = script.Folder.Pistol
 local PistolHole = PistolGun.Weapon.Hole
 PistolGun.Parent = nil
 
 
-local SniperWeld = script.Sniper.RightArm:WaitForChild'REF'
-for i,v in pairs(script.Sniper.RightArm:GetChildren()) do
+local SniperWeld = script.Folder.Sniper.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.Sniper.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local SRightAWeld = IT("Weld")
@@ -4063,12 +4063,12 @@ SRightAWeld.Part0 = RightArm
 SRightAWeld.Part1 = SniperWeld
 SRightAWeld.Name = "Sniper"
 SRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local SniperGun = script.Sniper
+local SniperGun = script.Folder.Sniper
 local SniperHole = SniperGun.Weapon.Hole
 SniperGun.Parent = nil
 
-local snip = script.snipe.RightArm:WaitForChild'REF'
-for i,v in pairs(script.snipe.RightArm:GetChildren()) do
+local snip = script.Folder.snipe.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.snipe.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local SRightAWeld = IT("Weld")
@@ -4077,11 +4077,11 @@ SRightAWeld.Part0 = RightArm
 SRightAWeld.Part1 = snip
 SRightAWeld.Name = "snipe"
 SRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local sniper = script.snipe
+local sniper = script.Folder.snipe
 sniper.Parent = nil
 
-local RailWeld = script.RailGun.RightArm:WaitForChild'REF'
-for i,v in pairs(script.RailGun.RightArm:GetChildren()) do
+local RailWeld = script.Folder.RailGun.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.RailGun.RightArm:GetChildren()) do
 	v.Anchored = false
 end 
 local RRRightAWeld = IT("Weld")
@@ -4090,12 +4090,12 @@ RRRightAWeld.Part0 = RightArm
 RRRightAWeld.Part1 = RailWeld
 RRRightAWeld.Name = "Railgun"
 RRRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local RailGun = script.RailGun
+local RailGun = script.Folder.RailGun
 local Railyy = RailGun.Weapon.Hole
 RailGun.Parent = nil
 
-local ShottyWeld = script.Shotty.RightArm:WaitForChild'REF'
-for i,v in pairs(script.Shotty.RightArm:GetChildren()) do
+local ShottyWeld = script.Folder.Shotty.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.Shotty.RightArm:GetChildren()) do
 	v.Anchored = false
 end 
 local SSSRightAWeld = IT("Weld")
@@ -4104,11 +4104,11 @@ SSSRightAWeld.Part0 = RightArm
 SSSRightAWeld.Part1 = ShottyWeld
 SSSRightAWeld.Name = "Shotty"
 SSSRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local Shotty = script.Shotty
+local Shotty = script.Folder.Shotty
 Shotty.Parent = nil
 
-local Weldy = script.Swordo.RightArm:WaitForChild'REF'
-for i,v in pairs(script.Swordo.RightArm:GetChildren()) do
+local Weldy = script.Folder.Swordo.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.Swordo.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local KATSRightAWeld = IT("Weld")
@@ -4117,12 +4117,12 @@ KATSRightAWeld.Part0 = RightArm
 KATSRightAWeld.Part1 = Weldy
 KATSRightAWeld.Name = "Swordo"
 KATSRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local Swordo = script.Swordo
+local Swordo = script.Folder.Swordo
 --local KatanaHit = Swordo.Weapon.Hitbox
 Swordo.Parent = nil
 
-local KatanaWeld = script.Katana.RightArm:WaitForChild'REF'
-for i,v in pairs(script.Katana.RightArm:GetChildren()) do
+local KatanaWeld = script.Folder.Katana.RightArm:WaitForChild'REF'
+for i,v in pairs(script.Folder.Katana.RightArm:GetChildren()) do
 	v.Anchored = false
 end
 local KATSRightAWeld = IT("Weld")
@@ -4131,7 +4131,7 @@ KATSRightAWeld.Part0 = RightArm
 KATSRightAWeld.Part1 = KatanaWeld
 KATSRightAWeld.Name = "Katana"
 KATSRightAWeld.C1 = CF(0, 0, 0) * angles(0, 0, 0)
-local Katana = script.Katana
+local Katana = script.Folder.Folder.Katana
 local KatanaHit = Katana.Weapon.Hitbox
 Katana.Parent = nil
 
