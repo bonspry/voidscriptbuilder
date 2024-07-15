@@ -1399,8 +1399,8 @@ if plr.UserId == ID then
 
 
 		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-		plr.CameraMaxZoomDistance = math.huge
-		plr.CameraMinZoomDistance = 0
+		--plr.CameraMaxZoomDistance = math.huge
+		--plr.CameraMinZoomDistance = 0
 		workspace.CurrentCamera.FieldOfView = 70
 		pcall(function() workspace.CurrentCamera:ClearAllChildren() end)
 
