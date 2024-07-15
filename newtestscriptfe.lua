@@ -592,7 +592,7 @@ function ClientConnect(Event)
 	end)
 end
 
-for _,v in pairs(game:GetDescendants()) do
+for _,v in pairs(game.ReplicatedStorage:GetChildren()) do
 	if v:IsA("RemoteEvent") and v.Name == EN then
 		Event = v
 		ClientConnect(Event)
