@@ -1104,8 +1104,8 @@ spawn(function()
 			end
 			--end
 
-			if not CHolder or not workspace:FindFirstChild(CHolder.Name) or not workspace.Terrain:FindFirstChild(CHolder.Name) then
-				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
+			if not CHolder or CHolder.Parent ~= workspace then
+				local Parents = {workspace}
 
 				CHolder = Instance.new(Instances[math.random(1,#Instances)])
 				CHolder.Name = Randomstring()
@@ -1131,8 +1131,8 @@ spawn(function()
 				Char.Parent = CHolder
 			end
 
-			if not MPartHolder or not workspace:FindFirstChild(MPartHolder.Name) or not workspace.Terrain:FindFirstChild(MPartHolder.Name) then
-				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
+			if not MPartHolder or not MPartHolder.Parent ~= workspace then
+				local Parents = {workspace}
 
 				MPartHolder = Instance.new(Instances[math.random(1,#Instances)])
 				MPartHolder.Name = Randomstring()
