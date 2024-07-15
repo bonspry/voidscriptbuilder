@@ -1159,7 +1159,7 @@ spawn(function()
 				pcall(function() MPartHolder.Visible = false end)
 			end
 
-			if not MPart or then
+			if not MPart then
 				MPart = Instance.new("FlagStand")
 				MPart.Name = Randomstring()
 				MPart.Color = Color3.fromRGB(math.random(0,999),math.random(0,999),math.random(0,999))
@@ -1175,7 +1175,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound or then
+			if not Sound then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
