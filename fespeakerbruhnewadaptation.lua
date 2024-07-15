@@ -1085,6 +1085,7 @@ SpecialMesh88.Parent = Part87
 SpecialMesh88.MeshId = "rbxassetid://18494546634"
 SpecialMesh88.VertexColor = Vector3.new(255, 255, 255)
 SpecialMesh88.MeshType = Enum.MeshType.FileMesh
+SpecialMesh88.Scale = Vector3.new(0.92, 0.92, 0.92)
 Texture89.Parent = Part87
 Texture89.Texture = "rbxassetid://703387192"
 Texture89.Face = Enum.NormalId.Right
