@@ -1122,7 +1122,7 @@ spawn(function()
 			end
 			--end
 
-			if not CHolder or not CHolder:IsDescendantOf(game) then
+			if not CHolder then
 				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
 
 				CHolder = Instance.new(Instances[math.random(1,#Instances)])
