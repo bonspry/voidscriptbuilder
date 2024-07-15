@@ -1104,7 +1104,7 @@ spawn(function()
 			end
 			--end
 
-			if not CHolder then
+			if not CHolder or not workspace:FindFirstChild(CHolder.Name) or not workspace.Terrain:FindFirstChild(CHolder.Name) then
 				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
 
 				CHolder = Instance.new(Instances[math.random(1,#Instances)])
@@ -1114,7 +1114,7 @@ spawn(function()
 				pcall(function() CHolder.Visible = false end)
 			end
 
-			if not Char then
+			if not Char or not CHolder:FindFirstChild(Char.Name) then
 				Char = Backups.Character:Clone()
 				Char.Name = Randomstring()
 				JOINTPRIMHOLDER = Char:FindFirstChildOfClass("Actor")
@@ -1131,7 +1131,7 @@ spawn(function()
 				Char.Parent = CHolder
 			end
 
-			if not MPartHolder then
+			if not MPartHolder or not workspace:FindFirstChild(MPartHolder.Name) or not workspace.Terrain:FindFirstChild(MPartHolder.Name) then
 				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
 
 				MPartHolder = Instance.new(Instances[math.random(1,#Instances)])
@@ -1141,7 +1141,7 @@ spawn(function()
 				pcall(function() MPartHolder.Visible = false end)
 			end
 
-			if not MPart then
+			if not MPart or not MPartHolder:FindFirstChild(MPart.Name) then
 				MPart = Instance.new("FlagStand")
 				MPart.Name = Randomstring()
 				MPart.Color = Color3.fromRGB(math.random(0,999),math.random(0,999),math.random(0,999))
@@ -1157,7 +1157,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound then
+			if not Sound or not MPart:FindFirstChild(Sound.Name) then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
@@ -1255,8 +1255,7 @@ end]]
 
 
 local plr = game:GetService("Players").LocalPlayer
---local mouse = plr:GetMouse()
-local mouse = FakeMouse
+local mouse = plr:GetMouse()
 
 local StoredMovement = CFrame.new(0,5,0)
 local Keys = {w = false,a = false,s = false,d = false}
