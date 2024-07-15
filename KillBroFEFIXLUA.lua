@@ -799,7 +799,7 @@ function Refit()
 						RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 						RootPartValue.Value=Head
 						ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
-						ClientScript.Disabled=false]]
+						ClientScript.Disabled=false
 					end)
 				end Fixing=false
 			end
