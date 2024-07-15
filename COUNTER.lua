@@ -1926,130 +1926,178 @@ end]]
 
 --ClientConnect(Event)
 
+local FakeGame = game -- This will be the sandboxed game object provided by the FE script
+local plr = FakeGame.Players.LocalPlayer
+local mouse = plr:GetMouse()
+local UserInputService = FakeGame:GetService("UserInputService")
+local RunService = FakeGame:GetService("RunService")
+
+local ID = plr.UserId
+local Keys = {}
+--local CameraZoom = 5
+--local CameraRotation = Vector2.new()
+--local MainCFrame = CFrame.new()
+--local Walking = false
+--local StoredMovement = CFrame.new()
+--local CHolder, MPartHolder, MPart, Welds = nil, nil, nil, {}
+
+-- Function to communicate with the server
+--[[local function FireServer(action, data)
+    -- Implementation depends on how the FE script handles server communication
+    -- You might need to use a RemoteEvent or other method provided by the FE script
+    print("FireServer called with:", action, data)
+end]]
+
+--[[local function Destroy(obj, time)
+    if obj then
+        game:GetService("Debris"):AddItem(obj, time or 0)
+    end
+end]]
+
+--[[local function ChatFunc(msg, arg1, arg2)
+    -- Implement chat functionality using the FE script's methods
+    plr:Chat(msg)
+end]]
+
+--[[local function Sfx(id, parent, properties, shouldPlay)
+    local sound = Instance.new("Sound")
+    sound.SoundId = id
+    for k, v in pairs(properties or {}) do
+        sound[k] = v
+    end
+    sound.Parent = parent
+    if shouldPlay then sound:Play() end
+    return sound
+end]]
+
 if plr.UserId == ID then
-	local FirstClick = false
-	mouse.Button1Down:Connect(function()
-		FirstClick = true
-		if not FirstClick then
-			FireServer("Shoot",{mouse.Hit})
-		end
-	end)
+    local FirstClick = false
+    mouse.Button1Down:Connect(function()
+        FirstClick = true
+        if not FirstClick then
+            FireServer("Shoot", {mouse.Hit})
+        end
+    end)
 
-	mouse.KeyDown:Connect(function(k)
-		Keys[k] = true
-		if k == "q" then
-			Destroy(CHolder,0)
-		elseif k == "e" then
-			Destroy(MPartHolder,0)
-			if workspace.CurrentCamera then
-				workspace.CurrentCamera:remove()
-				task.wait()task.wait()
-				workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-			end
-		elseif k == "r" then
-			StoredMovement = CFrame.new(0,5,0)
-			--FireServer("SetMovement",{StoredMovement,true})
-			MainCFrame = MainCFrame:Lerp(StoredMovement,1)
-			Walking = true
-		elseif k == "b" then
-			local Sound = Sfx("rbxassetid://7108607217",MPart,{Volume = .8},true)
-			for _,w in pairs(Welds) do
-				w.Enabled = false
-			end
-			repeat wait() until not Sound:IsDescendantOf(game)
-			wait(1)
-			for _,w in pairs(Welds) do
-				w.Enabled = true
-			end
-		elseif k == "v" then
-			local Sound = Sfx("rbxassetid://1566051529",MPart,{Volume = 2},true)
-			ChatFunc("Die   Die   Die",true,true)
-		end
-	end)
+    UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if gameProcessed then return end
+        
+        if input.UserInputType == Enum.UserInputType.Keyboard then
+            local key = input.KeyCode.Name:lower()
+            Keys[key] = true
+            if key == "q" then
+                Destroy(CHolder, 0)
+            elseif key == "e" then
+                Destroy(MPartHolder, 0)
+                if workspace.CurrentCamera then
+                    workspace.CurrentCamera:Destroy()
+                    task.wait()
+                    workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+                end
+            elseif key == "r" then
+                StoredMovement = CFrame.new(0,5,0)
+                MainCFrame = MainCFrame:Lerp(StoredMovement, 1)
+                Walking = true
+            elseif key == "b" then
+                local Sound = Sfx("rbxassetid://7108607217", MPart, {Volume = .8}, true)
+                for _, w in pairs(Welds) do
+                    w.Enabled = false
+                end
+                repeat task.wait() until not Sound.Parent
+                task.wait(1)
+                for _, w in pairs(Welds) do
+                    w.Enabled = true
+                end
+            elseif key == "v" then
+                local Sound = Sfx("rbxassetid://1566051529", MPart, {Volume = 2}, true)
+                ChatFunc("Die   Die   Die", true, true)
+            end
+        end
+    end)
 
-	mouse.KeyUp:Connect(function(k)
-		Keys[k] = false
-	end)
+    UserInputService.InputEnded:Connect(function(input, gameProcessed)
+        if gameProcessed then return end
+        
+        if input.UserInputType == Enum.UserInputType.Keyboard then
+            Keys[input.KeyCode.Name:lower()] = false
+        end
+    end)
 
-	plr.Chatted:Connect(function(msg)
-		ChatFunc(msg,false,true)
-	end)
+    plr.Chatted:Connect(function(msg)
+        ChatFunc(msg, false, true)
+    end)
 
-	game:GetService("UserInputService").InputChanged:Connect(function(Input,Ignore)
-		if Input.UserInputType == Enum.UserInputType.MouseWheel then
-			if Ignore then return end 
-			if Input.Position.Z > 0 then
-				if CameraZoom > 1 then
-					CameraZoom = CameraZoom*.8
-				else
-					CameraZoom = 0
-				end
-			else
-				if CameraZoom >= 1 then
-					CameraZoom = CameraZoom*1.25
-				else
-					CameraZoom = 1
-				end
-			end
-		end
-	end)
+    UserInputService.InputChanged:Connect(function(input, gameProcessed)
+        if gameProcessed then return end
+        
+        if input.UserInputType == Enum.UserInputType.MouseWheel then
+            if input.Position.Z > 0 then
+                if CameraZoom > 1 then
+                    CameraZoom = CameraZoom * 0.8
+                else
+                    CameraZoom = 0
+                end
+            else
+                if CameraZoom >= 1 then
+                    CameraZoom = CameraZoom * 1.25
+                else
+                    CameraZoom = 1
+                end
+            end
+        end
+    end)
 
-	game:GetService("RunService").Heartbeat:Connect(function()
-		local OldCF = StoredMovement
-		if Keys.w then
-			StoredMovement = StoredMovement*CFrame.new(0,0,-1) end
-		if Keys.s then
-			StoredMovement = StoredMovement*CFrame.new(0,0,1) end
-		if Keys.a then
-			StoredMovement = StoredMovement*CFrame.new(-1,0,0) end
-		if Keys.d then
-			StoredMovement = StoredMovement*CFrame.new(1,0,0)
-		end
+    RunService.Heartbeat:Connect(function()
+        local OldCF = StoredMovement
+        if Keys.w then StoredMovement = StoredMovement * CFrame.new(0,0,-1) end
+        if Keys.s then StoredMovement = StoredMovement * CFrame.new(0,0,1) end
+        if Keys.a then StoredMovement = StoredMovement * CFrame.new(-1,0,0) end
+        if Keys.d then StoredMovement = StoredMovement * CFrame.new(1,0,0) end
 
-		StoredMovement = CFrame.new(StoredMovement.Position,StoredMovement.Position+workspace.CurrentCamera.CFrame.LookVector)
+        StoredMovement = CFrame.new(StoredMovement.Position, StoredMovement.Position + workspace.CurrentCamera.CFrame.LookVector)
 
-		local NewCFrame = CFrame.new(OldCF.p,StoredMovement.p)
+        local NewCFrame = CFrame.new(OldCF.Position, StoredMovement.Position)
 
-		if (StoredMovement.X ~= OldCF.X or StoredMovement.Z ~= OldCF.Z) then
-			--FireServer("SetMovement",{NewCFrame,true})
-			MainCFrame = MainCFrame:Lerp(NewCFrame,1)
-			Walking = true
-		else
-			--FireServer("SetMovement",{StoredMovement,false})
-			Walking = false
-		end
+        if (StoredMovement.X ~= OldCF.X or StoredMovement.Z ~= OldCF.Z) then
+            MainCFrame = MainCFrame:Lerp(NewCFrame, 1)
+            Walking = true
+        else
+            Walking = false
+        end
 
-		--FireServer("Update",{workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CoordinateFrame, mouse.Hit, mouse.Target})
-		Camera.CFrame = workspace.CurrentCamera.CFrame
-		Camera.CoordinateCFrame = workspace.CurrentCamera.CoordinateFrame
-		Mouse.Hit = mouse.Hit
-		Mouse.Target = mouse.Target
+        -- Update camera
+        workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+        workspace.CurrentCamera.FieldOfView = 70
 
+        local MouseDelta = UserInputService:GetMouseDelta() * (UserSettings():GetService("UserGameSettings").MouseSensitivity)
 
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-		--plr.CameraMaxZoomDistance = math.huge
-		--plr.CameraMinZoomDistance = 0
-		workspace.CurrentCamera.FieldOfView = 70
-		pcall(function() workspace.CurrentCamera:ClearAllChildren() end)
+        if CameraZoom == 0 then
+            UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+            CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X, MouseDelta.Y)
+        elseif UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+            UserInputService.MouseBehavior = Enum.MouseBehavior.LockCurrentPosition
+            CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X, MouseDelta.Y)
+        else
+            UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+        end
 
-		local MouseDelta = game:GetService("UserInputService"):GetMouseDelta()*(UserSettings():GetService("UserGameSettings").MouseSensitivity)
+        CameraRotation = Vector2.new(
+            CameraRotation.X > 180 and CameraRotation.X - 360 or CameraRotation.X < -180 and CameraRotation.X + 360 or CameraRotation.X,
+            math.clamp(CameraRotation.Y, -81, 81)
+        )
 
-		if CameraZoom == 0 then
-			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
-			CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
-		elseif game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
-			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCurrentPosition
-			CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
-		else
-			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.Default
-		end
+        local NewAngles = CFrame.Angles(0, math.rad(CameraRotation.X), 0) * CFrame.Angles(math.rad(CameraRotation.Y), 0, 0)
+        local CameraCFrame = NewAngles + (MPart and MPart.CFrame.Position or Vector3.new()) + NewAngles * Vector3.new(0, 0, CameraZoom)
+        workspace.CurrentCamera.CFrame = CameraCFrame
+        workspace.CurrentCamera.Focus = CameraCFrame * CFrame.new(0, 0, -CameraZoom)
 
-		CameraRotation = Vector2.new(CameraRotation.X > 180 and CameraRotation.X-360 or CameraRotation.X < -180 and CameraRotation.X+360 or CameraRotation.X,math.clamp(CameraRotation.Y,-81,81))
-		CameraSubject = MPart
-		local NewAngles = CFrame.Angles(0,math.rad(CameraRotation.X),0)*CFrame.Angles(math.rad(CameraRotation.Y),0,0)
-		local CameraCFrame = NewAngles+CameraSubject.CFrame.Position+NewAngles*Vector3.new(0,0,CameraZoom)
-		workspace.CurrentCamera.CFrame = CameraCFrame
-		workspace.CurrentCamera.Focus = CameraCFrame*CFrame.new(0,0,-CameraZoom)
-	end)
+        -- Send updates to server
+        FireServer("Update", {
+            workspace.CurrentCamera.CFrame,
+            workspace.CurrentCamera.CoordinateFrame,
+            mouse.Hit,
+            mouse.Target
+        })
+    end)
 end
 local Player = game.Players.LocalPlayer
