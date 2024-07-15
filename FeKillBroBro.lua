@@ -1,4 +1,3 @@
---whatever = 
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -2433,13 +2432,7 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 			player.CameraMaxZoomDistance = 2147483647
 			player.CameraMinZoomDistance = 0
 			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
-			for _, X in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
-				if X:IsA("RemoteEvent") and X.Name == tostring(script.Name) then
-					pcall(function()
-						Remote = X
-					end)
-				end
-			end
+			Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
 		end)
 	end))
 end)
@@ -2447,7 +2440,7 @@ end)
 local BackUp=NLS(ClientThingLUA, script)
 BackUp.Name=ClientDataDesignatedID
 BackUp.Disabled=true
-local Remote=Instance.new("RemoteEvent")Remote.Name=ClientDataDesignatedID;Remote.Parent=game:GetService("ReplicatedStorage")
+local Remote=Instance.new("RemoteEvent")Remote.Name="KillBroRemote";Remote.Parent=game:GetService("ReplicatedStorage")
 MainPosition=CFrame.new()
 OldMainPosition=MainPosition
 TorsoCFrame=CFrame.new()
