@@ -2370,14 +2370,7 @@ local Effects=Instance.new("WorldModel",nil)Effects.Archivable=false;Effects.Nam
 local Face=Instance.new("Decal",nil)Face.Name=RandomString()Face.Archivable=false;Face.Color3=Color3.fromRGB(255,255,255);Face.Transparency=0;Face.ZIndex=math.random(0,999999999);Face.Face="Front";Face.Texture="http://www.roblox.com/asset/?id=7074749";Face.Parent=Head
 local Music=Instance.new("Sound",nil)Music.Name=RandomString()Music.Volume=3;Music.Looped=true;Music.SoundId="rbxassetid://1838076025"Music.Archivable=false;Music.PlaybackSpeed=1;if Mute==true then Music.Playing=false Music:Pause() elseif Mute==false then Music.Playing=true Music:Play() end;Music.Archivable=false;Music.PlayOnRemove=false;local Remixer=Instance.new("EqualizerSoundEffect",Music)Remixer.Archivable=false;Remixer.Name=RandomString()Remixer.HighGain=0.15;Remixer.Enabled=true;Remixer.LowGain=-15;Remixer.Priority=0;Remixer.MidGain=-7;Music.Parent=Torso
 local ClientThingLUA = [==[
-local Remote
-for _, X in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
-	if X:IsA("RemoteEvent") and X.Name == tostring(script.Name) then
-		pcall(function()
-			Remote = X
-		end)
-	end
-end
+local Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
 
 local player = game:GetService("Players").LocalPlayer
 local mouse = player:GetMouse()
