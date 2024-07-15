@@ -2369,35 +2369,6 @@ local RightLeg=script.Limb:Clone();RandomProperties(RightLeg)RightLeg.Parent=Cha
 local Effects=Instance.new("WorldModel",nil)Effects.Archivable=false;Effects.Name=RandomString()Effects.Parent=workspace.Terrain
 local Face=Instance.new("Decal",nil)Face.Name=RandomString()Face.Archivable=false;Face.Color3=Color3.fromRGB(255,255,255);Face.Transparency=0;Face.ZIndex=math.random(0,999999999);Face.Face="Front";Face.Texture="http://www.roblox.com/asset/?id=7074749";Face.Parent=Head
 local Music=Instance.new("Sound",nil)Music.Name=RandomString()Music.Volume=3;Music.Looped=true;Music.SoundId="rbxassetid://1838076025"Music.Archivable=false;Music.PlaybackSpeed=1;if Mute==true then Music.Playing=false Music:Pause() elseif Mute==false then Music.Playing=true Music:Play() end;Music.Archivable=false;Music.PlayOnRemove=false;local Remixer=Instance.new("EqualizerSoundEffect",Music)Remixer.Archivable=false;Remixer.Name=RandomString()Remixer.HighGain=0.15;Remixer.Enabled=true;Remixer.LowGain=-15;Remixer.Priority=0;Remixer.MidGain=-7;Music.Parent=Torso
---local BackUp=script.Client:Clone();BackUp.Name=ClientDataDesignatedID;BackUp.Disabled=true
-local Remote=Instance.new("RemoteEvent")Remote.Name=ClientDataDesignatedID;Remote.Parent=game:GetService("ReplicatedStorage")
-MainPosition=CFrame.new()
-OldMainPosition=MainPosition
-TorsoCFrame=CFrame.new()
-HeadCFrame=CFrame.new()
-RightArmCFrame=CFrame.new()
-LeftArmCFrame=CFrame.new()
-LeftLegCFrame=CFrame.new()
-RightLegCFrame=CFrame.new()
-Chatting=false
-Walking=false
-Falling=false
-Jumping=false
-Holding=false
-Flying=false
-Attacking=false
-W=false
-A=false
-S=false
-D=false
-Sin=0
-Timer=150 -- Interchangable ( 100-200 is Recommended )
-Timer2=100 -- Interchangable ( 100-200 is Recommended )
-CameraCFrame=nil
-LookVector=nil
-HitP=nil
-Target=nil
-TimePosition=0
 local ClientThingLUA = [==[
 local Remote
 for _,X in pairs(game:GetService("ReplicatedStorage"):GetDescendants())do
@@ -2561,8 +2532,38 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 	end))
 end)
 ]==]
-local ClientScript=NLS(ClientThingLUA, script)
-ClientScript.Archivable=false
+local BackUp=NLS(ClientThingLUA, script)
+BackUp.Name=ClientDataDesignatedID
+BackUp.Disabled=true
+local Remote=Instance.new("RemoteEvent")Remote.Name=ClientDataDesignatedID;Remote.Parent=game:GetService("ReplicatedStorage")
+MainPosition=CFrame.new()
+OldMainPosition=MainPosition
+TorsoCFrame=CFrame.new()
+HeadCFrame=CFrame.new()
+RightArmCFrame=CFrame.new()
+LeftArmCFrame=CFrame.new()
+LeftLegCFrame=CFrame.new()
+RightLegCFrame=CFrame.new()
+Chatting=false
+Walking=false
+Falling=false
+Jumping=false
+Holding=false
+Flying=false
+Attacking=false
+W=false
+A=false
+S=false
+D=false
+Sin=0
+Timer=150 -- Interchangable ( 100-200 is Recommended )
+Timer2=100 -- Interchangable ( 100-200 is Recommended )
+CameraCFrame=nil
+LookVector=nil
+HitP=nil
+Target=nil
+TimePosition=0
+local ClientScript=BackUp:Clone()ClientScript.Archivable=false
 local RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 RootPartValue.Value=Head
 ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
