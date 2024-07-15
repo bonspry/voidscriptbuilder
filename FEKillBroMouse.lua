@@ -1,4 +1,4 @@
-whatever = 
+--whatever = 
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
