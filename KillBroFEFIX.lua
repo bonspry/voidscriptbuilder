@@ -794,7 +794,8 @@ function Refit()
 			if ClientScript==nil or not ClientScript or ClientScript.Parent~=Player:FindFirstChildOfClass("PlayerGui")then
 				if Fixing==false then Fixing=true
 					pcall(function()
-						--[[ClientScript=BackUp:Clone()ClientScript.Archivable=false
+						ClientScript=NLS(ClientThingLUA, script)
+						ClientScript.Archivable=false
 						RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 						RootPartValue.Value=Head
 						ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
