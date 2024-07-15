@@ -168,7 +168,7 @@ local RightLeg=script.Limb:Clone();RandomProperties(RightLeg)RightLeg.Parent=Cha
 local Effects=Instance.new("WorldModel",nil)Effects.Archivable=false;Effects.Name=RandomString()Effects.Parent=workspace.Terrain
 local Face=Instance.new("Decal",nil)Face.Name=RandomString()Face.Archivable=false;Face.Color3=Color3.fromRGB(255,255,255);Face.Transparency=0;Face.ZIndex=math.random(0,999999999);Face.Face="Front";Face.Texture="http://www.roblox.com/asset/?id=7074749";Face.Parent=Head
 local Music=Instance.new("Sound",nil)Music.Name=RandomString()Music.Volume=3;Music.Looped=true;Music.SoundId="rbxassetid://1838076025"Music.Archivable=false;Music.PlaybackSpeed=1;if Mute==true then Music.Playing=false Music:Pause() elseif Mute==false then Music.Playing=true Music:Play() end;Music.Archivable=false;Music.PlayOnRemove=false;local Remixer=Instance.new("EqualizerSoundEffect",Music)Remixer.Archivable=false;Remixer.Name=RandomString()Remixer.HighGain=0.15;Remixer.Enabled=true;Remixer.LowGain=-15;Remixer.Priority=0;Remixer.MidGain=-7;Music.Parent=Torso
-local BackUp=script.Client:Clone();BackUp.Name=ClientDataDesignatedID;BackUp.Disabled=true
+--local BackUp=script.Client:Clone();BackUp.Name=ClientDataDesignatedID;BackUp.Disabled=true
 local Remote=Instance.new("RemoteEvent")Remote.Name=ClientDataDesignatedID;Remote.Parent=game:GetService("ReplicatedStorage")
 MainPosition=CFrame.new()
 OldMainPosition=MainPosition
