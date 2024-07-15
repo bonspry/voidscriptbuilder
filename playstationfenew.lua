@@ -901,7 +901,7 @@ game:GetService("Players").PlayerAdded:Connect(function(Playerr)
 	end
 	GiveReplicatedClient(Playerr)
 end)
-local mouse = FakeMouse
+
 function QuaternionFromCFrame(cf)
 	local mx, my, mz, m00, m01, m02, m10, m11, m12, m20, m21, m22 = cf:components()
 	local trace = m00 + m11 + m22
@@ -1271,6 +1271,8 @@ end]]
 
 
 local plr = game:GetService("Players").LocalPlayer
+--local mouse = plr:GetMouse()
+local mouse = FakeMouse
 
 local StoredMovement = CFrame.new(0,5,0)
 local Keys = {w = false,a = false,s = false,d = false}
