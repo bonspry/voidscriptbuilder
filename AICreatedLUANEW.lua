@@ -625,7 +625,7 @@ end
 wait(1)
 -- TERRIBLE CONVERT 🤮🤮🤮🤮
 
-local ID = game:GetService("Players").LocalPlayer.UserId
+local ID = owner.UserId
 
 local CameraSubject = nil
 
@@ -1088,7 +1088,7 @@ Destroy(Player:FindFirstChildOfClass("PlayerGui"):FindFirstChild("__LoadingLC"),
 						Welds.GunJoint.C0 = Clerp(Welds.GunJoint.C0,CFrame.new(.05,-1,-.15) * CFrame.Angles(math.rad(-90),math.rad(0),math.rad(0)),1/2)
 
 ]]
-local ID = game:GetService("Players").LocalPlayer.UserId
+local ID = owner.UserId
 local EN = {}
 
 script.Disabled = true
