@@ -1157,7 +1157,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound or Sound.Parent ~= MPart then
+			if not Sound then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
