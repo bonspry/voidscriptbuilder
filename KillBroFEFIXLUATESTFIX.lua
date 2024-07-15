@@ -2411,82 +2411,82 @@ game:GetService("UserInputService").InputBegan:Connect(function(Input,Running)
 	if not Running then
 		if Input.KeyCode==Enum.KeyCode.W then
 			pcall(function()
-				Remote:FireServer("W",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("W",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.A then
 			pcall(function()
-				Remote:FireServer("A",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("A",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.S then
 			pcall(function()
-				Remote:FireServer("S",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("S",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.D then
 			pcall(function()
-				Remote:FireServer("D",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("D",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.D then
 			pcall(function()
-				Remote:FireServer("D",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("D",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.Space then
 			pcall(function()
-				Remote:FireServer("Up",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("Up",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.LeftControl then
 			pcall(function()
-				Remote:FireServer("Down",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("Down",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.T then
 			pcall(function()
-				Remote:FireServer("T",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("T",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.Z then
 			pcall(function()
-				Remote:FireServer("Z",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("Z",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.F then
 			pcall(function()
-				Remote:FireServer("F",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("F",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.X then
 			pcall(function()
-				Remote:FireServer("X",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("X",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.C then
 			pcall(function()
-				Remote:FireServer("C",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("C",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.L then
 			pcall(function()
-				Remote:FireServer("L",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("L",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.P then
 			pcall(function()
-				Remote:FireServer("P",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("P",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.U then
 			pcall(function()
-				Remote:FireServer("U",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("U",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 		if Input.KeyCode==Enum.KeyCode.M then
 			pcall(function()
-				Remote:FireServer("M",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+				Remote:FireServer("M",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 			end)
 		end
 	end
@@ -2494,54 +2494,54 @@ end)
 game:GetService("UserInputService").InputEnded:Connect(function(Input,Running)
 	if Input.KeyCode==Enum.KeyCode.W then
 		pcall(function()
-			Remote:FireServer("W",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("W",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 	if Input.KeyCode==Enum.KeyCode.A then
 		pcall(function()
-			Remote:FireServer("A",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("A",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 	if Input.KeyCode==Enum.KeyCode.S then
 		pcall(function()
-			Remote:FireServer("S",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("S",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 	if Input.KeyCode==Enum.KeyCode.D then
 		pcall(function()
-			Remote:FireServer("D",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("D",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 	if Input.KeyCode==Enum.KeyCode.Z then
 		pcall(function()
-			Remote:FireServer("Z",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("Z",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 	if Input.KeyCode==Enum.KeyCode.LeftControl then
 		pcall(function()
-			Remote:FireServer("Down",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("Down",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 end)
-game:GetService("Players").LocalPlayer:GetMouse().Button1Down:Connect(function()
+owner:GetMouse().Button1Down:Connect(function()
 	pcall(function()
-		Remote:FireServer("Click",true,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+		Remote:FireServer("Click",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 	end)
 end)
-game:GetService("Players").LocalPlayer:GetMouse().Button1Up:Connect(function()
+owner:GetMouse().Button1Up:Connect(function()
 	pcall(function()
-		Remote:FireServer("Click",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+		Remote:FireServer("Click",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
 	end)
 end)
 game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 	coroutine.resume(coroutine.create(function()
 		pcall(function()
-			Remote:FireServer("Camera",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("LookVector",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("MouseHit",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("MouseTarget",false,game:GetService("Players").LocalPlayer:GetMouse().Target,game:GetService("Players").LocalPlayer:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			game:GetService("Players").LocalPlayer.CameraMaxZoomDistance=2147483647
-			game:GetService("Players").LocalPlayer.CameraMinZoomDistance=0
+			Remote:FireServer("Camera",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("LookVector",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseHit",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseTarget",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			owner.CameraMaxZoomDistance=2147483647
+			owner.CameraMinZoomDistance=0
 			workspace.CurrentCamera.CameraSubject=script:FindFirstChildOfClass("ObjectValue").Value
 			for _,X in pairs(game:GetService("ReplicatedStorage"):GetDescendants())do
 				if X:IsA("RemoteEvent")and X.Name==tostring(script.Name)then
