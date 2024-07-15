@@ -1943,7 +1943,7 @@ local CameraZoom = 15
 
 function FireServer(...)
 	if Event then
-		Event:FireServer(...)
+		--Event:FireServer(...)
 	end
 end
 
