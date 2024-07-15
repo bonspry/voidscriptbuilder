@@ -1132,7 +1132,7 @@ spawn(function()
 				pcall(function() CHolder.Visible = false end)
 			end
 
-			if not Char or not Char:IsDescendantOf(game) then
+			if not Char then
 				Char = Backups.Character:Clone()
 				Char.Name = Randomstring()
 				JOINTPRIMHOLDER = Char:FindFirstChildOfClass("Actor")
@@ -1149,7 +1149,7 @@ spawn(function()
 				Char.Parent = CHolder
 			end
 
-			if not MPartHolder or not MPartHolder:IsDescendantOf(game) then
+			if not MPartHolder then
 				local Parents = {workspace, workspace:FindFirstChildOfClass("Terrain")}
 
 				MPartHolder = Instance.new(Instances[math.random(1,#Instances)])
@@ -1159,7 +1159,7 @@ spawn(function()
 				pcall(function() MPartHolder.Visible = false end)
 			end
 
-			if not MPart or not MPart:IsDescendantOf(game) then
+			if not MPart or then
 				MPart = Instance.new("FlagStand")
 				MPart.Name = Randomstring()
 				MPart.Color = Color3.fromRGB(math.random(0,999),math.random(0,999),math.random(0,999))
@@ -1175,7 +1175,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound or not Sound:IsDescendantOf(game) then
+			if not Sound or then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
