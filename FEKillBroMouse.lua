@@ -1,3 +1,4 @@
+whatever = 
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -2371,163 +2372,74 @@ local Face=Instance.new("Decal",nil)Face.Name=RandomString()Face.Archivable=fals
 local Music=Instance.new("Sound",nil)Music.Name=RandomString()Music.Volume=3;Music.Looped=true;Music.SoundId="rbxassetid://1838076025"Music.Archivable=false;Music.PlaybackSpeed=1;if Mute==true then Music.Playing=false Music:Pause() elseif Mute==false then Music.Playing=true Music:Play() end;Music.Archivable=false;Music.PlayOnRemove=false;local Remixer=Instance.new("EqualizerSoundEffect",Music)Remixer.Archivable=false;Remixer.Name=RandomString()Remixer.HighGain=0.15;Remixer.Enabled=true;Remixer.LowGain=-15;Remixer.Priority=0;Remixer.MidGain=-7;Music.Parent=Torso
 local ClientThingLUA = [==[
 local Remote
-for _,X in pairs(game:GetService("ReplicatedStorage"):GetDescendants())do
-	if X:IsA("RemoteEvent")and X.Name==tostring(script.Name)then
+for _, X in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+	if X:IsA("RemoteEvent") and X.Name == tostring(script.Name) then
 		pcall(function()
-			Remote=X
+			Remote = X
 		end)
 	end
 end
-game:GetService("UserInputService").InputBegan:Connect(function(Input,Running)
-	if not Running then
-		if Input.KeyCode==Enum.KeyCode.W then
-			pcall(function()
-				Remote:FireServer("W",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.A then
-			pcall(function()
-				Remote:FireServer("A",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.S then
-			pcall(function()
-				Remote:FireServer("S",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.D then
-			pcall(function()
-				Remote:FireServer("D",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.D then
-			pcall(function()
-				Remote:FireServer("D",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.Space then
-			pcall(function()
-				Remote:FireServer("Up",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.LeftControl then
-			pcall(function()
-				Remote:FireServer("Down",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.T then
-			pcall(function()
-				Remote:FireServer("T",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.Z then
-			pcall(function()
-				Remote:FireServer("Z",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.F then
-			pcall(function()
-				Remote:FireServer("F",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.X then
-			pcall(function()
-				Remote:FireServer("X",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.C then
-			pcall(function()
-				Remote:FireServer("C",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.L then
-			pcall(function()
-				Remote:FireServer("L",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.P then
-			pcall(function()
-				Remote:FireServer("P",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.U then
-			pcall(function()
-				Remote:FireServer("U",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-		if Input.KeyCode==Enum.KeyCode.M then
-			pcall(function()
-				Remote:FireServer("M",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			end)
-		end
-	end
-end)
-game:GetService("UserInputService").InputEnded:Connect(function(Input,Running)
-	if Input.KeyCode==Enum.KeyCode.W then
+
+local player = game:GetService("Players").LocalPlayer
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+	local keyActions = {
+		w = "W", a = "A", s = "S", d = "D",
+		space = "Up", leftcontrol = "Down",
+		t = "T", z = "Z", f = "F", x = "X",
+		c = "C", l = "L", p = "P", u = "U", m = "M"
+	}
+
+	if keyActions[key] then
 		pcall(function()
-			Remote:FireServer("W",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-		end)
-	end
-	if Input.KeyCode==Enum.KeyCode.A then
-		pcall(function()
-			Remote:FireServer("A",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-		end)
-	end
-	if Input.KeyCode==Enum.KeyCode.S then
-		pcall(function()
-			Remote:FireServer("S",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-		end)
-	end
-	if Input.KeyCode==Enum.KeyCode.D then
-		pcall(function()
-			Remote:FireServer("D",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-		end)
-	end
-	if Input.KeyCode==Enum.KeyCode.Z then
-		pcall(function()
-			Remote:FireServer("Z",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-		end)
-	end
-	if Input.KeyCode==Enum.KeyCode.LeftControl then
-		pcall(function()
-			Remote:FireServer("Down",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer(keyActions[key], true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 		end)
 	end
 end)
-owner:GetMouse().Button1Down:Connect(function()
+
+mouse.KeyUp:Connect(function(key)
+	local keyActions = {
+		w = "W", a = "A", s = "S", d = "D",
+		leftcontrol = "Down", z = "Z"
+	}
+
+	if keyActions[key] then
+		pcall(function()
+			Remote:FireServer(keyActions[key], false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+		end)
+	end
+end)
+
+mouse.Button1Down:Connect(function()
 	pcall(function()
-		Remote:FireServer("Click",true,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+		Remote:FireServer("Click", true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end)
 end)
-owner:GetMouse().Button1Up:Connect(function()
+
+mouse.Button1Up:Connect(function()
 	pcall(function()
-		Remote:FireServer("Click",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
+		Remote:FireServer("Click", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end)
 end)
+
 game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 	coroutine.resume(coroutine.create(function()
 		pcall(function()
-			Remote:FireServer("Camera",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("LookVector",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("MouseHit",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			Remote:FireServer("MouseTarget",false,owner:GetMouse().Target,owner:GetMouse().Hit.Position,workspace.CurrentCamera.CFrame,workspace.CurrentCamera.CFrame.LookVector)
-			owner.CameraMaxZoomDistance=2147483647
-			owner.CameraMinZoomDistance=0
-			workspace.CurrentCamera.CameraSubject=script:FindFirstChildOfClass("ObjectValue").Value
-			for _,X in pairs(game:GetService("ReplicatedStorage"):GetDescendants())do
-				if X:IsA("RemoteEvent")and X.Name==tostring(script.Name)then
+			Remote:FireServer("Camera", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("LookVector", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseHit", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseTarget", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			player.CameraMaxZoomDistance = 2147483647
+			player.CameraMinZoomDistance = 0
+			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
+			for _, X in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+				if X:IsA("RemoteEvent") and X.Name == tostring(script.Name) then
 					pcall(function()
-						Remote=X
+						Remote = X
 					end)
 				end
 			end
-			--[[for _,Parts in pairs(workspace:GetDescendants())do
-				if Parts:IsA("BasePart")or Parts.ClassName=='FlagStand'then
-					pcall(function()
-						Parts.CanCollide=false
-					end)
-				end
-			end]]
 		end)
 	end))
 end)
@@ -2996,8 +2908,7 @@ function Refit()
 			if ClientScript==nil or not ClientScript or ClientScript.Parent~=Player:FindFirstChildOfClass("PlayerGui")then
 				if Fixing==false then Fixing=true
 					pcall(function()
-						ClientScript=NLS(ClientThingLUA, script)
-						ClientScript.Archivable=false
+						ClientScript=BackUp:Clone()ClientScript.Archivable=false
 						RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 						RootPartValue.Value=Head
 						ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
