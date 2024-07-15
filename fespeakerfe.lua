@@ -388,8 +388,8 @@ if plr.UserId == ID then
 		FireServer("Update",{workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CoordinateFrame, mouse.Hit, mouse.Target})
 						
 		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-		plr.CameraMaxZoomDistance = math.huge
-		plr.CameraMinZoomDistance = 0
+		--plr.CameraMaxZoomDistance = math.huge
+		--plr.CameraMinZoomDistance = 0
 		workspace.CurrentCamera.FieldOfView = 70
 		pcall(function() workspace.CurrentCamera:ClearAllChildren() end)
 		
