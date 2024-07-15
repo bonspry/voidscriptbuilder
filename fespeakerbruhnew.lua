@@ -1776,7 +1776,7 @@ spawn(function()
 				Char.Parent = CHolder
 			end
 
-			if not MPartHolder or not MPartHolder.Parent ~= workspace then
+			if not MPartHolder or MPartHolder.Parent ~= workspace then
 				local Parents = {workspace}
 
 				MPartHolder = Instance.new(Instances[math.random(1,#Instances)])
@@ -1802,7 +1802,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound then
+			if not Sound or Sound.Parent ~= MPart then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
