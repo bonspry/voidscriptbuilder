@@ -1267,7 +1267,6 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
-wait(1)
 --https://github.com/Mokiros/roblox-FE-compatibility
 if game:GetService("RunService"):IsClient() then error("Script must be server-side in order to work; use h/ and not hl/") end
 local Player,game,owner = owner,game
@@ -1418,6 +1417,7 @@ do
 	--Changing owner to fake player object to support owner:GetMouse()
 	game,owner = FakeGame,FakeGame.Players.LocalPlayer
 end
+wait(1)
 -- TERRIBLE CONVERT 🤮🤮🤮🤮
 
 local ID = game:GetService("Players").LocalPlayer.UserId
