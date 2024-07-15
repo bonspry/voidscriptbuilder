@@ -247,7 +247,7 @@ Beam0.Width1 = 0.20000000298023224
 LocalScript1.Name = "Replicate"
 LocalScript1.Parent = mas
 LocalScript1.Enabled = false
-table.insert(cors,sandbox(LocalScript1,function()
+--[[table.insert(cors,sandbox(LocalScript1,function()
 local ID = script:GetAttribute("ID")
 local EN = script:GetAttribute("EventName")
 
@@ -413,7 +413,7 @@ if plr.UserId == ID then
 	end)
 end
 local Player = game.Players.LocalPlayer
-end))
+end))]]
 LocalScript1.Disabled = true
 SphereHandleAdornment2.Name = "Adornment"
 SphereHandleAdornment2.Parent = LocalScript1
