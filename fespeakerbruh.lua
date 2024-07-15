@@ -1,3 +1,4 @@
+
 --Converted with ttyyuu12345's model to script plugin v4
 function sandbox(var,func)
 	local env = getfenv(func)
@@ -48,17 +49,17 @@ Part29 = Instance.new("Part")
 Pants30 = Instance.new("Pants")
 Part31 = Instance.new("Part")
 SpecialMesh32 = Instance.new("SpecialMesh")
-Part33 = Instance.new("Part")
-SpecialMesh34 = Instance.new("SpecialMesh")
-Folder35 = Instance.new("Folder")
-Motor6D36 = Instance.new("Motor6D")
-Motor6D37 = Instance.new("Motor6D")
+Texture33 = Instance.new("Texture")
+Part34 = Instance.new("Part")
+SpecialMesh35 = Instance.new("SpecialMesh")
+Texture36 = Instance.new("Texture")
+Folder37 = Instance.new("Folder")
 Motor6D38 = Instance.new("Motor6D")
 Motor6D39 = Instance.new("Motor6D")
 Motor6D40 = Instance.new("Motor6D")
 Motor6D41 = Instance.new("Motor6D")
-Weld42 = Instance.new("Weld")
-Weld43 = Instance.new("Weld")
+Motor6D42 = Instance.new("Motor6D")
+Motor6D43 = Instance.new("Motor6D")
 Weld44 = Instance.new("Weld")
 Weld45 = Instance.new("Weld")
 Weld46 = Instance.new("Weld")
@@ -66,9 +67,11 @@ Weld47 = Instance.new("Weld")
 Weld48 = Instance.new("Weld")
 Weld49 = Instance.new("Weld")
 Weld50 = Instance.new("Weld")
-Part51 = Instance.new("Part")
-Part52 = Instance.new("Part")
-Trail53 = Instance.new("Trail")
+Weld51 = Instance.new("Weld")
+Weld52 = Instance.new("Weld")
+Part53 = Instance.new("Part")
+Part54 = Instance.new("Part")
+Trail55 = Instance.new("Trail")
 Beam0.Name = "NeonBeam"
 Beam0.Parent = mas
 Beam0.FaceCamera = true
@@ -79,9 +82,8 @@ Beam0.Transparency = NumberSequence.new(0,0)
 Beam0.Width0 = 0.20000000298023224
 Beam0.Width1 = 0.20000000298023224
 LocalScript1.Name = "Replicate"
-LocalScript1.Parent = mas
 LocalScript1.Enabled = false
---[[table.insert(cors,sandbox(LocalScript1,function()
+table.insert(cors,sandbox(LocalScript1,function()
 local ID = script:GetAttribute("ID")
 local EN = script:GetAttribute("EventName")
 
@@ -222,8 +224,8 @@ if plr.UserId == ID then
 		FireServer("Update",{workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CoordinateFrame, mouse.Hit, mouse.Target})
 						
 		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-		--plr.CameraMaxZoomDistance = math.huge
-		--plr.CameraMinZoomDistance = 0
+		plr.CameraMaxZoomDistance = math.huge
+		plr.CameraMinZoomDistance = 0
 		workspace.CurrentCamera.FieldOfView = 70
 		pcall(function() workspace.CurrentCamera:ClearAllChildren() end)
 		
@@ -247,7 +249,7 @@ if plr.UserId == ID then
 	end)
 end
 local Player = game.Players.LocalPlayer
-end))]]
+end))
 LocalScript1.Disabled = true
 SphereHandleAdornment2.Name = "Adornment"
 SphereHandleAdornment2.Parent = LocalScript1
@@ -435,14 +437,12 @@ Part29.TopSurface = Enum.SurfaceType.Smooth
 Pants30.Name = "SuitPants"
 Pants30.Parent = Model6
 Pants30.PantsTemplate = "rbxassetid://5222221108"
-Part31.Name = "NeonPartsNew"
+Part31.Name = "NeonParts"
 Part31.Parent = Model5
-Part31.CFrame = CFrame.new(-52.9758949, 4.46900368, -60.651825, -1, -1.06855097e-07, -2.69198779e-08, -1.06854856e-07, 0.999999881, 5.66156189e-07, 2.69193094e-08, 5.66157325e-07, -1)
-Part31.Orientation = Vector3.new(0, 180, 0)
-Part31.Position = Vector3.new(-52.975894927978516, 4.469003677368164, -60.651824951171875)
-Part31.Rotation = Vector3.new(180, 0, 180)
+Part31.CFrame = CFrame.new(-54.4758987, 4.49999905, -59.3918228, 1.00000072, 5.67669147e-08, -1.69963457e-08, 5.68323948e-08, 1.0000006, -7.82305989e-08, -1.72292687e-08, -7.8230606e-08, 1.00000083)
+Part31.Position = Vector3.new(-54.47589874267578, 4.499999046325684, -59.391822814941406)
 Part31.Color = Color3.new(1, 1, 1)
-Part31.Size = Vector3.new(2.000999927520752, 2.2139999866485596, 8.927000045776367)
+Part31.Size = Vector3.new(4, 1, 2)
 Part31.BottomSurface = Enum.SurfaceType.Smooth
 Part31.BrickColor = BrickColor.new("Institutional white")
 Part31.Locked = true
@@ -450,167 +450,812 @@ Part31.Material = Enum.Material.Neon
 Part31.TopSurface = Enum.SurfaceType.Smooth
 Part31.brickColor = BrickColor.new("Institutional white")
 SpecialMesh32.Parent = Part31
-SpecialMesh32.MeshId = "rbxassetid://18494164368"
+SpecialMesh32.MeshId = "rbxassetid://18494546634"
 SpecialMesh32.VertexColor = Vector3.new(255, 255, 255)
-SpecialMesh32.TextureId = "rbxassetid://11088743045"
 SpecialMesh32.MeshType = Enum.MeshType.FileMesh
-Part33.Name = "NeonParts"
-Part33.Parent = Model5
-Part33.CFrame = CFrame.new(-54.4758987, 4.49999905, -59.3918228, 1.00000072, 5.67669147e-08, -1.69963457e-08, 5.68323948e-08, 1.0000006, -7.82305989e-08, -1.72292687e-08, -7.8230606e-08, 1.00000083)
-Part33.Position = Vector3.new(-54.47589874267578, 4.499999046325684, -59.391822814941406)
-Part33.Color = Color3.new(1, 1, 1)
-Part33.Size = Vector3.new(4, 1, 2)
-Part33.BottomSurface = Enum.SurfaceType.Smooth
-Part33.BrickColor = BrickColor.new("Institutional white")
-Part33.Locked = true
-Part33.Material = Enum.Material.Neon
-Part33.TopSurface = Enum.SurfaceType.Smooth
-Part33.brickColor = BrickColor.new("Institutional white")
-SpecialMesh34.Parent = Part33
-SpecialMesh34.MeshId = "rbxassetid://18494546634"
-SpecialMesh34.VertexColor = Vector3.new(255, 255, 255)
-SpecialMesh34.TextureId = "rbxassetid://11088743045"
-SpecialMesh34.MeshType = Enum.MeshType.FileMesh
-Folder35.Name = "Welds"
-Folder35.Parent = Model3
-Motor6D36.Name = "LeftHip"
-Motor6D36.Parent = Folder35
-Motor6D36.MaxVelocity = 0.10000000149011612
-Motor6D36.C0 = CFrame.new(-1, -1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
-Motor6D36.C1 = CFrame.new(-0.5, 1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
-Motor6D36.Part0 = Part29
-Motor6D36.Part1 = Part26
-Motor6D36.part1 = Part26
-Motor6D37.Name = "LeftShoulder"
-Motor6D37.Parent = Folder35
-Motor6D37.MaxVelocity = 0.10000000149011612
-Motor6D37.C0 = CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
-Motor6D37.C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
-Motor6D37.Part0 = Part29
-Motor6D37.Part1 = Part25
-Motor6D37.part1 = Part25
-Motor6D38.Name = "Neck"
-Motor6D38.Parent = Folder35
+Texture33.Parent = Part31
+Texture33.Texture = "rbxassetid://703387192"
+Texture33.Face = Enum.NormalId.Right
+Texture33.Color3 = Color3.new(39.2157, 39.2157, 39.2157)
+Part34.Name = "NeonParts"
+Part34.Parent = Model5
+Part34.CFrame = CFrame.new(-52.9758949, 4.46900368, -60.651825, -1, -1.06855097e-07, -2.69198779e-08, -1.06854856e-07, 0.999999881, 5.66156189e-07, 2.69193094e-08, 5.66157325e-07, -1)
+Part34.Orientation = Vector3.new(0, 180, 0)
+Part34.Position = Vector3.new(-52.975894927978516, 4.469003677368164, -60.651824951171875)
+Part34.Rotation = Vector3.new(180, 0, 180)
+Part34.Color = Color3.new(1, 1, 1)
+Part34.Size = Vector3.new(2.000999927520752, 2.2139999866485596, 8.927000045776367)
+Part34.BottomSurface = Enum.SurfaceType.Smooth
+Part34.BrickColor = BrickColor.new("Institutional white")
+Part34.Locked = true
+Part34.Material = Enum.Material.Neon
+Part34.TopSurface = Enum.SurfaceType.Smooth
+Part34.brickColor = BrickColor.new("Institutional white")
+SpecialMesh35.Parent = Part34
+SpecialMesh35.MeshId = "rbxassetid://18494164368"
+SpecialMesh35.VertexColor = Vector3.new(255, 255, 255)
+SpecialMesh35.MeshType = Enum.MeshType.FileMesh
+Texture36.Parent = Part34
+Texture36.Texture = "rbxassetid://703387192"
+Texture36.Face = Enum.NormalId.Right
+Texture36.Color3 = Color3.new(39.2157, 39.2157, 39.2157)
+Folder37.Name = "Welds"
+Folder37.Parent = Model3
+Motor6D38.Name = "LeftHip"
+Motor6D38.Parent = Folder37
 Motor6D38.MaxVelocity = 0.10000000149011612
-Motor6D38.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
-Motor6D38.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D38.C0 = CFrame.new(-1, -1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D38.C1 = CFrame.new(-0.5, 1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
 Motor6D38.Part0 = Part29
-Motor6D38.Part1 = Part18
-Motor6D38.part1 = Part18
-Motor6D39.Name = "RightHip"
-Motor6D39.Parent = Folder35
+Motor6D38.Part1 = Part26
+Motor6D38.part1 = Part26
+Motor6D39.Name = "LeftShoulder"
+Motor6D39.Parent = Folder37
 Motor6D39.MaxVelocity = 0.10000000149011612
-Motor6D39.C0 = CFrame.new(1, -1, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
-Motor6D39.C1 = CFrame.new(0.5, 1, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D39.C0 = CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D39.C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
 Motor6D39.Part0 = Part29
-Motor6D39.Part1 = Part28
-Motor6D39.part1 = Part28
-Motor6D40.Name = "RightShoulder"
-Motor6D40.Parent = Folder35
+Motor6D39.Part1 = Part25
+Motor6D39.part1 = Part25
+Motor6D40.Name = "Neck"
+Motor6D40.Parent = Folder37
 Motor6D40.MaxVelocity = 0.10000000149011612
-Motor6D40.C0 = CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
-Motor6D40.C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D40.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D40.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
 Motor6D40.Part0 = Part29
-Motor6D40.Part1 = Part27
-Motor6D40.part1 = Part27
-Motor6D41.Name = "RootJoint"
-Motor6D41.Parent = Folder35
+Motor6D40.Part1 = Part18
+Motor6D40.part1 = Part18
+Motor6D41.Name = "RightHip"
+Motor6D41.Parent = Folder37
 Motor6D41.MaxVelocity = 0.10000000149011612
-Motor6D41.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
-Motor6D41.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
-Motor6D41.Part0 = Part24
-Motor6D41.Part1 = Part29
-Motor6D41.part1 = Part29
-Weld42.Name = "Outer"
-Weld42.Parent = Folder35
-Weld42.C0 = CFrame.new(0.00183296204, -9.53674316e-07, 0.0096244812, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
-Weld42.Part0 = Part18
-Weld42.Part1 = Part22
-Weld42.part1 = Part22
-Weld43.Name = "Ultra Fabulous Hair"
-Weld43.Parent = Folder35
-Weld43.C0 = CFrame.new(0.168333054, 0.499998569, 2.86102295e-05, -1.0000006, 4.58167051e-08, 1.00350007e-07, -4.88071237e-08, 1.00000048, 5.58793545e-08, -7.42729753e-08, -5.58793545e-08, -1.00000072)
-Weld43.Part0 = Part18
-Weld43.Part1 = Part20
-Weld43.part1 = Part20
-Weld44.Name = "HNeonParts"
-Weld44.Parent = Folder35
-Weld44.C0 = CFrame.new(2.47955322e-05, -9.53674316e-07, 2.47955322e-05, 1.00000072, 5.67670391e-08, -1.69966015e-08, 5.68325191e-08, 1.0000006, -7.82311105e-08, -1.72295245e-08, -7.82311176e-08, 1.00000083)
+Motor6D41.C0 = CFrame.new(1, -1, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D41.C1 = CFrame.new(0.5, 1, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D41.Part0 = Part29
+Motor6D41.Part1 = Part28
+Motor6D41.part1 = Part28
+Motor6D42.Name = "RightShoulder"
+Motor6D42.Parent = Folder37
+Motor6D42.MaxVelocity = 0.10000000149011612
+Motor6D42.C0 = CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D42.C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D42.Part0 = Part29
+Motor6D42.Part1 = Part27
+Motor6D42.part1 = Part27
+Motor6D43.Name = "RootJoint"
+Motor6D43.Parent = Folder37
+Motor6D43.MaxVelocity = 0.10000000149011612
+Motor6D43.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D43.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D43.Part0 = Part24
+Motor6D43.Part1 = Part29
+Motor6D43.part1 = Part29
+Weld44.Name = "Outer"
+Weld44.Parent = Folder37
+Weld44.C0 = CFrame.new(0.00183296204, -9.53674316e-07, 0.0096244812, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
 Weld44.Part0 = Part18
-Weld44.Part1 = Part33
-Weld44.part1 = Part33
-Weld45.Name = "GunAdditions"
-Weld45.Parent = Folder35
-Weld45.C0 = CFrame.new(-0.00300000003, 1.20000005, 0.519999981, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1)
-Weld45.Part0 = Part11
-Weld45.Part1 = Part16
-Weld45.part1 = Part16
-Weld46.Name = "Hole"
-Weld46.Parent = Folder35
-Weld46.C0 = CFrame.new(-0.00110816956, 1.53814411, -3.34217167, -9.3231634e-08, 2.67109463e-08, -1.00000143, 8.92260203e-08, 0.999999285, -2.6713689e-08, 1.00000072, 1.4883075e-07, 5.81876947e-09)
-Weld46.Part0 = Part11
-Weld46.Part1 = Part13
-Weld46.part1 = Part13
-Weld47.Name = "Hole2"
-Weld47.Parent = Folder35
-Weld47.C0 = CFrame.new(-0.00112915039, 1.53817606, -7.14214659, 3.39267672e-06, -4.01940906e-06, -1.00000143, -5.45404055e-06, 0.999999285, -4.07284369e-06, 1.00000072, 5.69211852e-06, 3.49170159e-06)
+Weld44.Part1 = Part22
+Weld44.part1 = Part22
+Weld45.Name = "Ultra Fabulous Hair"
+Weld45.Parent = Folder37
+Weld45.C0 = CFrame.new(0.168333054, 0.499998569, 2.86102295e-05, -1.0000006, 4.58167051e-08, 1.00350007e-07, -4.88071237e-08, 1.00000048, 5.58793545e-08, -7.42729753e-08, -5.58793545e-08, -1.00000072)
+Weld45.Part0 = Part18
+Weld45.Part1 = Part20
+Weld45.part1 = Part20
+Weld46.Name = "HNeonParts"
+Weld46.Parent = Folder37
+Weld46.C0 = CFrame.new(2.47955322e-05, -9.53674316e-07, 2.47955322e-05, 1.00000072, 5.67670391e-08, -1.69966015e-08, 5.68325191e-08, 1.0000006, -7.82311105e-08, -1.72295245e-08, -7.82311176e-08, 1.00000083)
+Weld46.Part0 = Part18
+Weld46.Part1 = Part31
+Weld46.part1 = Part31
+Weld47.Name = "GunAdditions"
+Weld47.Parent = Folder37
+Weld47.C0 = CFrame.new(-0.00300000003, 1.20000005, 0.519999981, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1)
 Weld47.Part0 = Part11
-Weld47.Part1 = Part12
-Weld47.part1 = Part12
-Weld48.Name = "GunJoint"
-Weld48.Parent = Folder35
-Weld48.C0 = CFrame.new(2.57492065e-05, 3.33786011e-06, 2.00271606e-05, 1, -1.06854976e-07, 1.77915425e-07, 1.06855076e-07, 1, -5.66156757e-07, -1.77915368e-07, 5.66156814e-07, 1)
-Weld48.Part0 = Part27
-Weld48.Part1 = Part11
-Weld48.part1 = Part11
-Weld49.Name = "GNeonParts"
-Weld49.Parent = Folder35
-Weld49.C0 = CFrame.new(0, 1.46899998, -1.25999999, -1, 0, 1.50995803e-07, 0, 1, 0, -1.50995803e-07, 0, -1)
+Weld47.Part1 = Part16
+Weld47.part1 = Part16
+Weld48.Name = "Hole"
+Weld48.Parent = Folder37
+Weld48.C0 = CFrame.new(-0.00110816956, 1.53814411, -3.34217167, -9.3231634e-08, 2.67109463e-08, -1.00000143, 8.92260203e-08, 0.999999285, -2.6713689e-08, 1.00000072, 1.4883075e-07, 5.81876947e-09)
+Weld48.Part0 = Part11
+Weld48.Part1 = Part13
+Weld48.part1 = Part13
+Weld49.Name = "Hole2"
+Weld49.Parent = Folder37
+Weld49.C0 = CFrame.new(-0.00112915039, 1.53817606, -7.14214659, 3.39267672e-06, -4.01940906e-06, -1.00000143, -5.45404055e-06, 0.999999285, -4.07284369e-06, 1.00000072, 5.69211852e-06, 3.49170159e-06)
 Weld49.Part0 = Part11
-Weld49.Part1 = Part31
-Weld49.part1 = Part31
-Weld50.Name = "Base"
-Weld50.Parent = Folder35
-Weld50.C0 = CFrame.new(6.15119934e-05, 1.30516863, -2.10824013, 5.36990628e-05, 3.95186325e-05, -1.00000048, -0.707085609, 0.707127631, -1.00384732e-05, 0.707127869, 0.707085967, 6.59481593e-05)
-Weld50.Part0 = Part11
-Weld50.Part1 = Part14
-Weld50.part1 = Part14
-Part51.Name = "AttachmentPart"
-Part51.Parent = mas
-Part51.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Part51.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
-Part51.Color = Color3.new(1, 1, 1)
-Part51.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
-Part51.Anchored = true
-Part51.BottomSurface = Enum.SurfaceType.Smooth
-Part51.BrickColor = BrickColor.new("Institutional white")
-Part51.CanCollide = false
-Part51.Material = Enum.Material.Neon
-Part51.TopSurface = Enum.SurfaceType.Smooth
-Part51.brickColor = BrickColor.new("Institutional white")
-Part51.Shape = Enum.PartType.Ball
-Part52.Name = "TrailBlast"
-Part52.Parent = mas
-Part52.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-Part52.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
-Part52.Color = Color3.new(1, 1, 1)
-Part52.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
-Part52.BottomSurface = Enum.SurfaceType.Smooth
-Part52.BrickColor = BrickColor.new("Institutional white")
-Part52.CanCollide = false
-Part52.Material = Enum.Material.Neon
-Part52.TopSurface = Enum.SurfaceType.Smooth
-Part52.brickColor = BrickColor.new("Institutional white")
-Part52.Shape = Enum.PartType.Ball
-Trail53.Parent = Part52
-Trail53.Attachment0 = nil
-Trail53.Attachment1 = nil
-Trail53.FaceCamera = true
-Trail53.LightEmission = 1
-Trail53.LightInfluence = 1
-Trail53.Transparency = NumberSequence.new(0,1)
-Trail53.Lifetime = 1
-Trail53.WidthScale = NumberSequence.new(1,1,0)
+Weld49.Part1 = Part12
+Weld49.part1 = Part12
+Weld50.Name = "GunJoint"
+Weld50.Parent = Folder37
+Weld50.C0 = CFrame.new(2.57492065e-05, 3.33786011e-06, 2.00271606e-05, 1, -1.06854976e-07, 1.77915425e-07, 1.06855076e-07, 1, -5.66156757e-07, -1.77915368e-07, 5.66156814e-07, 1)
+Weld50.Part0 = Part27
+Weld50.Part1 = Part11
+Weld50.part1 = Part11
+Weld51.Name = "GNeonParts"
+Weld51.Parent = Folder37
+Weld51.C0 = CFrame.new(0, 1.46899998, -1.25999999, -1, 0, 1.50995803e-07, 0, 1, 0, -1.50995803e-07, 0, -1)
+Weld51.Part0 = Part11
+Weld51.Part1 = Part34
+Weld51.part1 = Part34
+Weld52.Name = "Base"
+Weld52.Parent = Folder37
+Weld52.C0 = CFrame.new(6.15119934e-05, 1.30516863, -2.10824013, 5.36990628e-05, 3.95186325e-05, -1.00000048, -0.707085609, 0.707127631, -1.00384732e-05, 0.707127869, 0.707085967, 6.59481593e-05)
+Weld52.Part0 = Part11
+Weld52.Part1 = Part14
+Weld52.part1 = Part14
+Part53.Name = "AttachmentPart"
+Part53.Parent = mas
+Part53.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part53.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part53.Color = Color3.new(1, 1, 1)
+Part53.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+Part53.Anchored = true
+Part53.BottomSurface = Enum.SurfaceType.Smooth
+Part53.BrickColor = BrickColor.new("Institutional white")
+Part53.CanCollide = false
+Part53.Material = Enum.Material.Neon
+Part53.TopSurface = Enum.SurfaceType.Smooth
+Part53.brickColor = BrickColor.new("Institutional white")
+Part53.Shape = Enum.PartType.Ball
+Part54.Name = "TrailBlast"
+Part54.Parent = mas
+Part54.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part54.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part54.Color = Color3.new(1, 1, 1)
+Part54.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+Part54.BottomSurface = Enum.SurfaceType.Smooth
+Part54.BrickColor = BrickColor.new("Institutional white")
+Part54.CanCollide = false
+Part54.Material = Enum.Material.Neon
+Part54.TopSurface = Enum.SurfaceType.Smooth
+Part54.brickColor = BrickColor.new("Institutional white")
+Part54.Shape = Enum.PartType.Ball
+Trail55.Parent = Part54
+Trail55.Attachment0 = nil
+Trail55.Attachment1 = nil
+Trail55.FaceCamera = true
+Trail55.LightEmission = 1
+Trail55.LightInfluence = 1
+Trail55.Transparency = NumberSequence.new(0,1)
+Trail55.Lifetime = 1
+Trail55.WidthScale = NumberSequence.new(1,1,0)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Beam56 = Instance.new("Beam")
+LocalScript57 = Instance.new("LocalScript")
+SphereHandleAdornment58 = Instance.new("SphereHandleAdornment")
+Model59 = Instance.new("Model")
+Model60 = Instance.new("Model")
+Model61 = Instance.new("Model")
+Model62 = Instance.new("Model")
+Shirt63 = Instance.new("Shirt")
+ForceField64 = Instance.new("ForceField")
+Humanoid65 = Instance.new("Humanoid")
+Model66 = Instance.new("Model")
+Part67 = Instance.new("Part")
+Part68 = Instance.new("Part")
+Part69 = Instance.new("Part")
+Part70 = Instance.new("Part")
+SpecialMesh71 = Instance.new("SpecialMesh")
+Part72 = Instance.new("Part")
+SpecialMesh73 = Instance.new("SpecialMesh")
+Part74 = Instance.new("Part")
+SpecialMesh75 = Instance.new("SpecialMesh")
+Part76 = Instance.new("Part")
+SpecialMesh77 = Instance.new("SpecialMesh")
+Part78 = Instance.new("Part")
+SpecialMesh79 = Instance.new("SpecialMesh")
+Part80 = Instance.new("Part")
+Part81 = Instance.new("Part")
+Part82 = Instance.new("Part")
+Part83 = Instance.new("Part")
+Part84 = Instance.new("Part")
+Part85 = Instance.new("Part")
+Pants86 = Instance.new("Pants")
+Part87 = Instance.new("Part")
+SpecialMesh88 = Instance.new("SpecialMesh")
+Texture89 = Instance.new("Texture")
+Part90 = Instance.new("Part")
+SpecialMesh91 = Instance.new("SpecialMesh")
+Texture92 = Instance.new("Texture")
+Folder93 = Instance.new("Folder")
+Motor6D94 = Instance.new("Motor6D")
+Motor6D95 = Instance.new("Motor6D")
+Motor6D96 = Instance.new("Motor6D")
+Motor6D97 = Instance.new("Motor6D")
+Motor6D98 = Instance.new("Motor6D")
+Motor6D99 = Instance.new("Motor6D")
+Weld100 = Instance.new("Weld")
+Weld101 = Instance.new("Weld")
+Weld102 = Instance.new("Weld")
+Weld103 = Instance.new("Weld")
+Weld104 = Instance.new("Weld")
+Weld105 = Instance.new("Weld")
+Weld106 = Instance.new("Weld")
+Weld107 = Instance.new("Weld")
+Weld108 = Instance.new("Weld")
+Part109 = Instance.new("Part")
+Part110 = Instance.new("Part")
+Trail111 = Instance.new("Trail")
+Beam56.Name = "NeonBeam"
+Beam56.Parent = mas
+Beam56.FaceCamera = true
+Beam56.LightEmission = 1
+Beam56.LightInfluence = 1
+Beam56.Segments = 5
+Beam56.Transparency = NumberSequence.new(0,0)
+Beam56.Width0 = 0.20000000298023224
+Beam56.Width1 = 0.20000000298023224
+LocalScript57.Name = "Replicate"
+LocalScript57.Parent = mas
+LocalScript57.Enabled = false
+table.insert(cors,sandbox(LocalScript57,function()
+local ID = script:GetAttribute("ID")
+local EN = script:GetAttribute("EventName")
+
+script.Disabled = true
+
+function Randomstring(Len)
+	local String = ""
+	for i=1,Len or math.random(5,20) do
+		local Tbl = {
+char(math.random(65,90)),
+			string.char(math.random(97,122)),
+			string.char(math.random(48,57))
+		}
+		String = String..Tbl[math.random(1,#Tbl)]
+	end
+	return String
+end
+
+
+local plr = game:GetService("Players").LocalPlayer
+local mouse = plr:GetMouse()
+
+local StoredMovement = CFrame.new(0,5,0)
+local Keys = {w = false,a = false,s = false,d = false}
+local Event = nil
+
+local CameraSubject = nil
+local CameraRotation = Vector2.new(0, 0)
+local CameraZoom = 15
+
+function FireServer(...)
+	if Event and Event ~= nil then
+		Event:FireServer(...)
+	end
+end
+
+function ClientConnect(Event)
+	Event.OnClientEvent:Connect(function(type,data)
+		if type == "SetCS" then
+			CameraSubject = data[1]
+		end
+	end)
+end
+
+for _,v in pairs(game:GetDescendants()) do
+	if v:IsA("RemoteEvent") and v.Name == EN then
+		Event = v
+		ClientConnect(Event)
+	end
+end
+
+game.DescendantAdded:Connect(function(d)
+	if d:IsA("RemoteEvent") and d.Name == EN then
+		Event = d
+		ClientConnect(Event)
+	end
+end)
+
+if plr.UserId == ID then
+	local FirstClick = false
+	mouse.Button1Down:Connect(function()
+		FirstClick = true
+		if not FirstClick then
+			FireServer("Shoot",{mouse.Hit})
+		end
+	end)
+	
+	mouse.KeyDown:Connect(function(k)
+		Keys[k] = true
+		if k == "q" then
+			FireServer("RefitChar",{})
+		elseif k == "e" then
+			FireServer("RefitOther",{})
+			if workspace.CurrentCamera then
+				workspace.CurrentCamera:remove()
+				task.wait()task.wait()
+				workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+			end
+		elseif k == "r" then
+			StoredMovement = CFrame.new(0,5,0)
+			FireServer("SetMovement",{StoredMovement,true})
+		elseif k == "b" then
+			FireServer("Lego",{})
+		elseif k == "v" then
+			FireServer("Kaboom",{})
+		end
+	end)
+
+	mouse.KeyUp:Connect(function(k)
+		Keys[k] = false
+	end)
+	
+	plr.Chatted:Connect(function(msg)
+		FireServer("ChatFunc",{msg})
+	end)
+	
+	game:GetService("UserInputService").InputChanged:Connect(function(Input,Ignore)
+		if Input.UserInputType == Enum.UserInputType.MouseWheel then
+			if Ignore then return end 
+			if Input.Position.Z > 0 then
+				if CameraZoom > 1 then
+					CameraZoom = CameraZoom*.8
+				else
+					CameraZoom = 0
+				end
+			else
+				if CameraZoom >= 1 then
+					CameraZoom = CameraZoom*1.25
+				else
+					CameraZoom = 1
+				end
+			end
+		end
+	end)
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+		local OldCF = StoredMovement
+		if Keys.w then
+			StoredMovement = StoredMovement*CFrame.new(0,0,-1) end
+		if Keys.s then
+			StoredMovement = StoredMovement*CFrame.new(0,0,1) end
+		if Keys.a then
+			StoredMovement = StoredMovement*CFrame.new(-1,0,0) end
+		if Keys.d then
+			StoredMovement = StoredMovement*CFrame.new(1,0,0)
+		end
+
+		StoredMovement = CFrame.new(StoredMovement.Position,StoredMovement.Position+workspace.CurrentCamera.CFrame.LookVector)
+
+		local NewCFrame = CFrame.new(OldCF.p,StoredMovement.p)
+
+		if (StoredMovement.X ~= OldCF.X or StoredMovement.Z ~= OldCF.Z) then
+			FireServer("SetMovement",{NewCFrame,true})
+		else
+			FireServer("SetMovement",{StoredMovement,false})
+		end
+
+		FireServer("Update",{workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CoordinateFrame, mouse.Hit, mouse.Target})
+						
+		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+		plr.CameraMaxZoomDistance = math.huge
+		plr.CameraMinZoomDistance = 0
+		workspace.CurrentCamera.FieldOfView = 70
+		pcall(function() workspace.CurrentCamera:ClearAllChildren() end)
+		
+		local MouseDelta = game:GetService("UserInputService"):GetMouseDelta()*(UserSettings():GetService("UserGameSettings").MouseSensitivity)
+
+		if CameraZoom == 0 then
+			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
+			CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+		elseif game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCurrentPosition
+			CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+		else
+			game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.Default
+		end
+		
+		CameraRotation = Vector2.new(CameraRotation.X > 180 and CameraRotation.X-360 or CameraRotation.X < -180 and CameraRotation.X+360 or CameraRotation.X,math.clamp(CameraRotation.Y,-81,81))
+		local NewAngles = CFrame.Angles(0,math.rad(CameraRotation.X),0)*CFrame.Angles(math.rad(CameraRotation.Y),0,0)
+		local CameraCFrame = NewAngles+CameraSubject.CFrame.Position+NewAngles*Vector3.new(0,0,CameraZoom)
+		workspace.CurrentCamera.CFrame = CameraCFrame
+		workspace.CurrentCamera.Focus = CameraCFrame*CFrame.new(0,0,-CameraZoom)
+	end)
+end
+local Player = game.Players.LocalPlayer
+end))
+LocalScript57.Disabled = true
+SphereHandleAdornment58.Name = "Adornment"
+SphereHandleAdornment58.Parent = LocalScript57
+SphereHandleAdornment58.Color3 = Color3.new(0.0509804, 0.411765, 0.67451)
+SphereHandleAdornment58.AlwaysOnTop = true
+Model59.Name = "Character"
+Model59.Parent = mas
+Model59.PrimaryPart = Part80
+Model60.Name = "J4x3aBGHEO6PW8PYFnv0B6XifwD29nu33wX01i57t9R55k"
+Model60.Parent = Model59
+Model61.Name = "Speaker"
+Model61.Parent = Model60
+Model62.Name = "Cannon"
+Model62.Parent = Model61
+Shirt63.Name = "SuitShirt"
+Shirt63.Parent = Model62
+Shirt63.ShirtTemplate = "rbxassetid://5222212137"
+ForceField64.Name = "FF"
+ForceField64.Parent = Model62
+ForceField64.Visible = false
+Humanoid65.Parent = Model62
+Humanoid65.LeftLeg = Part82
+Humanoid65.RightLeg = Part84
+Humanoid65.Torso = Part80
+Model66.Name = "Railgun"
+Model66.Parent = Model62
+Part67.Name = "Joint"
+Part67.Parent = Model66
+Part67.CFrame = CFrame.new(-52.9758949, 3.00000334, -59.3918266, 1, -1.06855097e-07, 1.7791568e-07, 1.06854941e-07, 0.999999881, -5.66156189e-07, -1.77915112e-07, 5.66157325e-07, 1)
+Part67.Position = Vector3.new(-52.975894927978516, 3.0000033378601074, -59.39182662963867)
+Part67.Transparency = 1
+Part67.Size = Vector3.new(1.0039602518081665, 1.0039602518081665, 1.0039602518081665)
+Part67.BottomSurface = Enum.SurfaceType.Smooth
+Part67.Locked = true
+Part67.TopSurface = Enum.SurfaceType.Smooth
+Part68.Name = "Hole2"
+Part68.Parent = Model66
+Part68.CFrame = CFrame.new(-52.9770241, 4.53818321, -66.5339737, 3.57059321e-06, -4.12626332e-06, -1.00000143, -6.02019645e-06, 0.999999166, -4.17970023e-06, 1.00000072, 6.25827624e-06, 3.66961467e-06)
+Part68.Orientation = Vector3.new(0, -90, 0)
+Part68.Position = Vector3.new(-52.97702407836914, 4.538183212280273, -66.53397369384766)
+Part68.Rotation = Vector3.new(0, -90, 0)
+Part68.Transparency = 1
+Part68.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
+Part68.BottomSurface = Enum.SurfaceType.Smooth
+Part68.Locked = true
+Part68.TopSurface = Enum.SurfaceType.Smooth
+Part69.Name = "Hole"
+Part69.Parent = Model66
+Part69.CFrame = CFrame.new(-52.977005, 4.53814888, -62.7339973, 8.46841672e-08, -8.01440478e-08, -1.00000143, -4.76930609e-07, 0.999999166, -1.3356879e-07, 1.00000072, 7.14987664e-07, 1.8373413e-07)
+Part69.Orientation = Vector3.new(0, -90, 0)
+Part69.Position = Vector3.new(-52.97700500488281, 4.538148880004883, -62.7339973449707)
+Part69.Rotation = Vector3.new(0, -90, 0)
+Part69.Transparency = 1
+Part69.Size = Vector3.new(0.20079202950000763, 0.20079202950000763, 0.20079202950000763)
+Part69.BottomSurface = Enum.SurfaceType.Smooth
+Part69.Locked = true
+Part69.TopSurface = Enum.SurfaceType.Smooth
+Part70.Name = "Base"
+Part70.Parent = Model66
+Part70.CFrame = CFrame.new(-52.9758339, 4.30517292, -61.5000648, 5.39004286e-05, 3.9568873e-05, -1.00000048, -0.707085967, 0.707127154, -1.01453643e-05, 0.707127452, 0.707086384, 6.6126071e-05)
+Part70.Orientation = Vector3.new(0.0010000000474974513, -89.99600219726562, -44.99800109863281)
+Part70.Position = Vector3.new(-52.975833892822266, 4.305172920227051, -61.500064849853516)
+Part70.Rotation = Vector3.new(44.99800109863281, -90, 0)
+Part70.Color = Color3.new(0, 0, 0)
+Part70.Size = Vector3.new(9.361000061035156, 8.616000175476074, 1.4739999771118164)
+Part70.BottomSurface = Enum.SurfaceType.Smooth
+Part70.BrickColor = BrickColor.new("Really black")
+Part70.Locked = true
+Part70.TopSurface = Enum.SurfaceType.Smooth
+Part70.brickColor = BrickColor.new("Really black")
+SpecialMesh71.Parent = Part70
+SpecialMesh71.MeshId = "rbxassetid://6080721391"
+SpecialMesh71.Scale = Vector3.new(2, 2, 2)
+SpecialMesh71.MeshType = Enum.MeshType.FileMesh
+Part72.Name = "GunAdditions"
+Part72.Parent = Model66
+Part72.CFrame = CFrame.new(-52.9788933, 4.20000315, -58.8718262, -1, -1.06855097e-07, -3.28911483e-07, -1.06855026e-07, 0.999999881, 5.66156189e-07, 3.28910915e-07, 5.66157325e-07, -1)
+Part72.Orientation = Vector3.new(0, 180, 0)
+Part72.Position = Vector3.new(-52.9788932800293, 4.200003147125244, -58.871826171875)
+Part72.Rotation = Vector3.new(180, 0, 180)
+Part72.Color = Color3.new(0, 0, 0)
+Part72.Size = Vector3.new(4, 1, 2)
+Part72.BottomSurface = Enum.SurfaceType.Smooth
+Part72.BrickColor = BrickColor.new("Really black")
+Part72.Locked = true
+Part72.TopSurface = Enum.SurfaceType.Smooth
+Part72.brickColor = BrickColor.new("Really black")
+SpecialMesh73.Parent = Part72
+SpecialMesh73.MeshId = "rbxassetid://18494357855"
+SpecialMesh73.MeshType = Enum.MeshType.FileMesh
+Part74.Name = "Head"
+Part74.Parent = Model62
+Part74.CFrame = CFrame.new(-54.4759216, 4.5, -59.3918457, 1, -1.23648948e-13, 2.55795385e-13, -1.23648948e-13, 1, 5.1159077e-13, 2.55795385e-13, 5.1159077e-13, 1)
+Part74.Position = Vector3.new(-54.475921630859375, 4.5, -59.391845703125)
+Part74.Transparency = 1
+Part74.Size = Vector3.new(2, 1, 1)
+Part74.BottomSurface = Enum.SurfaceType.Smooth
+Part74.Locked = true
+Part74.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh75.Parent = Part74
+SpecialMesh75.Scale = Vector3.new(1.25, 1.25, 1.25)
+Part76.Name = "Ultra Fabulous Hair"
+Part76.Parent = Part74
+Part76.CFrame = CFrame.new(-54.3075867, 4.99999857, -59.3918152, -1.0000006, 4.58165808e-08, 1.00349752e-07, -4.88069993e-08, 1.00000048, 5.58788429e-08, -7.42732311e-08, -5.58788429e-08, -1.00000072)
+Part76.Orientation = Vector3.new(0, 180, 0)
+Part76.Position = Vector3.new(-54.307586669921875, 4.999998569488525, -59.391815185546875)
+Part76.Rotation = Vector3.new(180, 0, 180)
+Part76.Color = Color3.new(0, 0, 0)
+Part76.Size = Vector3.new(4, 1, 2)
+Part76.BottomSurface = Enum.SurfaceType.Smooth
+Part76.BrickColor = BrickColor.new("Really black")
+Part76.Locked = true
+Part76.TopSurface = Enum.SurfaceType.Smooth
+Part76.brickColor = BrickColor.new("Really black")
+SpecialMesh77.Parent = Part76
+SpecialMesh77.MeshId = "rbxassetid://5589314244"
+SpecialMesh77.MeshType = Enum.MeshType.FileMesh
+Part78.Name = "Outer"
+Part78.Parent = Part74
+Part78.CFrame = CFrame.new(-54.4740906, 4.49999905, -59.3822212, -1, -1.23648948e-13, -8.74230324e-08, 1.23648989e-13, 1, -5.1159077e-13, 8.74225208e-08, 5.1159077e-13, -1)
+Part78.Orientation = Vector3.new(0, 180, 0)
+Part78.Position = Vector3.new(-54.474090576171875, 4.499999046325684, -59.38222122192383)
+Part78.Rotation = Vector3.new(180, 0, 180)
+Part78.Size = Vector3.new(4, 1, 2)
+Part78.BottomSurface = Enum.SurfaceType.Smooth
+Part78.Locked = true
+Part78.TopSurface = Enum.SurfaceType.Smooth
+SpecialMesh79.Parent = Part78
+SpecialMesh79.MeshId = "rbxassetid://18494627709"
+SpecialMesh79.MeshType = Enum.MeshType.FileMesh
+Part80.Name = "HumanoidRootPart"
+Part80.Parent = Model62
+Part80.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, -1.23648948e-13, 2.55795385e-13, -1.23648948e-13, 1, 5.1159077e-13, 2.55795385e-13, 5.1159077e-13, 1)
+Part80.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part80.Transparency = 1
+Part80.Size = Vector3.new(2, 2, 1)
+Part80.Anchored = true
+Part80.BottomSurface = Enum.SurfaceType.Smooth
+Part80.Locked = true
+Part80.TopSurface = Enum.SurfaceType.Smooth
+Part81.Name = "Left Arm"
+Part81.Parent = Model62
+Part81.CFrame = CFrame.new(-55.9759216, 3, -59.3918457, 1, -1.23648935e-13, 2.55795385e-13, -1.23648948e-13, 0.999999881, 5.1159077e-13, 2.55795385e-13, 5.11590716e-13, 1)
+Part81.Position = Vector3.new(-55.975921630859375, 3, -59.391845703125)
+Part81.Size = Vector3.new(1, 2, 1)
+Part81.BottomSurface = Enum.SurfaceType.Smooth
+Part81.CanCollide = false
+Part81.Locked = true
+Part81.TopSurface = Enum.SurfaceType.Smooth
+Part82.Name = "Left Leg"
+Part82.Parent = Model62
+Part82.CFrame = CFrame.new(-54.9759216, 1.00000012, -59.3918457, 1, -1.23648935e-13, 2.55795385e-13, -1.23648948e-13, 0.999999881, 5.1159077e-13, 2.55795385e-13, 5.11590716e-13, 1)
+Part82.Position = Vector3.new(-54.975921630859375, 1.0000001192092896, -59.391845703125)
+Part82.Size = Vector3.new(1, 2, 1)
+Part82.BottomSurface = Enum.SurfaceType.Smooth
+Part82.CanCollide = false
+Part82.Locked = true
+Part82.TopSurface = Enum.SurfaceType.Smooth
+Part83.Name = "Right Arm"
+Part83.Parent = Model62
+Part83.CFrame = CFrame.new(-52.9759216, 3, -59.3918457, 1, -1.23648935e-13, 2.55795385e-13, -1.23648948e-13, 0.999999881, 5.1159077e-13, 2.55795385e-13, 5.11590716e-13, 1)
+Part83.Position = Vector3.new(-52.975921630859375, 3, -59.391845703125)
+Part83.Size = Vector3.new(1, 2, 1)
+Part83.BottomSurface = Enum.SurfaceType.Smooth
+Part83.CanCollide = false
+Part83.Locked = true
+Part83.TopSurface = Enum.SurfaceType.Smooth
+Part84.Name = "Right Leg"
+Part84.Parent = Model62
+Part84.CFrame = CFrame.new(-53.9759216, 1.00000012, -59.3918457, 1, -1.23648935e-13, 2.55795385e-13, -1.23648948e-13, 0.999999881, 5.1159077e-13, 2.55795385e-13, 5.11590716e-13, 1)
+Part84.Position = Vector3.new(-53.975921630859375, 1.0000001192092896, -59.391845703125)
+Part84.Size = Vector3.new(1, 2, 1)
+Part84.BottomSurface = Enum.SurfaceType.Smooth
+Part84.CanCollide = false
+Part84.Locked = true
+Part84.TopSurface = Enum.SurfaceType.Smooth
+Part85.Name = "Torso"
+Part85.Parent = Model62
+Part85.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, -1.23648948e-13, 2.55795385e-13, -1.23648948e-13, 1, 5.1159077e-13, 2.55795385e-13, 5.1159077e-13, 1)
+Part85.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part85.Size = Vector3.new(2, 2, 1)
+Part85.BottomSurface = Enum.SurfaceType.Smooth
+Part85.Locked = true
+Part85.TopSurface = Enum.SurfaceType.Smooth
+Pants86.Name = "SuitPants"
+Pants86.Parent = Model62
+Pants86.PantsTemplate = "rbxassetid://5222221108"
+Part87.Name = "NeonParts"
+Part87.Parent = Model61
+Part87.CFrame = CFrame.new(-54.4758987, 4.49999905, -59.3918228, 1.00000072, 5.67669147e-08, -1.69963457e-08, 5.68323948e-08, 1.0000006, -7.82305989e-08, -1.72292687e-08, -7.8230606e-08, 1.00000083)
+Part87.Position = Vector3.new(-54.47589874267578, 4.499999046325684, -59.391822814941406)
+Part87.Color = Color3.new(1, 1, 1)
+Part87.Size = Vector3.new(4, 1, 2)
+Part87.BottomSurface = Enum.SurfaceType.Smooth
+Part87.BrickColor = BrickColor.new("Institutional white")
+Part87.Locked = true
+Part87.Material = Enum.Material.Neon
+Part87.TopSurface = Enum.SurfaceType.Smooth
+Part87.brickColor = BrickColor.new("Institutional white")
+SpecialMesh88.Parent = Part87
+SpecialMesh88.MeshId = "rbxassetid://18494546634"
+SpecialMesh88.VertexColor = Vector3.new(255, 255, 255)
+SpecialMesh88.MeshType = Enum.MeshType.FileMesh
+Texture89.Parent = Part87
+Texture89.Texture = "rbxassetid://703387192"
+Texture89.Face = Enum.NormalId.Right
+Texture89.Color3 = Color3.new(39.2157, 39.2157, 39.2157)
+Part90.Name = "NeonPartsNew"
+Part90.Parent = Model61
+Part90.CFrame = CFrame.new(-52.9758949, 4.46900368, -60.651825, -1, -1.06855097e-07, -2.69198779e-08, -1.06854856e-07, 0.999999881, 5.66156189e-07, 2.69193094e-08, 5.66157325e-07, -1)
+Part90.Orientation = Vector3.new(0, 180, 0)
+Part90.Position = Vector3.new(-52.975894927978516, 4.469003677368164, -60.651824951171875)
+Part90.Rotation = Vector3.new(180, 0, 180)
+Part90.Color = Color3.new(1, 1, 1)
+Part90.Size = Vector3.new(2.000999927520752, 2.2139999866485596, 8.927000045776367)
+Part90.BottomSurface = Enum.SurfaceType.Smooth
+Part90.BrickColor = BrickColor.new("Institutional white")
+Part90.Locked = true
+Part90.Material = Enum.Material.Neon
+Part90.TopSurface = Enum.SurfaceType.Smooth
+Part90.brickColor = BrickColor.new("Institutional white")
+SpecialMesh91.Parent = Part90
+SpecialMesh91.MeshId = "rbxassetid://18494164368"
+SpecialMesh91.VertexColor = Vector3.new(255, 255, 255)
+SpecialMesh91.MeshType = Enum.MeshType.FileMesh
+Texture92.Parent = Part90
+Texture92.Texture = "rbxassetid://703387192"
+Texture92.Face = Enum.NormalId.Right
+Texture92.Color3 = Color3.new(39.2157, 39.2157, 39.2157)
+Folder93.Name = "Welds"
+Folder93.Parent = Model59
+Motor6D94.Name = "LeftHip"
+Motor6D94.Parent = Folder93
+Motor6D94.MaxVelocity = 0.10000000149011612
+Motor6D94.C0 = CFrame.new(-1, -1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D94.C1 = CFrame.new(-0.5, 1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D94.Part0 = Part85
+Motor6D94.Part1 = Part82
+Motor6D94.part1 = Part82
+Motor6D95.Name = "LeftShoulder"
+Motor6D95.Parent = Folder93
+Motor6D95.MaxVelocity = 0.10000000149011612
+Motor6D95.C0 = CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D95.C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D95.Part0 = Part85
+Motor6D95.Part1 = Part81
+Motor6D95.part1 = Part81
+Motor6D96.Name = "Neck"
+Motor6D96.Parent = Folder93
+Motor6D96.MaxVelocity = 0.10000000149011612
+Motor6D96.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D96.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D96.Part0 = Part85
+Motor6D96.Part1 = Part74
+Motor6D96.part1 = Part74
+Motor6D97.Name = "RightHip"
+Motor6D97.Parent = Folder93
+Motor6D97.MaxVelocity = 0.10000000149011612
+Motor6D97.C0 = CFrame.new(1, -1, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D97.C1 = CFrame.new(0.5, 1, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D97.Part0 = Part85
+Motor6D97.Part1 = Part84
+Motor6D97.part1 = Part84
+Motor6D98.Name = "RightShoulder"
+Motor6D98.Parent = Folder93
+Motor6D98.MaxVelocity = 0.10000000149011612
+Motor6D98.C0 = CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D98.C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D98.Part0 = Part85
+Motor6D98.Part1 = Part83
+Motor6D98.part1 = Part83
+Motor6D99.Name = "RootJoint"
+Motor6D99.Parent = Folder93
+Motor6D99.MaxVelocity = 0.10000000149011612
+Motor6D99.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D99.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D99.Part0 = Part80
+Motor6D99.Part1 = Part85
+Motor6D99.part1 = Part85
+Weld100.Name = "Outer"
+Weld100.Parent = Folder93
+Weld100.C0 = CFrame.new(0.00183296204, -9.53674316e-07, 0.0096244812, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1)
+Weld100.Part0 = Part74
+Weld100.Part1 = Part78
+Weld100.part1 = Part78
+Weld101.Name = "Ultra Fabulous Hair"
+Weld101.Parent = Folder93
+Weld101.C0 = CFrame.new(0.168333054, 0.499998569, 2.86102295e-05, -1.0000006, 4.58167051e-08, 1.00350007e-07, -4.88071237e-08, 1.00000048, 5.58793545e-08, -7.42729753e-08, -5.58793545e-08, -1.00000072)
+Weld101.Part0 = Part74
+Weld101.Part1 = Part76
+Weld101.part1 = Part76
+Weld102.Name = "HNeonParts"
+Weld102.Parent = Folder93
+Weld102.C0 = CFrame.new(2.47955322e-05, -9.53674316e-07, 2.47955322e-05, 1.00000072, 5.67670391e-08, -1.69966015e-08, 5.68325191e-08, 1.0000006, -7.82311105e-08, -1.72295245e-08, -7.82311176e-08, 1.00000083)
+Weld102.Part0 = Part74
+Weld102.Part1 = Part87
+Weld102.part1 = Part87
+Weld103.Name = "GunAdditions"
+Weld103.Parent = Folder93
+Weld103.C0 = CFrame.new(-0.00300000003, 1.20000005, 0.519999981, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1)
+Weld103.Part0 = Part67
+Weld103.Part1 = Part72
+Weld103.part1 = Part72
+Weld104.Name = "Hole"
+Weld104.Parent = Folder93
+Weld104.C0 = CFrame.new(-0.00110816956, 1.53814411, -3.34217167, -9.3231634e-08, 2.67109463e-08, -1.00000143, 8.92260203e-08, 0.999999285, -2.6713689e-08, 1.00000072, 1.4883075e-07, 5.81876947e-09)
+Weld104.Part0 = Part67
+Weld104.Part1 = Part69
+Weld104.part1 = Part69
+Weld105.Name = "Hole2"
+Weld105.Parent = Folder93
+Weld105.C0 = CFrame.new(-0.00112915039, 1.53817606, -7.14214659, 3.39267672e-06, -4.01940906e-06, -1.00000143, -5.45404055e-06, 0.999999285, -4.07284369e-06, 1.00000072, 5.69211852e-06, 3.49170159e-06)
+Weld105.Part0 = Part67
+Weld105.Part1 = Part68
+Weld105.part1 = Part68
+Weld106.Name = "GunJoint"
+Weld106.Parent = Folder93
+Weld106.C0 = CFrame.new(2.57492065e-05, 3.33786011e-06, 2.00271606e-05, 1, -1.06854976e-07, 1.77915425e-07, 1.06855076e-07, 1, -5.66156757e-07, -1.77915368e-07, 5.66156814e-07, 1)
+Weld106.Part0 = Part83
+Weld106.Part1 = Part67
+Weld106.part1 = Part67
+Weld107.Name = "GNeonParts"
+Weld107.Parent = Folder93
+Weld107.C0 = CFrame.new(0, 1.46899998, -1.25999999, -1, 0, 1.50995803e-07, 0, 1, 0, -1.50995803e-07, 0, -1)
+Weld107.Part0 = Part67
+Weld107.Part1 = Part90
+Weld107.part1 = Part90
+Weld108.Name = "Base"
+Weld108.Parent = Folder93
+Weld108.C0 = CFrame.new(6.15119934e-05, 1.30516863, -2.10824013, 5.36990628e-05, 3.95186325e-05, -1.00000048, -0.707085609, 0.707127631, -1.00384732e-05, 0.707127869, 0.707085967, 6.59481593e-05)
+Weld108.Part0 = Part67
+Weld108.Part1 = Part70
+Weld108.part1 = Part70
+Part109.Name = "AttachmentPart"
+Part109.Parent = mas
+Part109.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part109.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part109.Color = Color3.new(1, 1, 1)
+Part109.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+Part109.Anchored = true
+Part109.BottomSurface = Enum.SurfaceType.Smooth
+Part109.BrickColor = BrickColor.new("Institutional white")
+Part109.CanCollide = false
+Part109.Material = Enum.Material.Neon
+Part109.TopSurface = Enum.SurfaceType.Smooth
+Part109.brickColor = BrickColor.new("Institutional white")
+Part109.Shape = Enum.PartType.Ball
+Part110.Name = "TrailBlast"
+Part110.Parent = mas
+Part110.CFrame = CFrame.new(-54.4759216, 3, -59.3918457, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part110.Position = Vector3.new(-54.475921630859375, 3, -59.391845703125)
+Part110.Color = Color3.new(1, 1, 1)
+Part110.Size = Vector3.new(0.4000000059604645, 0.4000000059604645, 0.4000000059604645)
+Part110.BottomSurface = Enum.SurfaceType.Smooth
+Part110.BrickColor = BrickColor.new("Institutional white")
+Part110.CanCollide = false
+Part110.Material = Enum.Material.Neon
+Part110.TopSurface = Enum.SurfaceType.Smooth
+Part110.brickColor = BrickColor.new("Institutional white")
+Part110.Shape = Enum.PartType.Ball
+Trail111.Parent = Part110
+Trail111.Attachment0 = nil
+Trail111.Attachment1 = nil
+Trail111.FaceCamera = true
+Trail111.LightEmission = 1
+Trail111.LightInfluence = 1
+Trail111.Transparency = NumberSequence.new(0,1)
+Trail111.Lifetime = 1
+Trail111.WidthScale = NumberSequence.new(1,1,0)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
