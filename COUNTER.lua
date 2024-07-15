@@ -1933,42 +1933,19 @@ local UserInputService = FakeGame:GetService("UserInputService")
 local RunService = FakeGame:GetService("RunService")
 
 local ID = plr.UserId
-local Keys = {}
---local CameraZoom = 5
---local CameraRotation = Vector2.new()
---local MainCFrame = CFrame.new()
---local Walking = false
---local StoredMovement = CFrame.new()
---local CHolder, MPartHolder, MPart, Welds = nil, nil, nil, {}
+local StoredMovement = CFrame.new(0,5,0)
+local Keys = {w = false,a = false,s = false,d = false}
+--local Event = nil
 
--- Function to communicate with the server
---[[local function FireServer(action, data)
-    -- Implementation depends on how the FE script handles server communication
-    -- You might need to use a RemoteEvent or other method provided by the FE script
-    print("FireServer called with:", action, data)
-end]]
+local CameraSubject = nil
+local CameraRotation = Vector2.new(0, 0)
+local CameraZoom = 15
 
---[[local function Destroy(obj, time)
-    if obj then
-        game:GetService("Debris"):AddItem(obj, time or 0)
-    end
-end]]
-
---[[local function ChatFunc(msg, arg1, arg2)
-    -- Implement chat functionality using the FE script's methods
-    plr:Chat(msg)
-end]]
-
---[[local function Sfx(id, parent, properties, shouldPlay)
-    local sound = Instance.new("Sound")
-    sound.SoundId = id
-    for k, v in pairs(properties or {}) do
-        sound[k] = v
-    end
-    sound.Parent = parent
-    if shouldPlay then sound:Play() end
-    return sound
-end]]
+function FireServer(...)
+	if Event then
+		Event:FireServer(...)
+	end
+end
 
 if plr.UserId == ID then
     local FirstClick = false
