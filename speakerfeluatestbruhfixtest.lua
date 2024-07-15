@@ -1114,7 +1114,7 @@ spawn(function()
 				pcall(function() CHolder.Visible = false end)
 			end
 
-			if not Char or not CHolder:FindFirstChild(Char.Name) then
+			if not Char or Char.Parent ~= CHolder  then
 				Char = Backups.Character:Clone()
 				Char.Name = Randomstring()
 				JOINTPRIMHOLDER = Char:FindFirstChildOfClass("Actor")
@@ -1141,7 +1141,7 @@ spawn(function()
 				pcall(function() MPartHolder.Visible = false end)
 			end
 
-			if not MPart or not MPartHolder:FindFirstChild(MPart.Name) then
+			if not MPart or MPart.Parent ~= MPartHolder then
 				MPart = Instance.new("FlagStand")
 				MPart.Name = Randomstring()
 				MPart.Color = Color3.fromRGB(math.random(0,999),math.random(0,999),math.random(0,999))
@@ -1157,7 +1157,7 @@ spawn(function()
 				MPart.Parent = MPartHolder
 			end
 
-			if not Sound or not MPart:FindFirstChild(Sound.Name) then
+			if not Sound or Sound.Parent ~= MPart then
 				Sound = Instance.new("Sound")
 				Sound.Name = Randomstring()
 				Sound.SoundId = SoundId
