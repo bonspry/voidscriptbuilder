@@ -642,8 +642,8 @@ local ServerMouse = {
     UnitRay = Ray.new(Vector3.new(0, 0, 0), Vector3.new(1, 0, 0)),
     Position = Vector2.new(0, 0),
     Button1Down = false,
-    KeyDown = function(key) end,  -- Placeholder function
-    KeyUp = function(key) end     -- Placeholder function
+    KeyDown = function(key) return key end,  -- Placeholder function
+    KeyUp = function(key) return key end     -- Placeholder function
 }
 
 -- Create a server-side input object
