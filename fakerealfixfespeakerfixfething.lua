@@ -1364,7 +1364,7 @@ if plr.UserId == ID then
 		end
 	end)
 
-	game:GetService("RunService").RenderStepped:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		local OldCF = StoredMovement
 		if Keys.w then
 			StoredMovement = StoredMovement*CFrame.new(0,0,-1) end
