@@ -3426,7 +3426,7 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 			Remote:FireServer("MouseTarget", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 			player.CameraMaxZoomDistance = 2147483647
 			player.CameraMinZoomDistance = 0
-			workspace.CurrentCamera.CameraSubject = Owner.PlayerGui:FindFirstChildOfClass("ObjectValue").Value
+			workspace.CurrentCamera.CameraSubject = owner.PlayerGui.RootPartValue.Value
 			Remote = owner.PlayerGui:WaitForChild("KillBroRemote")
 	end))
 end)
