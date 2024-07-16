@@ -2464,7 +2464,7 @@ HitP=nil
 Target=nil
 TimePosition=0
 local ClientScript=BackUp:Clone()ClientScript.Archivable=false
-local RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
+local RootPartValue=Instance.new("ObjectValue",owner.PlayerGui);RootPartValue.Archivable=false;RootPartValue.Name="RootPartValue"
 RootPartValue.Value=Head
 ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
 ClientScript.Disabled=false
@@ -3395,7 +3395,6 @@ mouse.KeyDown:Connect(function(key)
 	}
 
 	if keyActions[key] then
-print(keyActions[key])
 			Remote:FireServer(keyActions[key], true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end
 end)
@@ -3407,18 +3406,15 @@ mouse.KeyUp:Connect(function(key)
 	}
 
 	if keyActions[key] then
-print(keyActions[key])
 			Remote:FireServer(keyActions[key], false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end
 end)
 
 mouse.Button1Down:Connect(function()
-print("button1down")
 		Remote:FireServer("Click", true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 end)
 
 mouse.Button1Up:Connect(function()
-print("button1up")
 		Remote:FireServer("Click", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 end)
 
@@ -3430,7 +3426,7 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 			Remote:FireServer("MouseTarget", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 			player.CameraMaxZoomDistance = 2147483647
 			player.CameraMinZoomDistance = 0
-			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
+			workspace.CurrentCamera.CameraSubject = Owner.PlayerGui:FindFirstChildOfClass("ObjectValue").Value
 			Remote = owner.PlayerGui:WaitForChild("KillBroRemote")
 	end))
 end)
