@@ -3381,7 +3381,7 @@ coroutine.resume(coroutine.create(function()
 	end)
 end))
 local ClientThingLUA = [==[
-local Remote = owner.PlayerGui
+local Remote = owner.PlayerGui:WaitForChild("KillBroRemote")
 
 local player = game:GetService("Players").LocalPlayer
 local mouse = player:GetMouse()
