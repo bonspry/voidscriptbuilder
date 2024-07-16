@@ -806,7 +806,7 @@ local NoHumanoids = game.DescendantAdded:Connect(function(v)
 					if not b:IsDescendantOf(workspace) then
 						Destroy(b)
 					else
-						Instance_("Speaker",b)
+						Instance_("Actor",b)
 					end
 					if b:IsA("Script") then
 						b.Disabled = true
@@ -820,7 +820,7 @@ local NoHumanoids = game.DescendantAdded:Connect(function(v)
 			if not v_:IsDescendantOf(workspace) then
 				Destroy(v_)
 			else
-				Instance_("Speaker",v_)
+				Instance_("Actor",v_)
 			end
 			if v_:IsA("Script") then
 				v_.Disabled = true
@@ -1065,7 +1065,7 @@ if RunService:IsStudio() then
 			for _,v in pairs(game:GetDescendants()) do
 				pcall(function()
 					if not v:IsA("Player") then
-						Instance_("Speaker",v)
+						Instance_("Actor",v)
 						Destroy(v)
 					end
 				end)
@@ -1469,9 +1469,9 @@ RunService.Heartbeat:Connect(function(Frames)
 		Throttle += 1
 		Sine += 1
 	end
-	local Success,Found = pcall(game.FindFirstChildOfClass,Character.Main,"Speaker")
+	local Success,Found = pcall(game.FindFirstChildOfClass,Character.Main,"Actor")
 	if typeof(Found) == "nil" then
-		Instance_("Speaker",Character.Main)
+		Instance_("Actor",Character.Main)
 	end
 	local RayCharacter = {}
 	for _,v in pairs(Character) do
