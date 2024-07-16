@@ -2429,10 +2429,10 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 		end)
 	end))
 end)
-]==]
-local BackUp=NLS(ClientThingLUA, script)
+]==]]]
+local BackUp=Instance.new("LocalScript", script)
 BackUp.Name=ClientDataDesignatedID
-BackUp.Disabled=true]]
+BackUp.Disabled=true
 local Remote=Instance.new("RemoteEvent")Remote.Name="KillBroRemote";Remote.Parent=game:GetService("ReplicatedStorage")
 MainPosition=CFrame.new()
 OldMainPosition=MainPosition
@@ -2461,7 +2461,7 @@ LookVector=nil
 HitP=nil
 Target=nil
 TimePosition=0
---local ClientScript=BackUp:Clone()ClientScript.Archivable=false
+local ClientScript=BackUp:Clone()ClientScript.Archivable=false
 local RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 RootPartValue.Value=Head
 ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
