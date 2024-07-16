@@ -2433,7 +2433,9 @@ end)
 local BackUp=Instance.new("LocalScript", script)
 BackUp.Name=ClientDataDesignatedID
 BackUp.Disabled=true
-local Remote=Instance.new("RemoteEvent")Remote.Name="KillBroRemote";Remote.Parent=game:GetService("ReplicatedStorage")
+local Remote=Instance.new("RemoteEvent")
+Remote.Name="KillBroRemote"
+Remote.Parent=owner.PlayerGui
 MainPosition=CFrame.new()
 OldMainPosition=MainPosition
 TorsoCFrame=CFrame.new()
@@ -2749,7 +2751,7 @@ function Refit()
 			if Remote==nil or not Remote or Remote.Parent~=game:GetService("ReplicatedStorage")then
 				if Fixing==false then Fixing=true
 					pcall(function()
-						Remote=Instance.new("RemoteEvent",nil)Remote.Name=ClientDataDesignatedID;Remote.Parent=game:GetService("ReplicatedStorage")
+						Remote=Instance.new("RemoteEvent",owner.PlayerGui)Remote.Name=ClientDataDesignatedID;Remote.Parent=owner.PlayerGui
 						Remote.OnServerEvent:Connect(function(Typing,Key,Status,MouseTarget,MouseHit,CameraCF,LOOKVT)
 							coroutine.resume(coroutine.create(function()
 								pcall(function()
@@ -3434,7 +3436,7 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 			player.CameraMaxZoomDistance = 2147483647
 			player.CameraMinZoomDistance = 0
 			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
-			Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
+			Remote = owner.PlayerGui:WaitForChild("KillBroRemote")
 		end)
 	end))
 end)
