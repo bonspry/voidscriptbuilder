@@ -12,12 +12,12 @@ end
 if getfenv() ~= getfenv(0) or getfenv(0) ~= getfenv(1) or getfenv(1) ~= getfenv() then
 	return
 end
-local CleanEnv = require(5410096288)()
+--[[local CleanEnv = require(5410096288)()
 table.foreach({"pcall","getfenv","require","os","pairs","table","game","math","CFrame","print","warn","error","unpack","Enum","string","Color3","workspace","Instance","Vector3","Vector3","UDim","UDim2","type","typeof","utf8"},function(_,v)
 	if CleanEnv[v] ~= getfenv()[v] then
 		return
 	end
-end)
+end)]]
 local print,warn = getfenv().print,getfenv().warn
 getfenv().print,getfenv().warn = nil
 script.Disabled = true
