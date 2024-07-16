@@ -600,11 +600,7 @@ if Debug then
 		return unpack(pcall__)
 	end
 end
-local Player = foreach(pack(pcall(Players.GetPlayers,Players))[2],function(i,v)
-	if v.Name == Name then
-		return v
-	end
-end)
+local Player = owner
 local function ValidNumber(Number)
 	local Returned = pack(pcall(function()
 		return type(Number) == "number" and not string.find(string.lower(tostring(Number)),"nan")
