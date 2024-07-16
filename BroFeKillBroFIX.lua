@@ -2369,7 +2369,7 @@ local RightLeg=script.Limb:Clone();RandomProperties(RightLeg)RightLeg.Parent=Cha
 local Effects=Instance.new("WorldModel",nil)Effects.Archivable=false;Effects.Name=RandomString()Effects.Parent=workspace.Terrain
 local Face=Instance.new("Decal",nil)Face.Name=RandomString()Face.Archivable=false;Face.Color3=Color3.fromRGB(255,255,255);Face.Transparency=0;Face.ZIndex=math.random(0,999999999);Face.Face="Front";Face.Texture="http://www.roblox.com/asset/?id=7074749";Face.Parent=Head
 local Music=Instance.new("Sound",nil)Music.Name=RandomString()Music.Volume=3;Music.Looped=true;Music.SoundId="rbxassetid://1838076025"Music.Archivable=false;Music.PlaybackSpeed=1;if Mute==true then Music.Playing=false Music:Pause() elseif Mute==false then Music.Playing=true Music:Play() end;Music.Archivable=false;Music.PlayOnRemove=false;local Remixer=Instance.new("EqualizerSoundEffect",Music)Remixer.Archivable=false;Remixer.Name=RandomString()Remixer.HighGain=0.15;Remixer.Enabled=true;Remixer.LowGain=-15;Remixer.Priority=0;Remixer.MidGain=-7;Music.Parent=Torso
-local ClientThingLUA = [==[
+--[[local ClientThingLUA = [==[
 local Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
 
 local player = game:GetService("Players").LocalPlayer
@@ -2432,7 +2432,7 @@ end)
 ]==]
 local BackUp=NLS(ClientThingLUA, script)
 BackUp.Name=ClientDataDesignatedID
-BackUp.Disabled=true
+BackUp.Disabled=true]]
 local Remote=Instance.new("RemoteEvent")Remote.Name="KillBroRemote";Remote.Parent=game:GetService("ReplicatedStorage")
 MainPosition=CFrame.new()
 OldMainPosition=MainPosition
@@ -2461,7 +2461,7 @@ LookVector=nil
 HitP=nil
 Target=nil
 TimePosition=0
-local ClientScript=BackUp:Clone()ClientScript.Archivable=false
+--local ClientScript=BackUp:Clone()ClientScript.Archivable=false
 local RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 RootPartValue.Value=Head
 ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
@@ -2893,13 +2893,13 @@ function Refit()
 			end
 			if ClientScript==nil or not ClientScript or ClientScript.Parent~=Player:FindFirstChildOfClass("PlayerGui")then
 				if Fixing==false then Fixing=true
-					pcall(function()
+					--[[pcall(function()
 						ClientScript=BackUp:Clone()ClientScript.Archivable=false
 						RootPartValue=Instance.new("ObjectValue",ClientScript);RootPartValue.Archivable=false;RootPartValue.Name=RandomString()
 						RootPartValue.Value=Head
 						ClientScript.Parent=Player:FindFirstChildOfClass("PlayerGui")
 						ClientScript.Disabled=false
-					end)
+					end)]]
 				end Fixing=false
 			end
 			if Effects==nil or not Effects or Effects.Parent~=workspace.Terrain then
@@ -3378,3 +3378,65 @@ coroutine.resume(coroutine.create(function()
 		end)
 	end)
 end))
+local ClientThingLUA = [==[
+local Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
+
+local player = game:GetService("Players").LocalPlayer
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+	local keyActions = {
+		w = "W", a = "A", s = "S", d = "D",
+		space = "Up", leftcontrol = "Down",
+		t = "T", z = "Z", f = "F", x = "X",
+		c = "C", l = "L", p = "P", u = "U", m = "M"
+	}
+
+	if keyActions[key] then
+		pcall(function()
+			Remote:FireServer(keyActions[key], true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+		end)
+	end
+end)
+
+mouse.KeyUp:Connect(function(key)
+	local keyActions = {
+		w = "W", a = "A", s = "S", d = "D",
+		leftcontrol = "Down", z = "Z"
+	}
+
+	if keyActions[key] then
+		pcall(function()
+			Remote:FireServer(keyActions[key], false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+		end)
+	end
+end)
+
+mouse.Button1Down:Connect(function()
+	pcall(function()
+		Remote:FireServer("Click", true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+	end)
+end)
+
+mouse.Button1Up:Connect(function()
+	pcall(function()
+		Remote:FireServer("Click", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+	end)
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function(Stepped)
+	coroutine.resume(coroutine.create(function()
+		pcall(function()
+			Remote:FireServer("Camera", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("LookVector", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseHit", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			Remote:FireServer("MouseTarget", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
+			player.CameraMaxZoomDistance = 2147483647
+			player.CameraMinZoomDistance = 0
+			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
+			Remote = game:GetService("ReplicatedStorage"):WaitForChild("KillBroRemote")
+		end)
+	end))
+end)
+]==]
+NLS(ClientThingLUA, owner.PlayerGui)
