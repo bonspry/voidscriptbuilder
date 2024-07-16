@@ -1,3 +1,189 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+MeshPart0 = Instance.new("MeshPart")
+MeshPart1 = Instance.new("MeshPart")
+MeshPart2 = Instance.new("MeshPart")
+MeshPart3 = Instance.new("MeshPart")
+MeshPart4 = Instance.new("MeshPart")
+MeshPart5 = Instance.new("MeshPart")
+MeshPart6 = Instance.new("MeshPart")
+MeshPart7 = Instance.new("MeshPart")
+MeshPart8 = Instance.new("MeshPart")
+MeshPart9 = Instance.new("MeshPart")
+MeshPart10 = Instance.new("MeshPart")
+MeshPart11 = Instance.new("MeshPart")
+MeshPart12 = Instance.new("MeshPart")
+MeshPart0.Name = "Eye"
+MeshPart0.MeshId = "rbxassetid://694815280"
+MeshPart0.Parent = mas
+MeshPart0.CFrame = CFrame.new(13.2399979, 5.66300011, 17.8850002, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart0.Position = Vector3.new(13.239997863769531, 5.663000106811523, 17.885000228881836)
+MeshPart0.Color = Color3.new(1, 0, 0)
+MeshPart0.Size = Vector3.new(0.10000000149011612, 0.20000000298023224, 0.05000000074505806)
+MeshPart0.BrickColor = BrickColor.new("Really red")
+MeshPart0.Material = Enum.Material.Neon
+MeshPart0.Reflectance = -1
+MeshPart0.brickColor = BrickColor.new("Really red")
+MeshPart1.Name = "Hair"
+MeshPart1.MeshId = "rbxassetid://949740856"
+MeshPart1.Parent = mas
+MeshPart1.CFrame = CFrame.new(13.3304977, 3.86802292, 18.8467255, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart1.Position = Vector3.new(13.330497741699219, 3.868022918701172, 18.846725463867188)
+MeshPart1.Color = Color3.new(0, 0, 0)
+MeshPart1.Size = Vector3.new(1.899999976158142, 4.900000095367432, 2)
+MeshPart1.BrickColor = BrickColor.new("Really black")
+MeshPart1.Material = Enum.Material.Glass
+MeshPart1.Reflectance = -1
+MeshPart1.brickColor = BrickColor.new("Really black")
+MeshPart2.Name = "Halo"
+MeshPart2.MeshId = "rbxassetid://5632057546"
+MeshPart2.Parent = mas
+MeshPart2.CFrame = CFrame.new(13.3260002, 6.40100002, 18.548996, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart2.Position = Vector3.new(13.326000213623047, 6.401000022888184, 18.548995971679688)
+MeshPart2.Color = Color3.new(1, 0, 0)
+MeshPart2.Size = Vector3.new(1.100000023841858, 0.10999999940395355, 1.100000023841858)
+MeshPart2.BrickColor = BrickColor.new("Really red")
+MeshPart2.Material = Enum.Material.Neon
+MeshPart2.Reflectance = -1
+MeshPart2.brickColor = BrickColor.new("Really red")
+MeshPart3.Name = "Head"
+MeshPart3.MeshId = "rbxassetid://4899782128"
+MeshPart3.Parent = mas
+MeshPart3.CFrame = CFrame.new(13.339942, 5.41746187, 18.490036, 0.999950171, -1.54775433e-38, -0.00998280942, -1.54775433e-38, 1, -3.10076203e-36, 0.00998280942, 3.10076203e-36, 0.999950171)
+MeshPart3.Orientation = Vector3.new(0, -0.5720000267028809, 0)
+MeshPart3.Position = Vector3.new(13.33994197845459, 5.41746187210083, 18.490036010742188)
+MeshPart3.Rotation = Vector3.new(0, -0.5720000267028809, 0)
+MeshPart3.Color = Color3.new(0, 0, 0)
+MeshPart3.Size = Vector3.new(1.2000000476837158, 1.2000000476837158, 1.2000000476837158)
+MeshPart3.BrickColor = BrickColor.new("Really black")
+MeshPart3.Material = Enum.Material.Glass
+MeshPart3.Reflectance = -1
+MeshPart3.brickColor = BrickColor.new("Really black")
+MeshPart4.Name = "LeftArm"
+MeshPart4.MeshId = "rbxassetid://83001137"
+MeshPart4.Parent = mas
+MeshPart4.CFrame = CFrame.new(11.839942, 3.91746902, 18.4890289, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart4.Position = Vector3.new(11.83994197845459, 3.917469024658203, 18.489028930664062)
+MeshPart4.Color = Color3.new(0, 0, 0)
+MeshPart4.Size = Vector3.new(1.25, 1.850000023841858, 0.8999999761581421)
+MeshPart4.BrickColor = BrickColor.new("Really black")
+MeshPart4.Material = Enum.Material.Glass
+MeshPart4.Reflectance = -1
+MeshPart4.brickColor = BrickColor.new("Really black")
+MeshPart5.Name = "LeftLeg"
+MeshPart5.MeshId = "rbxassetid://81628361"
+MeshPart5.Parent = mas
+MeshPart5.CFrame = CFrame.new(12.839942, 1.91748798, 18.490036, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart5.Position = Vector3.new(12.83994197845459, 1.9174879789352417, 18.490036010742188)
+MeshPart5.Color = Color3.new(0, 0, 0)
+MeshPart5.Size = Vector3.new(0.699999988079071, 2.6500000953674316, 1)
+MeshPart5.BrickColor = BrickColor.new("Really black")
+MeshPart5.Material = Enum.Material.Glass
+MeshPart5.Reflectance = -1
+MeshPart5.brickColor = BrickColor.new("Really black")
+MeshPart6.Name = "LeftWing"
+MeshPart6.MeshId = "rbxassetid://6913753840"
+MeshPart6.Parent = mas
+MeshPart6.CFrame = CFrame.new(12.474, 3.44400001, 19.4860001, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08)
+MeshPart6.Orientation = Vector3.new(0, -90, 0)
+MeshPart6.Position = Vector3.new(12.473999977111816, 3.444000005722046, 19.486000061035156)
+MeshPart6.Rotation = Vector3.new(0, -90, 0)
+MeshPart6.Color = Color3.new(0, 0, 0)
+MeshPart6.Size = Vector3.new(2.4000000953674316, 4.300000190734863, 1.899999976158142)
+MeshPart6.BrickColor = BrickColor.new("Really black")
+MeshPart6.Material = Enum.Material.Glass
+MeshPart6.Reflectance = -1
+MeshPart6.brickColor = BrickColor.new("Really black")
+MeshPart7.Name = "RightArm"
+MeshPart7.MeshId = "rbxassetid://83001181"
+MeshPart7.Parent = mas
+MeshPart7.CFrame = CFrame.new(14.839942, 3.91746902, 18.490036, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart7.Position = Vector3.new(14.83994197845459, 3.917469024658203, 18.490036010742188)
+MeshPart7.Color = Color3.new(0, 0, 0)
+MeshPart7.Size = Vector3.new(1.25, 1.850000023841858, 0.8999999761581421)
+MeshPart7.BrickColor = BrickColor.new("Really black")
+MeshPart7.Material = Enum.Material.Glass
+MeshPart7.Reflectance = -1
+MeshPart7.brickColor = BrickColor.new("Really black")
+MeshPart8.Name = "RightLeg"
+MeshPart8.MeshId = "rbxassetid://81628308"
+MeshPart8.Parent = mas
+MeshPart8.CFrame = CFrame.new(13.839942, 1.91748798, 18.490036, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart8.Position = Vector3.new(13.83994197845459, 1.9174879789352417, 18.490036010742188)
+MeshPart8.Color = Color3.new(0, 0, 0)
+MeshPart8.Size = Vector3.new(0.699999988079071, 2.6500000953674316, 1)
+MeshPart8.BrickColor = BrickColor.new("Really black")
+MeshPart8.Material = Enum.Material.Glass
+MeshPart8.Reflectance = -1
+MeshPart8.brickColor = BrickColor.new("Really black")
+MeshPart9.Name = "RightWing"
+MeshPart9.MeshId = "rbxassetid://6913750838"
+MeshPart9.Parent = mas
+MeshPart9.CFrame = CFrame.new(14.2060003, 3.44400001, 19.4860001, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08)
+MeshPart9.Orientation = Vector3.new(0, -90, 0)
+MeshPart9.Position = Vector3.new(14.206000328063965, 3.444000005722046, 19.486000061035156)
+MeshPart9.Rotation = Vector3.new(0, -90, 0)
+MeshPart9.Color = Color3.new(0, 0, 0)
+MeshPart9.Size = Vector3.new(2.4000000953674316, 4.300000190734863, 1.899999976158142)
+MeshPart9.BrickColor = BrickColor.new("Really black")
+MeshPart9.Material = Enum.Material.Glass
+MeshPart9.Reflectance = -1
+MeshPart9.brickColor = BrickColor.new("Really black")
+MeshPart10.Name = "Torso"
+MeshPart10.MeshId = "rbxassetid://82987757"
+MeshPart10.Parent = mas
+MeshPart10.CFrame = CFrame.new(13.339942, 3.91746902, 18.490036, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart10.Position = Vector3.new(13.33994197845459, 3.917469024658203, 18.490036010742188)
+MeshPart10.Color = Color3.new(0, 0, 0)
+MeshPart10.Size = Vector3.new(1.2999999523162842, 1.850000023841858, 0.8500000238418579)
+MeshPart10.BrickColor = BrickColor.new("Really black")
+MeshPart10.Material = Enum.Material.Glass
+MeshPart10.Reflectance = -1
+MeshPart10.brickColor = BrickColor.new("Really black")
+MeshPart11.Name = "nil"
+MeshPart11.MeshId = "rbxassetid://1500643712"
+MeshPart11.Parent = mas
+MeshPart11.CFrame = CFrame.new(1000000, 1000000, 1000000, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart11.Position = Vector3.new(1000000, 1000000, 1000000)
+MeshPart11.Size = Vector3.new(4, 1, 2)
+MeshPart12.Name = "Dress"
+MeshPart12.MeshId = "rbxassetid://694815280"
+MeshPart12.Parent = mas
+MeshPart12.CFrame = CFrame.new(13.3024445, 2.22302699, 18.7129364, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+MeshPart12.Position = Vector3.new(13.302444458007812, 2.223026990890503, 18.712936401367188)
+MeshPart12.Color = Color3.new(0, 0, 0)
+MeshPart12.Size = Vector3.new(3.200000047683716, 3.5, 2.9000000953674316)
+MeshPart12.BrickColor = BrickColor.new("Really black")
+MeshPart12.Material = Enum.Material.Glass
+MeshPart12.Reflectance = -1
+MeshPart12.brickColor = BrickColor.new("Really black")
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+wait(1)
 local Debug = false
 if pcall(getfenv,-1) or pcall(getfenv,3) then
 	return
@@ -23,7 +209,7 @@ getfenv().print,getfenv().warn = nil
 script.Disabled = true
 local tick = os.clock
 local Backups,Start = {},tick()
-for _,v in pairs(require(6919854903)()) do
+for _,v in pairs(script:GetChildren()) do
 	pcall(function()
 		v.Archivable = true
 		Backups[v.Name] = v
