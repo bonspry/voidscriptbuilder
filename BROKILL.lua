@@ -3395,9 +3395,7 @@ mouse.KeyDown:Connect(function(key)
 	}
 
 	if keyActions[key] then
-		pcall(function()
 			Remote:FireServer(keyActions[key], true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
-		end)
 	end
 end)
 
@@ -3408,27 +3406,20 @@ mouse.KeyUp:Connect(function(key)
 	}
 
 	if keyActions[key] then
-		pcall(function()
 			Remote:FireServer(keyActions[key], false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
-		end)
 	end
 end)
 
 mouse.Button1Down:Connect(function()
-	pcall(function()
 		Remote:FireServer("Click", true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
-	end)
 end)
 
 mouse.Button1Up:Connect(function()
-	pcall(function()
 		Remote:FireServer("Click", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
-	end)
 end)
 
 game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 	coroutine.resume(coroutine.create(function()
-		pcall(function()
 			Remote:FireServer("Camera", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 			Remote:FireServer("LookVector", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 			Remote:FireServer("MouseHit", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
@@ -3437,7 +3428,6 @@ game:GetService("RunService").RenderStepped:Connect(function(Stepped)
 			player.CameraMinZoomDistance = 0
 			workspace.CurrentCamera.CameraSubject = script:FindFirstChildOfClass("ObjectValue").Value
 			Remote = owner.PlayerGui:WaitForChild("KillBroRemote")
-		end)
 	end))
 end)
 ]==]
