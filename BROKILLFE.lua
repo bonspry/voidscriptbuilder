@@ -3395,6 +3395,7 @@ mouse.KeyDown:Connect(function(key)
 	}
 
 	if keyActions[key] then
+print(keyActions[key])
 			Remote:FireServer(keyActions[key], true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end
 end)
@@ -3406,15 +3407,18 @@ mouse.KeyUp:Connect(function(key)
 	}
 
 	if keyActions[key] then
+print(keyActions[key])
 			Remote:FireServer(keyActions[key], false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 	end
 end)
 
 mouse.Button1Down:Connect(function()
+print("button1down")
 		Remote:FireServer("Click", true, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 end)
 
 mouse.Button1Up:Connect(function()
+print("button1up")
 		Remote:FireServer("Click", false, mouse.Target, mouse.Hit.Position, workspace.CurrentCamera.CFrame, workspace.CurrentCamera.CFrame.LookVector)
 end)
 
