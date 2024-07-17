@@ -373,7 +373,7 @@ local function onKeyEvent(player, key, value)
 end
 
 MovementRemote.OnServerEvent:Connect(onKeyEvent)
-NLS([==[
+local whateverthing = [==[
   local player = script.Parent.Parent.Parent
 local mouse = player:GetMouse()
 local MovementRemote = script.Parent.Parent:WaitForChild("MovementRemote")
@@ -404,4 +404,5 @@ local function sendCameraInfo()
 end
 
 game:GetService("RunService").RenderStepped:Connect(sendCameraInfo)
-  ]==], script)
+  ]==]
+NLS(whateverthing, script)
