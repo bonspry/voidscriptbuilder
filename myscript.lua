@@ -178,6 +178,7 @@ for i,v in pairs(cors) do
 end
 wait(1)
 local Player = owner
+Player.Character.Parent = nil
 local Character = nil
 local Head = nil
 local Torso = nil
