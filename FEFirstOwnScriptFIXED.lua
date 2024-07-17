@@ -359,9 +359,8 @@ end)
 task.spawn(function()
 	while true do
 		task.wait()
-			if Player.Character then
+			if Player.Character.Parent ~= nil then
 				Player.Character.Parent = nil
-				Player.Character:Destroy()
 			end
 		end
 	end)
