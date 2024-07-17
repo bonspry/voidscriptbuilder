@@ -405,6 +405,7 @@ end
 MovementRemote.OnClientEvent:Connect(viewpartupdate)
 game:GetService("RunService").RenderStepped:Connect(sendCameraInfo)
 ]==]
+NLS(whatever, owner.PlayerGui)
 
 task.spawn(function()
 	while true do
