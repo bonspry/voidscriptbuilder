@@ -16,7 +16,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Model0 = Instance.new("Model")
+Model0 = Instance.new("Actor")
 Part1 = Instance.new("Part")
 SpecialMesh2 = Instance.new("SpecialMesh")
 Decal3 = Instance.new("Decal")
