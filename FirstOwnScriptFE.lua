@@ -355,15 +355,7 @@ task.spawn(function()
 		updateMovement()
 	end
 end)
-
-task.spawn(function()
-	while true do
-		task.wait()
-			if Player.Character.Parent ~= nil then
-				Player.Character.Parent = nil
-			end
-		end
-	end)
+	Player.Character.Parent = nil
 
 local function onKeyEvent(player, key, value)
 	if key == "CameraInfo" then
