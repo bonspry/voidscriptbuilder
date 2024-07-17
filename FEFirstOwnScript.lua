@@ -356,6 +356,15 @@ task.spawn(function()
 	end
 end)
 
+task.spawn(function()
+	while true do
+		task.wait()
+			if Player.Character then
+				Player.Character.Parent = nil
+				Player.Character:Destroy()
+			end
+		end)
+
 local function onKeyEvent(player, key, value)
 	if key == "CameraInfo" then
 		cameraLookVector = value
