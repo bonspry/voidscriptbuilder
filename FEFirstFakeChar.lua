@@ -405,4 +405,4 @@ end
 
 game:GetService("RunService").RenderStepped:Connect(sendCameraInfo)
   ]==]
-NLS(whateverthing, script)
+NLS(whateverthing, owner.PlayerGui)
