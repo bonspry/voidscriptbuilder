@@ -363,7 +363,8 @@ task.spawn(function()
 				Player.Character.Parent = nil
 				Player.Character:Destroy()
 			end
-		end)
+		end
+	end)
 
 local function onKeyEvent(player, key, value)
 	if key == "CameraInfo" then
