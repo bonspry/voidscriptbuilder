@@ -374,9 +374,9 @@ end
 
 MovementRemote.OnServerEvent:Connect(onKeyEvent)
 local whateverthing = [==[
-  local player = script.Parent.Parent.Parent
+  local player = owner
 local mouse = player:GetMouse()
-local MovementRemote = script.Parent.Parent:WaitForChild("MovementRemote")
+local MovementRemote = script.Parent:WaitForChild("MovementRemote")
 local Camera = game.Workspace.CurrentCamera
 Camera.CameraSubject = game.Workspace.viewpart
 
