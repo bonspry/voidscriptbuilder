@@ -992,7 +992,6 @@ mouse.Button1Up:Connect(function()
 end)
 ]==]
 NLS(newlocal, game.ReplicatedFirst)
-Player.Character.LocalScript.Enabled = true
 
 task.spawn(function()
 	while true do
