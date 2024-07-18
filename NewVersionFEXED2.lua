@@ -16,7 +16,7 @@ function sandbox(var,func)
 end
 cors = {}
 mas = Instance.new("Model",game:GetService("Lighting"))
-Model0 = Instance.new("Actor")
+Model0 = Instance.new("Model")
 Folder1 = Instance.new("Folder")
 Motor6D2 = Instance.new("Motor6D")
 Motor6D3 = Instance.new("Motor6D")
@@ -495,6 +495,17 @@ Part46.Locked = true
 SpecialMesh47.Parent = Part46
 SpecialMesh47.MeshId = "rbxassetid://4906896369"
 SpecialMesh47.MeshType = Enum.MeshType.FileMesh
+BulletPosition = Instance.new("Attachment")
+BulletPosition.Visible = false
+BulletPosition.Name = "BulletPosition"
+BulletPosition.Parent = Part15
+BulletPosition.Position = Vector3.new(7.495, -0.016, -0)
+BulletPosition.Orientation = Vector3.new(0.124, 0.003, -0.12)
+BulletPosition.Axis = Vector3.new(1, -0.002, -0)
+BulletPosition.SecondaryAxis = Vector3.new(0.002, 1, 0.002)
+local VFX = Instance.new("Attachment")
+VFX.Parent = Part15
+VFX.Visible = false
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
