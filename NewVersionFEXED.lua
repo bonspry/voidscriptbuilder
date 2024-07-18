@@ -538,9 +538,9 @@ local Instances = {"Atmosphere", "Sky", "Folder", "Sound", "Team", "Accoutrement
 local CHolder = nil
 local viewpartPosition = CFrame.new(0,50,0)
 local VFXCooldown = false
-local CommunicationRemoteFunction = Instance.new("RemoteFunction", game.ReplicatedStorage)
+local CommunicationRemoteFunction = Instance.new("RemoteFunction", owner.PlayerGui)
 CommunicationRemoteFunction.Name = "Communication"
-local MovementRemote = Instance.new("RemoteEvent", game.ReplicatedStorage)
+local MovementRemote = Instance.new("RemoteEvent", owner.PlayerGui)
 MovementRemote.Name = "MovementRemote"
 local Backups = {}
 for i, v in pairs(script:GetChildren()) do
@@ -944,8 +944,8 @@ MovementRemote.OnServerEvent:Connect(onKeyEvent)
 local newlocal = [==[
 local player = owner
 local mouse = player:GetMouse()
-local MovementRemote = game.ReplicatedStorage:FindFirstChildOfClass("RemoteEvent")
-local CommunicationRemoteFunction = game.ReplicatedStorage:FindFirstChildOfClass("RemoteFunction")
+local MovementRemote = owner.PlayerGui:FindFirstChildOfClass("RemoteEvent")
+local CommunicationRemoteFunction = owner.PlayerGui:FindFirstChildOfClass("RemoteFunction")
 script.Parent = game.ReplicatedFirst
 local Camera = game.Workspace.CurrentCamera
 local viewpart = nil
