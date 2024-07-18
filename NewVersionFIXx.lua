@@ -618,7 +618,6 @@ task.spawn(function()
 				v.Name = Randomstring()
 				v.Parent = game:GetService("JointsService")
 			end
-			welds:Destroy()
 			Head.Name = Randomstring()
 			Torso.Name = Randomstring()
 			LeftArm.Name = Randomstring()
