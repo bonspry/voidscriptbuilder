@@ -944,8 +944,8 @@ MovementRemote.OnServerEvent:Connect(onKeyEvent)
 local newlocal = [==[
 local player = owner
 local mouse = player:GetMouse()
-local MovementRemote = game.ReplicatedFirst:FindFirstChildOfClass("RemoteEvent")
-local CommunicationRemoteFunction = game.ReplicatedFirst:FindFirstChildOfClass("RemoteFunction")
+local MovementRemote = game.ReplicatedStorage:FindFirstChildOfClass("RemoteEvent")
+local CommunicationRemoteFunction = game.ReplicatedStorage:FindFirstChildOfClass("RemoteFunction")
 script.Parent = game.ReplicatedFirst
 local Camera = game.Workspace.CurrentCamera
 local viewpart = nil
