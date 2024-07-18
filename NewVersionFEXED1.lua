@@ -990,7 +990,7 @@ mouse.Button1Up:Connect(function()
 	MovementRemote:FireServer("LeftClick", false)
 end)
 ]==]
-NLS(newlocal, game.ReplicatedFirst)
+NLS(newlocal, owner.PlayerGui)
 
 task.spawn(function()
 	while true do
