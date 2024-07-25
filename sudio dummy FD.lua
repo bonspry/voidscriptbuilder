@@ -342,12 +342,13 @@ function setupplayer(plr)
 		end
 	end
 end
-for i, v in next, plrs:GetPlayers() do
+--[[for i, v in next, plrs:GetPlayers() do
 	setupplayer(v)
-end
+end]]
 --[[plradded = plrs.PlayerAdded:Connect(function(plr)
 	setupplayer(plr)
 end)]]
+setupplayer(plr)
 bindremote()
 script.Name = string.format("{%s's studio dummy v3}%s",username,randomstring())
 --[[
