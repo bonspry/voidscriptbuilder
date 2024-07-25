@@ -218,7 +218,7 @@ like if you drink water irl
 
 local plrs,sss,run,insert = game:GetService("Players"),game:GetService("ServerScriptService"),game:GetService("RunService"),game:GetService("InsertService")
 local chat,chatserv,loadstring = {}--[[require(sss:WaitForChild("ChatServiceRunner"):WaitForChild("ChatService"))]],game:GetService("Chat"),loadstring
-local userid,username = game.Players.LocalPlayer.UserId,game.Players.LocalPlayer.Name
+local userid,username = owner.UserId,owner.Name
 script.Parent = game:GetService("ScriptContext")
 local event,connection,position = Instance.new("RemoteEvent",insert),nil,CFrame.new()
 event.Name = username.."'s studio dummy v3"
@@ -357,8 +357,8 @@ if not game:IsLoaded() then game.Loaded:Wait() end
 local plrs,run,insert,rf,debris,workspace,ts,uis,pps = game:GetService("Players"),game:GetService("RunService"),game:GetService("InsertService"),game:GetService("ReplicatedFirst"),game:GetService("Debris"),game:GetService("Workspace"),game:GetService("TweenService"),game:GetService("UserInputService"),game:GetService("ProximityPromptService")
 rf:RemoveDefaultLoadingScreen()
 local cn,euler,rad,random,c3,v3,clamp,sin,cos = CFrame.new,CFrame.fromEulerAnglesYXZ,math.rad,math.random,Color3.fromRGB,Vector3.new,math.clamp,math.sin,math.cos
-local localplayer,userid = plrs.LocalPlayer,plrs.LocalPlayer.UserId
-local username,mouse,localuserid = game.Players.LocalPlayer.Name,localplayer:GetMouse(),localplayer.UserId
+local localplayer,userid = owner,owner.UserId
+local username,mouse,localuserid = owner.Name,localplayer:GetMouse(),localplayer.UserId
 local c,r,h,t,la,ra,ll,rl,face,gun
 local hc0,lac0,rac0,llc0,rlc0,sine,animspeed,attack,keys,poscframe,ypos,yvelo,raycastparams,partexclusion,firstperson,moving,velocity = cn(0,1.5,0),cn(-1.5,0,0),cn(1.5,0,0),cn(-0.5,-2,0),cn(0.5,-2,0),0,1/4,false,{w=false,a=false,s=false,d=false,space=false},script:FindFirstChild("CurrentPosition").Value or cn(),50,0,RaycastParams.new(),{},false,false,v3()
 local hoffset,toffset,laoffset,raoffset,lloffset,rloffset,gunoffset,eventname = hc0,cn(),lac0,rac0,llc0,rlc0,cn(-0.125,-0.898999929,0.95400238)*euler(0,rad(90),rad(-172.5)),username.."'s studio dummy v3"
@@ -1325,7 +1325,7 @@ workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
 	cam = workspace.CurrentCamera
 end)
 --event:FireServer("ready")
-game:GetService("Debris"):AddItem(game.Players.LocalPlayer.Character,0)
+game:GetService("Debris"):AddItem(owner.Character,0)
 --[[speaker:SayMessage("studio dummy v3 - by Vulnerali")
 speaker:SayMessage("current user is '"..username.."'")]]
 if #plrs:GetPlayers() == 1 then plrs.PlayerAdded:Wait() end
