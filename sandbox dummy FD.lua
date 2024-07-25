@@ -315,7 +315,7 @@ function randomstring()
 	end
 	return table.concat(e)
 end
-mainloop = run.Heartbeat:Connect(function()
+--mainloop = run.Heartbeat:Connect(function()
 	local ev = insert:FindFirstChild(username.."'s studio dummy v3")
 	if not ev or not event:IsA("RemoteEvent") then
 		game:GetService("Debris"):AddItem(ev,0)
@@ -324,7 +324,7 @@ mainloop = run.Heartbeat:Connect(function()
 		event.Name = username.."'s studio dummy v3"
 		bindremote()
 	end
-end)
+--end)
 function setupplayer(plr)
 	if not plr:IsA("Player") then return end
 	local sc = --[[script.Client:Clone()]]Instance.new("Folder", script)
@@ -495,7 +495,7 @@ function addtochat(name,msg)
 		end
 	end)
 end
---run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera.Value+1,function()
+run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera.Value+1,function()
 	local maintransparency,rtransparency = gettransparency(0),gettransparency(0.5)
 	if checkpart(c,v3(1,1,1),Enum.CollisionFidelity.Box,c3(0,0,0),Enum.Material.SmoothPlastic,1,false) then
 		if table.find(partexclusion,c) then
@@ -678,7 +678,7 @@ end
 	if not table.find(partexclusion,chat) then
 		table.insert(partexclusion,chat)
 	end
---end)
+end)
 function respawnchr()
 	for i, v in next, workspace:GetDescendants() do
 		if v:IsA("SpawnLocation") then
