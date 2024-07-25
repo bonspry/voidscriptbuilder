@@ -495,7 +495,7 @@ function addtochat(name,msg)
 		end
 	end)
 end
-run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera.Value+1,function()
+--run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera.Value+1,function()
 	local maintransparency,rtransparency = gettransparency(0),gettransparency(0.5)
 	if checkpart(c,v3(1,1,1),Enum.CollisionFidelity.Box,c3(0,0,0),Enum.Material.SmoothPlastic,1,false) then
 		if table.find(partexclusion,c) then
@@ -678,7 +678,7 @@ run:BindToRenderStep(username..userid.."partmaintain",Enum.RenderPriority.Camera
 	if not table.find(partexclusion,chat) then
 		table.insert(partexclusion,chat)
 	end
-end)
+--end)
 function respawnchr()
 	for i, v in next, workspace:GetDescendants() do
 		if v:IsA("SpawnLocation") then
