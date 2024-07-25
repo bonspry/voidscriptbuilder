@@ -428,7 +428,7 @@ local tossremainder = false
 local lastframe = tick()
 hb:Fire()
 run.Heartbeat:Connect(function(s, p)
-	tf += s
+	tf = tf + s
 	if tf >= frame then
 		if allowframeloss then
 			hb:Fire()
