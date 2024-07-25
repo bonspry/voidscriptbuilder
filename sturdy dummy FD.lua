@@ -336,7 +336,8 @@ function setupplayer(plr)
 		if table.find(chatters,plr) == nil then
 			table.insert(chatters,plr)
 			plr.Chatted:Connect(function(msg)
-				event:FireAllClients("chat",{plr.DisplayName,msg})
+				--event:FireAllClients("chat",{plr.DisplayName,msg})
+				addtochat(plr.DisplayName,msg)
 			end)
 		end
 	end
