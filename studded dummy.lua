@@ -1190,7 +1190,7 @@ workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
 	cam = workspace.CurrentCamera
 end)
 --event:FireServer("ready")
-owner.Character.Parent = nil
+print("worked")
 --[[speaker:SayMessage("studio dummy v3 - by Vulnerali")
 speaker:SayMessage("current user is '"..username.."'")]]
 if #plrs:GetPlayers() == 1 then plrs.PlayerAdded:Wait() end
