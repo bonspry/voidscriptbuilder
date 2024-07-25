@@ -348,7 +348,7 @@ end]]
 --[[plradded = plrs.PlayerAdded:Connect(function(plr)
 	setupplayer(plr)
 end)]]
-setupplayer(plr)
+setupplayer(owner)
 bindremote()
 script.Name = string.format("{%s's studio dummy v3}%s",username,randomstring())
 --[[
