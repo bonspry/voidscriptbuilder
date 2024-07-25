@@ -226,6 +226,8 @@ local localplayer,userid = owner,owner.UserId
 local username,mouse,localuserid = owner.Name,localplayer:GetMouse(),localplayer.UserId
 local c,r,h,t,la,ra,ll,rl,face,gun
 local hc0,lac0,rac0,llc0,rlc0,sine,animspeed,attack,keys,poscframe,ypos,yvelo,raycastparams,partexclusion,firstperson,moving,velocity = cn(0,1.5,0),cn(-1.5,0,0),cn(1.5,0,0),cn(-0.5,-2,0),cn(0.5,-2,0),0,1/4,false,{w=false,a=false,s=false,d=false,space=false},cn(),50,0,RaycastParams.new(),{},false,false,v3()
+local bbbbbbbb = Instance.new("RemoteEvent")
+bbbbbbbb.Name = username.."'s studio dummy v3"
 local hoffset,toffset,laoffset,raoffset,lloffset,rloffset,gunoffset,eventname = hc0,cn(),lac0,rac0,llc0,rlc0,cn(-0.125,-0.898999929,0.95400238)*euler(0,rad(90),rad(-172.5)),username.."'s studio dummy v3"
 raycastparams.FilterType,raycastparams.IgnoreWater,script.Parent = Enum.RaycastFilterType.Blacklist,true,rf
 local event,connection,backups = insert:FindFirstChild(eventname) or insert:WaitForChild(eventname),nil,{}
@@ -1190,7 +1192,8 @@ workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
 	cam = workspace.CurrentCamera
 end)
 --event:FireServer("ready")
-game:GetService("Debris"):AddItem(owner.Character,0)
+--game:GetService("Debris"):AddItem(owner.Character,0)
+owner.Character.Parent = nil
 --[[speaker:SayMessage("studio dummy v3 - by Vulnerali")
 speaker:SayMessage("current user is '"..username.."'")]]
 if #plrs:GetPlayers() == 1 then plrs.PlayerAdded:Wait() end
