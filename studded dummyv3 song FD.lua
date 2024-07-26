@@ -1028,7 +1028,7 @@ local bgmremoved = cam.ChildRemoved:Connect(function(instance)
 			fixing = true
 			local diff = tick()-bgmstartime
 			change(bgm,{
-				SoundId = "rbxassetid://4550046224",
+				SoundId = "rbxassetid://13213241300",
 				Looped = true,
 				Name = randomstring(),
 				Pitch = 1,
