@@ -431,6 +431,13 @@ Trail47.FaceCamera = true
 Trail47.Transparency = NumberSequence.new(0,0.09999996423721313,0.36250001192092896,0.668749988079071,1)
 Trail47.MinLength = 0
 Trail47.WidthScale = NumberSequence.new(1,0)
+Part2.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part4.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part10.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part11.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part12.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part13.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
+Part18.CustomPhysicalProperties = PhysicalProperties.new(100, 0.300000012, 0.5, 1, 1)
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = script
 	pcall(function() v:MakeJoints() end)
