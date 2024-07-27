@@ -497,10 +497,10 @@ script.Parent = game:GetService("MaterialService")
 script.Name = "LightningCannon_typicaal"..owner.UserId --// Changing this will result in everything exploding.
 local Assets = script
 local folderofcrap = Instance.new("Folder")
-table.foreach(Assets:Get("SLC"):GetChildren(), function(i,v)
-	local lol = v:Clone()
-	lol.Parent = folderofcrap
-end)
+for i, v in pairs(script:FindFirstChild("SLC"):GetChildren()) do
+    local lol = v:Clone()
+    lol.Parent = folderofcrap
+end
 
 folderofcrap["LightCharacter"].Name = "Character"
 
