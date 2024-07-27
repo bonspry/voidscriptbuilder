@@ -464,7 +464,7 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
-task.wait()
+wait(1)
 warn([[
 
 	Oh my goodness! Lightning Cannon for Lua Sandbox?
