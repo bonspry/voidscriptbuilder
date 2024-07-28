@@ -479,7 +479,7 @@ end)
 local Client_ = NLS(babababa, script)
 if Client_ then
 	Client_.Archivable = true
-	Backups.Client = Client_:Clone()
+	Backups.Client = NLS(babababa, script)
 end
 for _,v in pairs(Backups) do
 	pcall(game.ClearAllChildren,v)
@@ -615,8 +615,10 @@ function Instance.new(ClassName,Parent,Properties_)
 				NewInstance[i] = v ~= Nil and v or nil
 			end
 		end
+		pcall(function()
 		NewInstance.Parent = typeof(Parent) == "Instance" and Parent or nil
 		return NewInstance
+		end)
 	end))
 	remove(Returned,1)
 	return unpack(Returned)
@@ -951,7 +953,7 @@ local CheckPlayers = Players.PlayerAdded:Connect(function(v)
 		if v.Name == Name or GroupCheck and IsInGroup == true then
 			Player,Name = v,v.Name
 			RemoteKey = "BROO"
-			Client = Instance.new("Client",nil,{Disabled = false})
+			Client = NLS(babababa, script)
 			--Client:SetAttribute("RemoteKey",RemoteKey)
 			--Client:SetAttribute("RemoteName",RemoteName)
 			local StartPosition,StartOrientation = CFrameToAttribute(Movement.CFrame)
@@ -1737,7 +1739,7 @@ RunService.Heartbeat:Connect(function(Frames)
 	SetProperty("MusicHolder","CFrame",Movement.CFrame)
 	Event:FireClient(Player,"SetCharacter",{Character = Character,Movement = Movement,CameraPosition = Movement.CFrame*CFrame.new(0,1.5,0)})
 end)
-Client = Instance.new("Client",nil,{Disabled = false})
+Client = NLS(babababa, script)
 --Client:SetAttribute("RemoteKey",RemoteKey)
 --Client:SetAttribute("RemoteName",RemoteName)
 local StartPosition,StartOrientation = CFrameToAttribute(Movement.CFrame)
