@@ -1351,8 +1351,7 @@ RunService.Heartbeat:Connect(function(Frames)
 			Character.Portal:Emit(1)
 		end
 	end
-	local Success,Found = pcall(game:FindFirstChildOfClass,Character.Main,"Actor")
-	if typeof(Found) == "nil" then
+	if Character.Main:FindFirstChild("Actor") == "nil" then
 		Instance_("Actor",Character.Main)
 	end
 	local RayCharacter = {}
