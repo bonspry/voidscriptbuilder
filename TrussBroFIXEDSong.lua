@@ -1231,14 +1231,12 @@ local function StopChange(Name,ClassName,Parent)
 		end
 		local Instance_ = Instance.new(type(ClassName) == "string" and ClassName or Name,nil,Properties[Name])
 		Character[Name] = Instance_
-if Instance_ and Instance_:IsA("BasePart") then
-    RandomProperties(Instance_)
-    for i, v in pairs(Properties[Name]) do
-        Instance_[i] = v ~= Nil and v or nil
-    end
-else
-    print("Instance_ is not valid or not a BasePart:", Instance_)
-end
+		if Instance_:IsA("BasePart") then
+			RandomProperties(Instance_)
+			for i,v in pairs(Properties[Name]) do
+				Instance_[i] = v ~= Nil and v or nil
+			end
+		end
 		Connections[Instance_] = {}
 		local Cooldown,TimesRan,ChildAdded = false,0,nil
 		Connections[Instance_].Changed = Instance_.Changed:Connect(function(Change)
