@@ -1346,7 +1346,7 @@ RunService.Heartbeat:Connect(function(Frames)
 	for _ = 1,ConsecutiveFrames/Frame do
 		ConsecutiveFrames = ConsecutiveFrames - Frame
 		Throttle = Throttle + 1
-		Sine = Sine + 1
+		Sine += 1
 		if Sine%2 == 0 then
 			Character.Portal:Emit(1)
 		end
