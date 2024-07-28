@@ -377,11 +377,11 @@ game:GetService("UserInputService"):GetPropertyChangedSignal("MouseDeltaSensitiv
 	end
 end)
 game:GetService("RunService").RenderStepped:Connect(function(Frames)
-	ConsecutiveFrames += Frames
+	ConsecutiveFrames = ConsecutiveFrames + Frames
 	Throttle = 0
 	for _ = 1,ConsecutiveFrames/Frame do
-		ConsecutiveFrames -= Frame
-		Throttle += 1
+		ConsecutiveFrames = ConsecutiveFrames - Frame
+		Throttle = Throttle + 1
 	end
 	if not workspace.CurrentCamera or workspace.CurrentCamera.CameraType ~= Enum.CameraType.Scriptable or math.floor(workspace.CurrentCamera.FieldOfView*10+.5)/10 ~= 70 or workspace.CurrentCamera.CFrame ~= CameraCFrame then
 		game:GetService("Debris"):AddItem(workspace.CurrentCamera,0)
@@ -410,24 +410,24 @@ game:GetService("RunService").RenderStepped:Connect(function(Frames)
 	local MouseDelta = game:GetService("UserInputService"):GetMouseDelta()*(UserSettings():GetService("UserGameSettings").MouseSensitivity/2)
 	if CameraZoom == 0 then
 		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCenter
-		CameraRotation -= Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+		CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
 	elseif game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
 		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.LockCurrentPosition
-		CameraRotation -= Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
+		CameraRotation = CameraRotation - Vector2.new((CameraRotation.Y > 90 or CameraRotation.Y < -90) and -MouseDelta.X or MouseDelta.X,MouseDelta.Y)
 	else
 		game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.Default
 	end
 	if KeyDown("Left") then
-		CameraRotation += Vector2.new(2.5*Throttle,0)
+		CameraRotation = CameraRotation + Vector2.new(2.5*Throttle,0)
 	end
 	if KeyDown("Right") then
-		CameraRotation -= Vector2.new(2.5*Throttle,0)
+		CameraRotation = CameraRotation - Vector2.new(2.5*Throttle,0)
 	end
 	if KeyDown("Up") then
-		CameraRotation += Vector2.new(0,2.5*Throttle)
+		CameraRotation = CameraRotation + Vector2.new(0,2.5*Throttle)
 	end
 	if KeyDown("Down") then
-		CameraRotation -= Vector2.new(0,2.5*Throttle)
+		CameraRotation = CameraRotation - Vector2.new(0,2.5*Throttle)
 	end
 	CameraRotation = Vector2.new(CameraRotation.X > 180 and CameraRotation.X-360 or CameraRotation.X < -180 and CameraRotation.X+360 or CameraRotation.X,math.clamp(CameraRotation.Y,-81,81))
 	local NewAngles = CFrame.Angles(0,math.rad(CameraRotation.X),0)*CFrame.Angles(math.rad(CameraRotation.Y),0,0)
@@ -591,7 +591,7 @@ end
 function Instance.new(ClassName,Parent,Properties_)
 	local Returned = pack(pcall(function()
 		local ClassName = type(ClassName) == "string" and ClassName or "Folder"
-		CreationsThisFrame += 1
+		CreationsThisFrame = CreationsThisFrame + 1
 		if CreationsThisFrame >= 1e3 then
 			RunService.Heartbeat:Wait()
 			CreationsThisFrame = 0
@@ -851,7 +851,7 @@ local function Message(Text,Color)
 			Destroy(MessageHolder)
 		end))
 		for i,j in utf8.graphemes(Text) do
-			Length += 1
+			Length = Length + 1
 			insert(Graphemes,pack(string.gsub(string.sub(Text,i,j),".",function(x)
 				local Replaceables = {["<"] = "lt",[">"] = "gt",["\""] = "quot",["'"] = "apos",["&"] = "amp"}
 				for i,v in pairs(Replaceables) do
@@ -1244,7 +1244,7 @@ local function StopChange(Name,ClassName,Parent)
 				return
 			end
 			if not find(BlacklistedChanges,Change) and Properties[Name] and Properties[Name][Change] ~= nil and Instance_[Change] ~= (Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil) then
-				TimesRan += 1
+				TimesRan = TimesRan + 1
 				if TimesRan >= 25 then
 					Cooldown = true
 					Destroy(Instance_)
@@ -1256,7 +1256,7 @@ local function StopChange(Name,ClassName,Parent)
 				end
 				Instance_[Change] = Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil
 			elseif Properties.Defaults[Change] ~= nil and Instance_[Change] ~= (Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil) then
-				TimesRan += 1
+				TimesRan = TimesRan + 1
 				if TimesRan >= 25 then
 					Cooldown = true
 					Destroy(Instance_)
@@ -1341,12 +1341,12 @@ SetProperty("RightLeg","Size",ResizeUnion{1,2,1},true)
 SetProperty("LeftLeg","Size",ResizeUnion{1,2,1},true)
 ReplaceCharacter()
 RunService.Heartbeat:Connect(function(Frames)
-	ConsecutiveFrames += Frames
+	ConsecutiveFrames = ConsecutiveFrames + Frames
 	Throttle = 0
 	for _ = 1,ConsecutiveFrames/Frame do
-		ConsecutiveFrames -= Frame
-		Throttle += 1
-		Sine += 1
+		ConsecutiveFrames = ConsecutiveFrames - Frame
+		Throttle = Throttle + 1
+		Sine = Sine + 1
 		if Sine%2 == 0 then
 			Character.Portal:Emit(1)
 		end
@@ -1415,7 +1415,7 @@ RunService.Heartbeat:Connect(function(Frames)
 								SoundEffect{SoundId = "rbxassetid://299058146",Volume = 5}
 								local Start = tick()
 								repeat
-									Movement.HipHeight -= (.5+Movement.HipHeight)*.0225
+									Movement.HipHeight = Movement.HipHeight - (.5+Movement.HipHeight)*.0225
 									Welds.RootJoint.C0 = Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.Angles(rad(25),0,0),.0225)
 									Welds.Neck.C0 = Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.Angles(rad(10),0,0),.0225)
 									Welds.RightShoulder.C0 = Clerp(Welds.RightShoulder.C0,CFrame.new(1.5,.5,0)*CFrame.Angles(rad(40),0,rad(15))*Welds.Defaults.RightShoulder.C0,.0225)
@@ -1429,7 +1429,7 @@ RunService.Heartbeat:Connect(function(Frames)
 								Movement.Flying = true
 								local StartCFrame,EndCFrame = Movement.CFrame,Movement.CFrame*CFrame.new(0,400/3,-1000/9)
 								repeat
-									Movement.HipHeight += (4.5-Movement.HipHeight)*.1
+									Movement.HipHeight = Movement.HipHeight + (4.5-Movement.HipHeight)*.1
 									Welds.RootJoint.C0 = Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.Angles(rad(45),0,0),.1)
 									Welds.Neck.C0 = Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.Angles(rad(-15),0,0),.1)
 									Welds.RightShoulder.C0 = Clerp(Welds.RightShoulder.C0,CFrame.new(1.5,.5,0)*CFrame.Angles(rad(-15),0,rad(15))*Welds.Defaults.RightShoulder.C0,.0225)
@@ -1470,7 +1470,7 @@ RunService.Heartbeat:Connect(function(Frames)
 								Start = tick()
 								SoundEffect{SoundId = "rbxassetid://157498544",Parent = RandomService()}
 								repeat
-									Movement.HipHeight += (4.5-Movement.HipHeight)*.1
+									Movement.HipHeight = Movement.HipHeight + (4.5-Movement.HipHeight)*.1
 									Welds.RootJoint.C0 = Clerp(Welds.RootJoint.C0,Welds.Defaults.RootJoint.C0*CFrame.Angles(rad(45),0,0),.1)
 									Welds.Neck.C0 = Clerp(Welds.Neck.C0,Welds.Defaults.Neck.C0*CFrame.Angles(rad(-15),0,0),.1)
 									Welds.RightShoulder.C0 = Clerp(Welds.RightShoulder.C0,CFrame.new(1.5,.5,0)*CFrame.Angles(rad(-15),0,rad(15))*Welds.Defaults.RightShoulder.C0,.0225)
