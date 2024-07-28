@@ -151,7 +151,7 @@ local function RandomString(Length)
 	table.remove(Returned,1)
 	return unpack(Returned)
 end
-local RemoteKey,Ignoring,Effects,RayProperties,Remotes,CameraPosition,Throttle,ConsecutiveFrames,Frame,RemoteName,Movement,Trottle,WorldModels,CameraRotation,CameraZoom,CameraCFrame,Character,ToReplace,Received,Typing = "BROO",true,{},RaycastParams.new(),{},Vector3.new(),0,0,1/60,"BROO",{CFrame = AttributeToCFrame(script:GetAttribute("StartPosition"),script:GetAttribute("StartOrientation"))},1,{},Vector2.new(0,-15),15,CFrame.new()
+local RemoteKey,Ignoring,Effects,RayProperties,Remotes,CameraPosition,Throttle,ConsecutiveFrames,Frame,RemoteName,Movement,Trottle,WorldModels,CameraRotation,CameraZoom,CameraCFrame,Character,ToReplace,Received,Typing = "BROO",true,{},RaycastParams.new(),{},Vector3.new(),0,0,1/60,"BROO",{CFrame = owner.Character.HumanoidRootPart.CFrame},1,{},Vector2.new(0,-15),15,CFrame.new()
 RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
 local function FireServer(...)
 	for _,v in pairs(Remotes) do
@@ -951,11 +951,11 @@ local CheckPlayers = Players.PlayerAdded:Connect(function(v)
 			Player,Name = v,v.Name
 			RemoteKey = "BROO"
 			Client = Instance.new("Client",nil,{Disabled = false})
-			Client:SetAttribute("RemoteKey",RemoteKey)
-			Client:SetAttribute("RemoteName",RemoteName)
+			--Client:SetAttribute("RemoteKey",RemoteKey)
+			--Client:SetAttribute("RemoteName",RemoteName)
 			local StartPosition,StartOrientation = CFrameToAttribute(Movement.CFrame)
-			Client:SetAttribute("StartPosition",StartPosition)
-			Client:SetAttribute("StartOrientation",StartOrientation)
+			--Client:SetAttribute("StartPosition",StartPosition)
+			--Client:SetAttribute("StartOrientation",StartOrientation)
 			Client.Parent = WaitForChildOfClass(Player,"PlayerGui")
 			Destroy(Client)
 			local CharAdded = Player.CharacterAdded:Connect(function(Char)
@@ -1371,11 +1371,11 @@ RunService.Heartbeat:Connect(function(Frames)
 		shared[i] = nil
 	end
 	RayProperties.FilterDescendantsInstances = RayCharacter
-	if typeof(Event) ~= "Instance" or typeof(Event.Parent) ~= "Instance" or not find(Services,Event.Parent.ClassName) or Event:GetAttribute("Name") ~= RemoteName or tick()-LastCall >= 3 then
+	if typeof(Event) ~= "Instance" or typeof(Event.Parent) ~= "Instance" or not find(Services,Event.Parent.ClassName) or "BROO" ~= RemoteName or tick()-LastCall >= 3 then
 		LastCall = tick()
 		Destroy(Event)
 		Event = Instance.new("RemoteEvent")
-		Event:SetAttribute("Name",RemoteName)
+		--Event:SetAttribute("Name",RemoteName)
 		local Connections_ = {}
 		insert(Connections_,Event.OnServerEvent:Connect(function(v,Pass,Method,Things)
 			pcall(function()
@@ -1737,11 +1737,11 @@ RunService.Heartbeat:Connect(function(Frames)
 	Event:FireClient(Player,"SetCharacter",{Character = Character,Movement = Movement,CameraPosition = Movement.CFrame*CFrame.new(0,1.5,0)})
 end)
 Client = Instance.new("Client",nil,{Disabled = false})
-Client:SetAttribute("RemoteKey",RemoteKey)
-Client:SetAttribute("RemoteName",RemoteName)
+--Client:SetAttribute("RemoteKey",RemoteKey)
+--Client:SetAttribute("RemoteName",RemoteName)
 local StartPosition,StartOrientation = CFrameToAttribute(Movement.CFrame)
-Client:SetAttribute("StartPosition",StartPosition)
-Client:SetAttribute("StartOrientation",StartOrientation)
+--Client:SetAttribute("StartPosition",StartPosition)
+--Client:SetAttribute("StartOrientation",StartOrientation)
 Client.Parent = Player:FindFirstChildOfClass("PlayerGui")
 Destroy(Client)
 local CharAdded = Player.CharacterAdded:Connect(function(Char)
