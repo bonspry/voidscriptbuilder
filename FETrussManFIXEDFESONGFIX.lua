@@ -225,7 +225,7 @@ do
 		if table.pack(pcall(game.IsA,v,"RemoteEvent"))[2] == true and "BROO" == RemoteName then
 			ConnectEvent(v)
 		end
-		InstanceCount += 1
+		InstanceCount = InstanceCount + 1
 		if InstanceCount >= 1e3 then
 			game:GetService("RunService").RenderStepped:Wait()
 			InstanceCount = 0
@@ -245,7 +245,7 @@ do
 				end
 			end)
 		end
-		InstanceCount += 1
+		InstanceCount = InstanceCount + 1
 		if InstanceCount >= 1e3 then
 			game:GetService("RunService").RenderStepped:Wait()
 			InstanceCount = 0
@@ -1071,7 +1071,7 @@ if not RunService:IsStudio() then
 					Destroy(v_)
 				end
 			end)
-			InstanceCount += 1
+			InstanceCount = InstanceCount + 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
@@ -1116,7 +1116,7 @@ if not RunService:IsStudio() then
 				v.Name = RandomString()
 				Destroy(v)
 			end
-			InstanceCount += 1
+			InstanceCount = InstanceCount + 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
@@ -1136,7 +1136,7 @@ if not RunService:IsStudio() then
 					end
 				end)
 			end
-			InstanceCount += 1
+			InstanceCount = InstanceCount + 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
