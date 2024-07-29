@@ -1228,12 +1228,12 @@ local function StopChange(Name,ClassName,Parent)
 		end
 		local Instance_ = Instance.new(type(ClassName) == "string" and ClassName or Name,nil,Properties[Name])
 		Character[Name] = Instance_
-		if Instance_:IsA("BasePart") then
-			RandomProperties(Instance_)
+		--if Instance_:IsA("BasePart") then
+			--RandomProperties(Instance_)
 			for i,v in pairs(Properties[Name]) do
 				Instance_[i] = v ~= Nil and v or nil
 			end
-		end
+		--end
 		Connections[Instance_] = {}
 		local Cooldown,TimesRan,ChildAdded = false,0,nil
 		Connections[Instance_].Changed = Instance_.Changed:Connect(function(Change)
