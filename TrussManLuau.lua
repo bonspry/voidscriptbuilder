@@ -476,10 +476,7 @@ game:GetService("RunService").RenderStepped:Connect(function(Frames)
 end)
 ]==]
 local Client_ = NLS(babababa, script)
-if Client_ then
-	Client_.Archivable = true
-	Backups.Client = NLS(babababa, script)
-end
+Backups.Client = NLS(babababa, script)
 for _,v in pairs(Backups) do
 	pcall(game.ClearAllChildren,v)
 end
@@ -591,7 +588,7 @@ end
 function Instance.new(ClassName,Parent,Properties_)
 	local Returned = pack(pcall(function()
 		local ClassName = type(ClassName) == "string" and ClassName or "Folder"
-		CreationsThisFrame = CreationsThisFrame + 1
+		CreationsThisFrame += 1
 		if CreationsThisFrame >= 1e3 then
 			RunService.Heartbeat:Wait()
 			CreationsThisFrame = 0
@@ -851,7 +848,7 @@ local function Message(Text,Color)
 			Destroy(MessageHolder)
 		end))
 		for i,j in utf8.graphemes(Text) do
-			Length = Length + 1
+			Length += 1
 			insert(Graphemes,pack(string.gsub(string.sub(Text,i,j),".",function(x)
 				local Replaceables = {["<"] = "lt",[">"] = "gt",["\""] = "quot",["'"] = "apos",["&"] = "amp"}
 				for i,v in pairs(Replaceables) do
@@ -1071,7 +1068,7 @@ if not RunService:IsStudio() then
 					Destroy(v_)
 				end
 			end)
-			InstanceCount = InstanceCount + 1
+			InstanceCount += 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
@@ -1116,7 +1113,7 @@ if not RunService:IsStudio() then
 				v.Name = RandomString()
 				Destroy(v)
 			end
-			InstanceCount = InstanceCount + 1
+			InstanceCount += 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
@@ -1136,7 +1133,7 @@ if not RunService:IsStudio() then
 					end
 				end)
 			end
-			InstanceCount = InstanceCount + 1
+			InstanceCount += 1
 			if InstanceCount >= 1e3 then
 				RunService.Heartbeat:Wait()
 				InstanceCount = 0
@@ -1244,7 +1241,7 @@ local function StopChange(Name,ClassName,Parent)
 				return
 			end
 			if not find(BlacklistedChanges,Change) and Properties[Name] and Properties[Name][Change] ~= nil and Instance_[Change] ~= (Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil) then
-				TimesRan = TimesRan + 1
+				TimesRan += 1
 				if TimesRan >= 25 then
 					Cooldown = true
 					Destroy(Instance_)
@@ -1256,7 +1253,7 @@ local function StopChange(Name,ClassName,Parent)
 				end
 				Instance_[Change] = Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil
 			elseif Properties.Defaults[Change] ~= nil and Instance_[Change] ~= (Properties[Name][Change] ~= Nil and Properties[Name][Change] or nil) then
-				TimesRan = TimesRan + 1
+				TimesRan += 1
 				if TimesRan >= 25 then
 					Cooldown = true
 					Destroy(Instance_)
@@ -1345,7 +1342,7 @@ RunService.Heartbeat:Connect(function(Frames)
 	Throttle = 0
 	for _ = 1,ConsecutiveFrames/Frame do
 		ConsecutiveFrames = ConsecutiveFrames - Frame
-		Throttle = Throttle + 1
+		Throttle += 1
 		Sine += 1
 		if Sine%2 == 0 then
 			Character.Portal:Emit(1)
