@@ -1070,6 +1070,45 @@ function CamShake(POSITION, RANGE, INTENSITY, TIME)
 				local TORSO = CHILD:FindFirstChild("Torso") or CHILD:FindFirstChild("UpperTorso")
 				if TORSO and RANGE >= (TORSO.Position - POSITION).Magnitude then
 					local CAMSHAKER = NLS(CAMSHAKECODE, CHILD)
+						--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+BoolValue0 = Instance.new("BoolValue")
+NumberValue1 = Instance.new("NumberValue")
+NumberValue2 = Instance.new("NumberValue")
+BoolValue0.Name = "DoesFade"
+BoolValue0.Parent = mas
+NumberValue1.Name = "Shake"
+NumberValue1.Parent = mas
+NumberValue1.Value = 5
+NumberValue2.Name = "Timer"
+NumberValue2.Parent = mas
+NumberValue2.Value = 35
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = CAMSHAKER
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+					task.wait()
 					CAMSHAKER.Shake.Value = INTENSITY
 					CAMSHAKER.Timer.Value = TIME
 					CAMSHAKER.Parent = CHILD
