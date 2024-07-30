@@ -280,11 +280,12 @@ end)
 
 function Hitbox(Position,Scale)
 	if KillType == "Server" then
-		for i, v in pairs(game:GetDescendants()) do
+		for i, v in pairs(workspace:GetDescendants()) do
 			if v:IsA("BasePart") or v:IsA("FlagStand") then
 				if (v.Position-Position).Magnitude <= Scale then
 					if v.Parent ~= MGroup then
 						spawn(function()
+								pcall(function()
 							table.insert(Size,v.Size)
 							table.insert(Material,v.Material)
 							table.insert(Trans,v.Transparency)
@@ -304,6 +305,7 @@ function Hitbox(Position,Scale)
 							game:GetService("TweenService"):Create(Effec,TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{CFrame = Effec.CFrame*CFrame.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))*CFrame.Angles(math.random(-180,180),math.random(-180,180),math.random(-180,180)),Color = Color3.fromRGB(110, 153, 202),Transparency = 1}):Play()
 							game:GetService("Debris"):AddItem(Effec,3)
 							Die(v)
+									end)
 						end)
 
 					end
