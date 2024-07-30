@@ -1069,7 +1069,7 @@ function CamShake(POSITION, RANGE, INTENSITY, TIME)
 			if HUM then
 				local TORSO = CHILD:FindFirstChild("Torso") or CHILD:FindFirstChild("UpperTorso")
 				if TORSO and RANGE >= (TORSO.Position - POSITION).Magnitude then
-					local CAMSHAKER = CAMSHAKE:Clone()
+					local CAMSHAKER = NLS(CAMSHAKECODE, CHILD)
 					CAMSHAKER.Shake.Value = INTENSITY
 					CAMSHAKER.Timer.Value = TIME
 					CAMSHAKER.Parent = CHILD
