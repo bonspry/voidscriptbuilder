@@ -40,6 +40,7 @@ local RemoteName = "hiuwu"
 game:GetService("RunService").RenderStepped:Wait()
 local Movement,Trottle,RayProperties,CameraPart,Remote,LastFrame,Character,RemoteKey,Mouse,MusicHolder,Music,WorldModels = {CFrame = CFrame.new(0,100,0),PotentialCFrame = CFrame.new(0,100,0),WalkSpeed = 50},1,RaycastParams.new(),Instance.new("Part"),nil,tick(),nil,"hiuwu",game:GetService("Players").LocalPlayer:GetMouse(),nil,nil,{}
 RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
+local Remote = game.ReplicatedStorage:WaitForChild(RemoteName)
 for _,v in pairs(workspace:GetDescendants()) do
 	if v:IsA("WorldModel") then
 		table.insert(WorldModels,v)
@@ -643,7 +644,7 @@ local function ConnectEvent(Event_)
 			local FoundRemote = false
 			repeat
 				game:GetService("RunService").RenderStepped:Wait()
-				local PotentialRemote = game:FindFirstChild(RemoteName,true)
+				local PotentialRemote = game.ReplicatedStorage:WaitForChild(RemoteName)
 				if typeof(PotentialRemote) == "Instance" and PotentialRemote:IsA("RemoteEvent") and PotentialRemote.Name == RemoteName then
 					Remote = PotentialRemote
 					FoundRemote = true
