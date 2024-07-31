@@ -77,6 +77,7 @@ RealPos.Transparency = .75
 RealPos.Adornee = CameraPart
 RealPos.Parent = workspace
 local function MoveCharacter(X,Z)
+	print(X,Z)
 	Movement.PotentialCFrame = Movement.PotentialCFrame*CFrame.new(X,0,Z)
 end
 local function KeyDown(Key)
