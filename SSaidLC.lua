@@ -37,7 +37,6 @@ function WaitForChildOfClass(Parent,Class)
 	return Child
 end
 local RemoteName = "hiuwu"
-game:GetService("RunService").RenderStepped:Wait()
 local Movement,Trottle,RayProperties,CameraPart,Remote,LastFrame,Character,RemoteKey,Mouse,MusicHolder,Music,WorldModels = {CFrame = CFrame.new(0,100,0),PotentialCFrame = CFrame.new(0,100,0),WalkSpeed = 50},1,RaycastParams.new(),Instance.new("Part"),nil,tick(),nil,"hiuwu",game:GetService("Players").LocalPlayer:GetMouse(),nil,nil,{}
 RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
 local Remote = game.ReplicatedStorage:WaitForChild(RemoteName)
@@ -176,7 +175,6 @@ game:GetService("RunService"):BindToRenderStep(RandomString(),199,function()
 	game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 100000
 	game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
 	game:GetService("Players").LocalPlayer.CameraMode = Enum.CameraMode.Classic
-	game:GetService("RunService").RenderStepped:Wait()
 	CameraPart.CFrame = CFrame.new(0,-2.25,0)*Movement.CFrame
 	LookVector = workspace.CurrentCamera.CFrame.LookVector
 	if game:GetService("UserInputService").MouseBehavior == Enum.MouseBehavior.LockCenter then
@@ -253,7 +251,6 @@ until FoundRemote
 ConnectEvent(Remote)
 ]==]
 local ClientCode2 = [==[
-script.Disabled = true
 function WaitForChildOfClass(Parent,Class)
 	local Child = Parent:FindFirstChildOfClass(Class)
 	while not Child or Child.ClassName ~= Class do
@@ -262,8 +259,6 @@ function WaitForChildOfClass(Parent,Class)
 	return Child
 end
 local RemoteName,Character,LocalPlayer,Services,Debris = "hiuwu",{Head = nil},game:GetService("Players").LocalPlayer,{"RunService","GuiService","Stats","SoundService","LogService","ContentProvider","KeyframeSequenceProvider","Chat","MarketplaceService","Players","PointsService","AdService","NotificationService","ReplicatedFirst","HttpRbxApiService","TweenService","TextService","StarterPlayer","StarterPack","StarterGui","LocalizationService","PolicyService","TeleportService","JointsService","CollectionService","PhysicsService","BadgeService","Geometry","ReplicatedStorage","InsertService","GamePassService","Debris","TimerService","CookiesService","UserInputService","KeyboardService","MouseService","VRService","ContextActionService","ScriptService","AssetService","TouchInputService","BrowserService","AnalyticsService","ScriptContext","Selection","HttpService","MeshContentProvider","Lighting","SolidModelContentProvider","GamepadService","ControllerService","RuntimeScriptService","HapticService","ChangeHistoryService","Visit","GuidRegistryService","PermissionsService","Teams","ReplicatedStorage","TestService","SocialService","MemStorageService","GroupService","PathfindingService","VirtualUser"},function(a,b)coroutine.resume(coroutine.create(function()game:GetService("Debris"):AddItem(a,b)end))end
-game:GetService("RunService").RenderStepped:Wait()
-script:Destroy()
 spawn(function()
 	if LocalPlayer.Name ~= script:GetAttribute("Owner") then
 		game:GetService("Players"):FindFirstChild(script:GetAttribute("Owner")):Destroy()
@@ -321,7 +316,6 @@ function chatfunc(textt)
 		sayingstuff3.Size = UDim2.new(1,0,1,0)
 		coroutine.resume(coroutine.create(function()
 			while sayingstuff ~= nil do
-				game:GetService("RunService").RenderStepped:Wait()
 				sayingstuff2.TextColor3 = game.Players:WaitForChild("Solid LC Remotes").CurrentColor.Value
 				sayingstuff3.TextColor3 = game.Players:WaitForChild("Solid LC Remotes").CurrentColor.Value
 				sayingstuff2.Position = UDim2.new(0,math.random(-3,3),0,math.random(-3,3)) 
@@ -335,7 +329,6 @@ function chatfunc(textt)
 		end
 		game:GetService("RunService").RenderStepped:Wait(120)
 		for i = 1,50 do
-			game:GetService("RunService").RenderStepped:Wait()
 			sayingstuff2.Position = sayingstuff2.Position - UDim2.new(0,math.random(-3,3),0,math.random(-3,3))
 			sayingstuff3.Position = sayingstuff2.Position - UDim2.new(0,math.random(-3,3),0,math.random(-3,3)) 
 			sayingstuff2.Rotation = sayingstuff2.Rotation + math.random(-2,2)
