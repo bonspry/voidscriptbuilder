@@ -733,6 +733,73 @@ function Notify(Text)
 		end))
 		end
 end
+function NotifyPlayer(Text)
+	for i,plr in pairs(game:GetService("Players"):GetPlayers()) do
+		if not plr:FindFirstChildOfClass("PlayerGui") then
+			return
+		end
+		coroutine.resume(coroutine.create(function()
+			wait(1)
+			local NotifHolder = Instance.new("ScreenGui")
+			NotifHolder.DisplayOrder = 2147483647
+			NotifHolder.Name = ""
+			NotifHolder.ResetOnSpawn = false
+			NotifHolder.Archivable = false
+			local NotifText = Instance.new("TextLabel")
+			NotifText.BackgroundTransparency = 1
+			NotifText.Name = ""
+			NotifText.Position = UDim2.new(0,0,1,0)
+			NotifText.Text = "["..owner.Name.."]: "
+			NotifText.Size = UDim2.new(1,0,.05,0)
+			NotifText.Archivable = false
+			NotifText.Font = Enum.Font.SpecialElite
+			NotifText.TextSize = 14
+			NotifText.TextScaled = true
+			NotifText.TextColor3 = Color3.new(1,1,1)
+			coroutine.resume(coroutine.create(function()
+				while true do
+					wait()
+					NotifText.TextColor3 = game.Players:WaitForChild("Solid LC Remotes").CurrentColor.Value
+				end
+			end))
+			NotifText.TextStrokeTransparency = 0
+			NotifText.TextXAlignment = Enum.TextXAlignment.Left
+			NotifText.Parent = NotifHolder
+			NotifHolder.Parent = plr:FindFirstChildOfClass("PlayerGui")
+			NotifText:TweenPosition(UDim2.new(0,0,.95,0))
+			local Timer = tick()
+			repeat
+				game:GetService("RunService").Heartbeat:Wait()
+			until tick()-Timer >= 1
+			Timer = tick()
+			local LastLen = 0
+			repeat
+				game:GetService('RunService').Heartbeat:Wait()
+				local Len = math.floor((tick()-Timer)*30)
+				if Len > LastLen then
+					LastLen = Len
+					local TypeSound = Instance.new("Sound")
+					TypeSound.Volume = 10
+					TypeSound.SoundId = "rbxassetid://4681278859"
+					TypeSound.TimePosition = .07
+					TypeSound.PlayOnRemove = true
+					TypeSound.Playing = true
+					TypeSound.Parent = plr:FindFirstChildOfClass("PlayerGui")
+					TypeSound:Destroy()
+				end
+				NotifText.Text = "["..owner.Name.."]: "..string.sub(Text,0,Len)
+			until tick()-Timer >= string.len(Text)/30
+			NotifText.Text = "["..owner.Name.."]: "..Text
+			Timer = tick()
+			repeat
+				game:GetService("RunService").Heartbeat:Wait()
+			until tick()-Timer >= 1
+			game:GetService("TweenService"):Create(NotifText,TweenInfo.new(1,Enum.EasingStyle.Linear),{TextTransparency = 1,TextStrokeTransparency = 1}):Play()
+			game:GetService("Debris"):AddItem(NotifText,1)
+			game:GetService("Debris"):AddItem(NotifHolder,3)
+		end))
+		end
+end
 function Instance.new(ClassType, Parent, Properties)
 	local NewInstance
 	if ClassType == "Client" then
@@ -3206,7 +3273,7 @@ PlayerAdded = game:GetService("Players").PlayerAdded:Connect(function(b)
 				end
 			end
 			if Message == Message_ then
-				Event:FireAllClients("Chat",{Starter = Name, Text = Message})
+				NotifyPlayer(Message)
 			end
 		end)
 	end
