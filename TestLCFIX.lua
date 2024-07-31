@@ -76,14 +76,10 @@ RealPos.Transparency = .75
 RealPos.Adornee = CameraPart
 RealPos.Parent = workspace
 local function MoveCharacter(X,Z)
-	print(X,Z)
 	Movement.PotentialCFrame = Movement.PotentialCFrame*CFrame.new(X,0,Z)
 end
 local function KeyDown(Key)
-    print(Key)
-    local player = game.Players.LocalPlayer
-    local mouse = player:GetMouse()
-    return mouse.KeyDown[Key]
+    return not game:GetService("UserInputService"):GetFocusedTextBox() and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode[Key]) or false
 end
 Mouse.KeyDown:Connect(function(Key)
 	if Key == "f" then
