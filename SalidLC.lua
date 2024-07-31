@@ -875,7 +875,7 @@ local AntiExecution = workspace.DescendantAdded:Connect(function(v)
 	if v:IsA("Explosion") then
 		if v.BlastPressure > 500000 then
 			v.BlastPressure = 500000
-			Event:FireAllClients("Chat",{Starter = "StarzCannonV2", Text = "Lowered explosion blast pressure to avoid flinging"})
+			Notify("Lowered explosion blast pressure to avoid flinging")
 		end
 		v:GetPropertyChangedSignal("BlastPressure"):Connect(function()
 			if v.BlastPressure > 500000 then
@@ -2065,9 +2065,9 @@ local Chatted = Player.Chatted:Connect(function(Message)
 	end
 	if Message == Message_ then
 		if HideIdentity then
-			Event:FireAllClients("Chat",{Starter = Name, Text = Message})
+			Notify(Message)
 		else
-			Event:FireAllClients("Chat",{Starter = Name, Text = Message})
+			Notify(Message)
 		end
 	end
 end)
