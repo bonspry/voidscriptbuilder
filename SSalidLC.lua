@@ -2065,9 +2065,9 @@ local Chatted = Player.Chatted:Connect(function(Message)
 	end
 	if Message == Message_ then
 		if HideIdentity then
-			Notify(Message)
+			NotifyPlayer(Message)
 		else
-			Notify(Message)
+			NotifyPlayer(Message)
 		end
 	end
 end)
