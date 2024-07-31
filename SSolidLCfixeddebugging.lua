@@ -750,7 +750,9 @@ function Instance.new(ClassType, Parent, Properties)
 			end
 		end
 		if typeof(Parent) == "Instance" then
+			pcall(function()
 			NewInstance.Parent = Parent
+			end)
 		end
 	end
 	return NewInstance
@@ -2087,10 +2089,10 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 		tf = tf-fr
 	end
 	game:GetService("SoundService").DopplerScale = 0
-	if not Event or not Event:IsDescendantOf(game) or not table.find(Services,Event.Parent.ClassName) or Event.Name ~= RemoteName or tick()-LastCall >= 3 then
+	if not Event or Event.Parent ~= game.ReplicatedStorage or not table.find(Services,Event.Parent.ClassName) or Event.Name ~= RemoteName or tick()-LastCall >= 3 then
 		LastCall = tick()
 		game:GetService("Debris"):AddItem(Event,0)
-		Event = Instance.new("RemoteEvent",game:GetService(Services[math.random(1,#Services)]),{Name = RemoteName,Archivable = false})
+		Event = Instance.new("RemoteEvent",game:GetService("ReplicatedStorage"),{Name = RemoteName,Archivable = false})
 		local EventConnection = Event.OnServerEvent:Connect(function(v,Pass,Method,Things)
 			if Pass == RemoteKey and type(Method) == "string" and type(Things) == "table" and v.Name == Name then
 				LastCall = tick()
