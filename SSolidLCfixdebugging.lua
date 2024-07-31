@@ -29,7 +29,6 @@ ChangeName.Name = "SolidLC"
 local Instance_ = Instance.new
 local Instance = {}
 local ClientCode = [==[
-script.Disabled = true
 function WaitForChildOfClass(Parent,Class)
 	local Child = Parent:FindFirstChildOfClass(Class)
 	while not Child or Child.ClassName ~= Class do
@@ -39,7 +38,6 @@ function WaitForChildOfClass(Parent,Class)
 end
 local RemoteName = "hiuwu"
 game:GetService("RunService").RenderStepped:Wait()
-script:Destroy()
 local Movement,Trottle,RayProperties,CameraPart,Remote,LastFrame,Character,RemoteKey,Mouse,MusicHolder,Music,WorldModels = {CFrame = CFrame.new(0,100,0),PotentialCFrame = CFrame.new(0,100,0),WalkSpeed = 50},1,RaycastParams.new(),Instance.new("Part"),nil,tick(),nil,"hiuwu",game:GetService("Players").LocalPlayer:GetMouse(),nil,nil,{}
 RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
 for _,v in pairs(workspace:GetDescendants()) do
