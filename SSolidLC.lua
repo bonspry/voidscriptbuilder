@@ -587,9 +587,9 @@ function Notify(StarterText,Text)
 		Debris(NotifHolder,3)
 	end))]]
 end
-game.Players:WaitForChild("Solid LC Remotes").Chat.OnClientEvent:Connect(function(mes)
+--[[game.Players:WaitForChild("Solid LC Remotes").Chat.OnClientEvent:Connect(function(mes)
 	Notify("[SOLID LC]: ",mes)
-end)
+end)]]
 local sayingstuff = Instance.new("ScreenGui")
 sayingstuff.Name = "CreditsAndAuthentication"
 sayingstuff.ResetOnSpawn = false
