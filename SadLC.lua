@@ -38,6 +38,7 @@ function WaitForChildOfClass(Parent,Class)
 end
 local RemoteName = "hiuwu"
 local Movement,Trottle,RayProperties,CameraPart,Remote,LastFrame,Character,RemoteKey,Mouse,MusicHolder,Music,WorldModels = {CFrame = CFrame.new(0,100,0),PotentialCFrame = CFrame.new(0,100,0),WalkSpeed = 50},1,RaycastParams.new(),Instance.new("Part"),nil,tick(),nil,"hiuwu",game:GetService("Players").LocalPlayer:GetMouse(),nil,nil,{}
+local RemoteKey = "hiuwu"
 RayProperties.FilterType = Enum.RaycastFilterType.Blacklist
 local Remote = game.ReplicatedStorage:WaitForChild(RemoteName)
 for _,v in pairs(workspace:GetDescendants()) do
@@ -79,6 +80,7 @@ local function MoveCharacter(X,Z)
 	Movement.PotentialCFrame = Movement.PotentialCFrame*CFrame.new(X,0,Z)
 end
 local function KeyDown(Key)
+    print(Key)
     local player = game.Players.LocalPlayer
     local mouse = player:GetMouse()
     return mouse.KeyDown[Key]
@@ -107,6 +109,7 @@ Mouse.KeyDown:Connect(function(Key)
 	elseif Key == "\\" then
 		Remote:FireServer(RemoteKey,"Attack",{Type = "NightmareIsAlive",Confirmation = RemoteKey})
 	end
+	print(Key)
 end)
 Mouse.Button1Down:Connect(function()
 	Remote:FireServer(RemoteKey,"Attack",{Type = "ClickAttack"})
