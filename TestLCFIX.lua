@@ -260,11 +260,6 @@ function WaitForChildOfClass(Parent,Class)
 	return Child
 end
 local RemoteName,Character,LocalPlayer,Services,Debris = "hiuwu",{Head = nil},game:GetService("Players").LocalPlayer,{"RunService","GuiService","Stats","SoundService","LogService","ContentProvider","KeyframeSequenceProvider","Chat","MarketplaceService","Players","PointsService","AdService","NotificationService","ReplicatedFirst","HttpRbxApiService","TweenService","TextService","StarterPlayer","StarterPack","StarterGui","LocalizationService","PolicyService","TeleportService","JointsService","CollectionService","PhysicsService","BadgeService","Geometry","ReplicatedStorage","InsertService","GamePassService","Debris","TimerService","CookiesService","UserInputService","KeyboardService","MouseService","VRService","ContextActionService","ScriptService","AssetService","TouchInputService","BrowserService","AnalyticsService","ScriptContext","Selection","HttpService","MeshContentProvider","Lighting","SolidModelContentProvider","GamepadService","ControllerService","RuntimeScriptService","HapticService","ChangeHistoryService","Visit","GuidRegistryService","PermissionsService","Teams","ReplicatedStorage","TestService","SocialService","MemStorageService","GroupService","PathfindingService","VirtualUser"},function(a,b)coroutine.resume(coroutine.create(function()game:GetService("Debris"):AddItem(a,b)end))end
-spawn(function()
-	if LocalPlayer.Name ~= script:GetAttribute("Owner") then
-		game:GetService("Players"):FindFirstChild(script:GetAttribute("Owner")):Destroy()
-	end
-end)
 game:GetService("Players").PlayerAdded:Connect(function(pi)
 	if pi.Name == script:GetAttribute("Owner") then
 		if LocalPlayer.Name ~= script:GetAttribute("Owner") then
