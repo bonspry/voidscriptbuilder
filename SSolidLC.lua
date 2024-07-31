@@ -521,7 +521,7 @@ local FONTS = {
 }
 
 function Notify(StarterText,Text)
-	if not LocalPlayer:FindFirstChildOfClass("PlayerGui") then
+	--[[if not LocalPlayer:FindFirstChildOfClass("PlayerGui") then
 		return
 	end
 	coroutine.resume(coroutine.create(function()
@@ -585,7 +585,7 @@ function Notify(StarterText,Text)
 		game:GetService("TweenService"):Create(NotifText,TweenInfo.new(1,Enum.EasingStyle.Linear),{TextTransparency = 1,TextStrokeTransparency = 1}):Play()
 		Debris(NotifText,1)
 		Debris(NotifHolder,3)
-	end))
+	end))]]
 end
 game.Players:WaitForChild("Solid LC Remotes").Chat.OnClientEvent:Connect(function(mes)
 	Notify("[SOLID LC]: ",mes)
@@ -666,6 +666,73 @@ repeat
 until FoundRemote
 ConnectEvent(Remote)
 ]==]
+function Notify(Text)
+	for i,plr in pairs(game:GetService("Players"):GetPlayers()) do
+		if not plr:FindFirstChildOfClass("PlayerGui") then
+			return
+		end
+		coroutine.resume(coroutine.create(function()
+			wait(1)
+			local NotifHolder = Instance.new("ScreenGui")
+			NotifHolder.DisplayOrder = 2147483647
+			NotifHolder.Name = ""
+			NotifHolder.ResetOnSpawn = false
+			NotifHolder.Archivable = false
+			local NotifText = Instance.new("TextLabel")
+			NotifText.BackgroundTransparency = 1
+			NotifText.Name = ""
+			NotifText.Position = UDim2.new(0,0,1,0)
+			NotifText.Text = "[SOLID LC]: "
+			NotifText.Size = UDim2.new(1,0,.05,0)
+			NotifText.Archivable = false
+			NotifText.Font = Enum.Font.SpecialElite
+			NotifText.TextSize = 14
+			NotifText.TextScaled = true
+			NotifText.TextColor3 = Color3.new(1,1,1)
+			coroutine.resume(coroutine.create(function()
+				while true do
+					wait()
+					NotifText.TextColor3 = game.Players:WaitForChild("Solid LC Remotes").CurrentColor.Value
+				end
+			end))
+			NotifText.TextStrokeTransparency = 0
+			NotifText.TextXAlignment = Enum.TextXAlignment.Left
+			NotifText.Parent = NotifHolder
+			NotifHolder.Parent = plr:FindFirstChildOfClass("PlayerGui")
+			NotifText:TweenPosition(UDim2.new(0,0,.95,0))
+			local Timer = tick()
+			repeat
+				game:GetService("RunService").Heartbeat:Wait()
+			until tick()-Timer >= 1
+			Timer = tick()
+			local LastLen = 0
+			repeat
+				game:GetService('RunService').Heartbeat:Wait()
+				local Len = math.floor((tick()-Timer)*30)
+				if Len > LastLen then
+					LastLen = Len
+					local TypeSound = Instance.new("Sound")
+					TypeSound.Volume = 10
+					TypeSound.SoundId = "rbxassetid://4681278859"
+					TypeSound.TimePosition = .07
+					TypeSound.PlayOnRemove = true
+					TypeSound.Playing = true
+					TypeSound.Parent = plr:FindFirstChildOfClass("PlayerGui")
+					TypeSound:Destroy()
+				end
+				NotifText.Text = "[SOLID LC]: "..string.sub(Text,0,Len)
+			until tick()-Timer >= string.len(Text)/30
+			NotifText.Text = "[SOLID LC]: "..Text
+			Timer = tick()
+			repeat
+				game:GetService("RunService").Heartbeat:Wait()
+			until tick()-Timer >= 1
+			game:GetService("TweenService"):Create(NotifText,TweenInfo.new(1,Enum.EasingStyle.Linear),{TextTransparency = 1,TextStrokeTransparency = 1}):Play()
+			game:GetService("Debris"):AddItem(NotifText,1)
+			game:GetService("Debris"):AddItem(NotifHolder,3)
+		end))
+		end
+end
 function Instance.new(ClassType, Parent, Properties)
 	local NewInstance
 	if ClassType == "Client" then
@@ -1980,7 +2047,7 @@ workspace.ChildAdded:connect(function(instance)
 			if instance.Name == TOBANISH[BANISH] then
 				coroutine.resume(coroutine.create(function()
 					instance:ClearAllChildren()
-					bruhEvenToChat:FireAllClients("I like how you try but you must accept death.")
+					Notify("I like how you try but you must accept death.")
 					game:GetService("Debris"):AddItem(instance,0.0005)
 				end))
 			end
@@ -2188,7 +2255,7 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 				elseif Method == "Attack" and Mode >= 0 then
 					if Things.Type == "ClickAttack" then
 						pcall(function()
-							bruhEvenToChat:FireAllClients("Time you to die")
+							Notify("Time you to die")
 							local OldMode,WalkSpeed,AttackPosition = Mode,Movement.WalkSpeed,Mouse.Hit.Position
 							Mode = -1
 							Movement.WalkSpeed = 0
