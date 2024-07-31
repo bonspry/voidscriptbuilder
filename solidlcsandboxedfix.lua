@@ -1,4 +1,4 @@
-local Assets = LoadAssets(15984864764)
+local Assets = LoadAssets(18739288584)
 
 table.foreach(Assets:Get("SolidLC"):GetChildren(), function(i,v)
 	local lol = v:Clone()
