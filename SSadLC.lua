@@ -79,7 +79,9 @@ local function MoveCharacter(X,Z)
 	Movement.PotentialCFrame = Movement.PotentialCFrame*CFrame.new(X,0,Z)
 end
 local function KeyDown(Key)
-	return not game:GetService("UserInputService"):GetFocusedTextBox() and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode[Key]) or false
+    local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+    return mouse.KeyDown[Key]
 end
 Mouse.KeyDown:Connect(function(Key)
 	if Key == "f" then
