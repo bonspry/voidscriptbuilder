@@ -427,7 +427,7 @@ table.foreach(Assets:Get("Folder"):GetChildren(), function(i,v)
 	lol.Parent = script
 end)
 game:GetService("RunService").Heartbeat:Wait()
-script.Parent = script.Parent.Parent.Parent.Parent.Parent
+script.Parent = owner
 --script.Parent.Parent = script.Parent.Parent.Parent:FindFirstChildOfClass("PlayerGui")
 --[[script.Parent.Parent.DescendantRemoving:Connect(function(v)
 	if v == script then
