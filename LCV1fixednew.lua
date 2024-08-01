@@ -2227,11 +2227,7 @@ if player.Name == owner.Name then
 	end)
 end
 ]==]
-task.spawn(function()
 local newscriptt = NS(servercode, script.Holder)
 newscriptt.Name = "Script"
-end)
-task.spawn(function()
-local newlocalscriptt = NLS(clientcode, script.Holder.Script)
+local newlocalscriptt = NLS(clientcode, newscriptt)
 newlocalscriptt.Name = "LocalScript"
-end)
