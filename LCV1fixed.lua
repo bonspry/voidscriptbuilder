@@ -40,6 +40,7 @@ end
 local LCV1PORT = Instance.new("Model", game:GetService("ReplicatedStorage"))
 LCV1PORT.Name = "lol"
 LCV1PORT.Parent = owner.PlayerGui
+script.Parent = LCV1PORT
 --local Assets = LoadAssets(18756743020)
 --[[table.foreach(Assets:Get("Folder"):GetChildren(), function(i,v)
 	local lol = v:Clone()
