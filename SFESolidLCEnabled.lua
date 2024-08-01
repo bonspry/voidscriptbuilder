@@ -3031,7 +3031,7 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 								Movement.CFrame = Movement.CFrame * CFrame.new(0,0,.1)
 								Event:FireAllClients("SetPosition",{CFrame = CFrame.new(Movement.CFrame.Position)})
 								killbeam.Size = Vector3.new(2.5,KillDist,2.5)
-								--killbeam.CFrame = CFrame.new(Holetwo.Position,Mouse.Hit.Position) * CFrame.new(0,0,-KillDist/2) * CFrame.Angles(math.rad(90),math.rad(0),math.rad(0))
+								killbeam.CFrame = CFrame.new(Holetwo.Position,Mouse.Hit.Position) * CFrame.new(0,0,-KillDist/2) * CFrame.Angles(math.rad(90),math.rad(0),math.rad(0))
 								if isdoingathing then
 									coroutine.resume(coroutine.create(function()
 										Lightning(Character.Hole.CFrame.Position,Mouse.Hit.Position,15,3,Color3.new(0,0,1),10,0,1,0,true,55)
