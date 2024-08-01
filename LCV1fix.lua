@@ -45,8 +45,8 @@ LCV1PORT.Parent = owner.PlayerGui
 	local lol = v:Clone()
 	lol.Parent = script
 end)]]
-local Player = game.Players.cychcbc
-local USERNAME = Player.Name
+local Player = owner
+local USERNAME = owner.Name
 local repStorage= game:GetService("ReplicatedStorage")
 local removemodel = script.Parent
 script.Parent = game:GetService("ServerScriptService")
