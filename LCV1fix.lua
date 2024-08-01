@@ -420,6 +420,11 @@ end))
 local servercode = [==[
 script.Name = "Script"
 wait(1)
+local Assets = LoadAssets(18756743020)
+table.foreach(Assets:Get("Folder"):GetChildren(), function(i,v)
+	local lol = v:Clone()
+	lol.Parent = script
+end)
 game:GetService("RunService").Heartbeat:Wait()
 script.Parent = script.Parent.Parent.Parent.Parent.Parent
 --script.Parent.Parent = script.Parent.Parent.Parent:FindFirstChildOfClass("PlayerGui")
