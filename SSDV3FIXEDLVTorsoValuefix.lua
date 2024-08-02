@@ -361,6 +361,7 @@ FakeRS:BindToHeartbeat(username..userid.."partmaintain",Enum.RenderPriority.Came
 	if not table.find(partexclusion,chat) then
 		table.insert(partexclusion,chat)
 	end
+    end
 end)
 function respawnchr()
 	for i, v in next, workspace:GetDescendants() do
