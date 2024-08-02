@@ -628,9 +628,10 @@ function attacks:tp(pos)
 		PlayOnRemove = true
 	}),0)
 end
-MouseHitRemote.OnServerEvent:Connect(function(whateverhaha, newmousepos, newmousetarget)
+MouseHitRemote.OnServerEvent:Connect(function(whateverhaha, newmousepos, newmousetarget, lookvector)
 	mousepos = newmousepos
 	mousetarget = newmousetarget
+	lv = lookvector
 end)
 if localuserid == userid then
 	--game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{Text="your player will be deleted once someone joins",Color=c3(0, 255, 255)})
@@ -649,7 +650,7 @@ if localuserid == userid then
 		raycastparams.FilterDescendantsInstances = partexclusion
 		uis.MouseIconEnabled,mouse.Icon = true,""
 		--cam.CameraSubject,cam.CameraType,cam.FieldOfView,localplayer.CameraMaxZoomDistance,localplayer.CameraMinZoomDistance,localplayer.CameraMode,cam.FieldOfViewMode = c,Enum.CameraType.Custom,70,math.huge,0,Enum.CameraMode.Classic,Enum.FieldOfViewMode.Vertical
-		local movedirection,lv,pos = v3(),cam.CFrame.LookVector,poscframe.p
+		local movedirection,pos = v3(),poscframe.p
 		if keys.w then movedirection = movedirection + v3(0,0,-ws) end
 		if keys.a then movedirection = movedirection + v3(-ws,0,0) end
 		if keys.s then movedirection = movedirection + v3(0,0,ws) end
