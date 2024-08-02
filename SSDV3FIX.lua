@@ -629,7 +629,7 @@ function attacks:tp(pos)
 	}),0)
 end
 MouseHitRemote.OnServerEvent:Connect(function(newmousepos, newmousetarget)
-	mousepos = newmousepos
+	mousepos = Vector3.new(newmousepos)
 	mousetarget = newmousetarget
 end)
 if localuserid == userid then
