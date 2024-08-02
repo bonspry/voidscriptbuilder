@@ -244,6 +244,7 @@ FakeRS:BindToHeartbeat(username..userid.."partmaintain",Enum.RenderPriority.Came
 		t.Name = randomstring()
 		t.Parent = workspace
 		t.Archivable = false
+		torsovalue.Value = t
 	end
 	if not table.find(partexclusion,t) then
 		table.insert(partexclusion,t)
@@ -354,9 +355,6 @@ FakeRS:BindToHeartbeat(username..userid.."partmaintain",Enum.RenderPriority.Came
 				local j = msgs[#msgs-i]
 				addtochat(j[1],j[2])
 			end
-		if torsovalue.Value ~= t then
-		torsovalue.Value = t
-		end
 	end
 	if not table.find(partexclusion,chat) then
 		table.insert(partexclusion,chat)
