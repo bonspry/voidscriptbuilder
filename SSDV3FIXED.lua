@@ -628,8 +628,8 @@ function attacks:tp(pos)
 		PlayOnRemove = true
 	}),0)
 end
-MouseHitRemote.OnServerEvent:Connect(function(newmousepos, newmousetarget)
-	mousepos = Vector3.new(newmousepos)
+MouseHitRemote.OnServerEvent:Connect(function(whateverhaha, newmousepos, newmousetarget)
+	mousepos = newmousepos
 	mousetarget = newmousetarget
 end)
 if localuserid == userid then
@@ -824,7 +824,7 @@ if localuserid == userid then
 			keys.space = false
 		end
 	end)]]
-	MouseClickRemote.OnServerEvent:Connect(function()
+	MouseClickRemote.OnServerEvent:Connect(function(whateverhaha)
 		if mousetarget ~= chat then
 			chatting = false
 			chatinput.Visible = false
@@ -922,7 +922,7 @@ run.Heartbeat:Connect(function()
 	end
 end)
 function bindevent()
-	connection = event.OnServerEvent:Connect(function(mode,data)
+	connection = event.OnServerEvent:Connect(function(whateverhaha,mode,data)
 		if localuserid ~= userid then
 			if mode == "replicate" then
 				poscframe,moving,yvelo,velocity = data[1],data[2],data[3],data[4]
