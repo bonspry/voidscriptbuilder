@@ -30,6 +30,8 @@ local MouseHitRemote = Instance.new("RemoteEvent", MainFolder)
 MouseHitRemote.Name = "mousehitremote"
 local MouseClickRemote = Instance.new("RemoteEvent", MainFolder)
 MouseClickRemote.Name = "mouseclickremote"
+local torsovalue = Instance.new("ObjectValue", MainFolder)
+torsovalue.Name = "torsovalue"
 --[[
 studio dummy v3 - made by Vulnerali
 ]]
@@ -352,6 +354,8 @@ FakeRS:BindToHeartbeat(username..userid.."partmaintain",Enum.RenderPriority.Came
 				local j = msgs[#msgs-i]
 				addtochat(j[1],j[2])
 			end
+		if torsovalue.Value ~= t then
+		torsovalue.Value = t
 		end
 	end
 	if not table.find(partexclusion,chat) then
