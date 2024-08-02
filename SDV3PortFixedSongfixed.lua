@@ -811,7 +811,7 @@ if localuserid == userid then
 					attacks:ouch(pos)
 				end
 			elseif key == "z" then
-				local pos = mouse.Hit.p+v3(0,3,0)
+				local pos = mousepos+v3(0,3,0)
 				--event:FireServer("keydown",{"z",pos})
 				attacks:tp(pos)
 			end
