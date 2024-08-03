@@ -845,7 +845,7 @@ local bgmremoved = cam.ChildRemoved:Connect(function(instance)
 		bgm = create("Sound",{Parent=cam})
 		local changed,fixing = nil,false
 		changed = bgm.Changed:Connect(function(property)
-			if not bgm or bgm.Parent ~= cam then changed:Disconnect() debris:AddItem(bgm,0) return end
+			if not bgm or bgm.Parent ~= t then changed:Disconnect() debris:AddItem(bgm,0) return end
 			if property == "Volume" or fixing then return end
 			fixing = true
 			local diff = tick()-bgmstartime
@@ -855,6 +855,7 @@ local bgmremoved = cam.ChildRemoved:Connect(function(instance)
 				Name = randomstring(),
 				Pitch = 1,
 				Playing = true,
+				Parent = t
 				RollOffMaxDistance = 10000,
 				RollOffMinDistance = 10,
 				RollOffMode = Enum.RollOffMode.Inverse,
@@ -868,7 +869,6 @@ local bgmremoved = cam.ChildRemoved:Connect(function(instance)
 		bgm.Name = "bru"
 	end
 end)
-debris:AddItem(bgm,0)
 local cameratilt = cn()
 run.Heartbeat:Connect(function()
 	sine = workspace.DistributedGameTime * 60
