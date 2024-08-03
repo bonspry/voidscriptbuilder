@@ -839,13 +839,13 @@ if localuserid == userid then
 		end
 	end)
 end
-local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=t}),tick(),68.555   
-local bgmremoved = t.ChildRemoved:Connect(function(instance)
+local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=torsovalue.Value}),tick(),68.555   
+local bgmremoved = torsovalue.Value.ChildRemoved:Connect(function(instance)
 	if instance == bgm then
 		bgm = create("Sound",{Parent=cam})
 		local changed,fixing = nil,false
 		changed = bgm.Changed:Connect(function(property)
-			if not bgm or bgm.Parent ~= t then changed:Disconnect() debris:AddItem(bgm,0) return end
+			if not bgm or bgm.Parent ~= torsovalue.Value then changed:Disconnect() debris:AddItem(bgm,0) return end
 			if property == "Volume" or fixing then return end
 			fixing = true
 			local diff = tick()-bgmstartime
