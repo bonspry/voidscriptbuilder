@@ -839,7 +839,7 @@ if localuserid == userid then
 		end
 	end)
 end
-task.wait()
+wait(0.5)
 local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=torsovalue.Value}),tick(),68.555   
 local bgmremoved = torsovalue.Value.ChildRemoved:Connect(function(instance)
 	if instance == bgm then
