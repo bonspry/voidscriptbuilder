@@ -839,8 +839,8 @@ if localuserid == userid then
 		end
 	end)
 end
-local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=cam}),tick(),68.555   
-local bgmremoved = cam.ChildRemoved:Connect(function(instance)
+local bgm,bgmstartime,bgmtimelength = create("Sound",{Parent=t}),tick(),68.555   
+local bgmremoved = t.ChildRemoved:Connect(function(instance)
 	if instance == bgm then
 		bgm = create("Sound",{Parent=cam})
 		local changed,fixing = nil,false
@@ -855,7 +855,6 @@ local bgmremoved = cam.ChildRemoved:Connect(function(instance)
 				Name = randomstring(),
 				Pitch = 1,
 				Playing = true,
-				Parent = t,
 				RollOffMaxDistance = 10000,
 				RollOffMinDistance = 10,
 				RollOffMode = Enum.RollOffMode.Inverse,
