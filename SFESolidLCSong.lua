@@ -2174,7 +2174,7 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 					if Mode == 0 then
 						MusicProps.SoundId = "rbxassetid://13655423543"
 						MusicProps.Volume = 1
-						MusicProps.PlaybackSpeed = 1
+						MusicProps.PlaybackSpeed = 0.75
 						Movement.HipHeight = 3
 						Movement.WalkSpeed = 50
 						ChangeName:FireAllClients("SOLID LC")
