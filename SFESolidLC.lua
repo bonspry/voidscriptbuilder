@@ -2172,7 +2172,7 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 					Mode = Mode+1
 					MusicStart = tick()
 					if Mode == 0 then
-						MusicProps.SoundId = "rbxassetid://348832364"
+						MusicProps.SoundId = "rbxassetid://13655423543"
 						MusicProps.Volume = 1
 						MusicProps.PlaybackSpeed = 1
 						Movement.HipHeight = 3
@@ -2302,7 +2302,7 @@ local MainLoop = game:GetService("RunService").Heartbeat:Connect(function(s)
 						ChangeName:FireAllClients("Zavodila")
 					elseif Mode > 20 then
 						Mode = 0
-						MusicProps.SoundId = "rbxassetid://348832364"
+						MusicProps.SoundId = "rbxassetid://13655423543"
 						MusicProps.Volume = 1
 						MusicProps.PlaybackSpeed = 1
 						Movement.HipHeight = 3
