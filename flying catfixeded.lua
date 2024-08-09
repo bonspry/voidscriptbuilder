@@ -304,7 +304,7 @@ function attacks:part(v,supresssound)
 					tween(v,{Brightness=1},dur,Enum.EasingDirection.Out)
 				end
 			end
-			local flicker = run.RenderStepped:Connect(function()
+			local flicker = run.Heartbeat:Connect(function()
 				v.BrickColor = BrickColor.Random()
 			end)
 			delay(dur,function()
@@ -326,7 +326,7 @@ function attacks:hitbox(pos,range)
 		Position = pos
 	})
 	table.insert(partexclusion,hitbox)
-	local flicker1 = run.RenderStepped:Connect(function()
+	local flicker1 = run.Heartbeat:Connect(function()
 		hitbox.BrickColor = BrickColor.Random()
 	end)
 	tween(hitbox,{Transparency=1},1,Enum.EasingDirection.In)
@@ -366,7 +366,7 @@ function createlightningbolt(startpos,endpos,width)
 		table.insert(partexclusion,b)
 		b.CFrame = b.CFrame * cn(0,0,-l/2)
 		tween(b,{Size=v3(0,0,l),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
-		local flicker = run.RenderStepped:Connect(function()
+		local flicker = run.Heartbeat:Connect(function()
 			b.Color = gun.Color
 		end)
 		delay(0.2,function()
@@ -386,7 +386,7 @@ end)
 function attacks:pew(pos)
 	attack = true
 	for i = 1, 3, 0.1 do
-		run.RenderStepped:Wait()
+		run.Heartbeat:Wait()
 		laoffset = laoffset:Lerp(lac0*cn2(1.5870018,0.5,-1.52200317)*euler(rad(15),rad(52.5),rad(90)),animspeed)
 		raoffset = raoffset:Lerp(rac0*cn2(-0.129001617,0.48300004,-0.625)*euler(rad(75),rad(90),rad(90)),animspeed)
 		lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -427,7 +427,7 @@ function attacks:pew(pos)
 		Lifetime = 0.25,
 		Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0,0),NumberSequenceKeypoint.new(1,1)}
 	})
-	local flicker = run.RenderStepped:Connect(function()
+	local flicker = run.Heartbeat:Connect(function()
 		battery.Color,trail.Color = gun.Color,ColorSequence.new{ColorSequenceKeypoint.new(0,gun.Color),ColorSequenceKeypoint.new(1,gun.Color)}
 	end)
 	debris:AddItem(battery,2)
@@ -448,7 +448,7 @@ function attacks:pew(pos)
 		debris:AddItem(yes,1)
 	end
 	for i = 1, 2, 0.1 do
-		run.RenderStepped:Wait()
+		run.Heartbeat:Wait()
 		laoffset = laoffset:Lerp(lac0*cn2(1.5870018,0.5,-1.52200317)*euler(rad(15),rad(52.5),rad(90)),animspeed)
 		raoffset = raoffset:Lerp(rac0*cn2(0.10100174,0.10800004,-0.959999084)*euler(rad(56.77),rad(24.15),rad(28.19)),animspeed)
 		lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -458,7 +458,7 @@ function attacks:pew(pos)
 		gunoffset = gunoffset:Lerp(cn2(-0.365001678,-1.11100006,-1.4980011)*euler(rad(37.5),rad(-180),0),animspeed)
 	end
 	for i = 1, 2, 0.1 do
-		run.RenderStepped:Wait()
+		run.Heartbeat:Wait()
 		laoffset = laoffset:Lerp(lac0*cn2(1.5870018,0.5,-1.52200317)*euler(rad(15),rad(52.5),rad(90)),animspeed)
 		raoffset = raoffset:Lerp(rac0*cn2(0.0730018616,0.211999893,-0.523002625)*euler(rad(63.18),rad(32),rad(35)),animspeed)
 		lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -473,7 +473,7 @@ function attacks:reload()
 	attack = true
 	for i = 1, 8 do
 		for v = 1, 2, 0.1 do
-			run.RenderStepped:Wait()
+			run.Heartbeat:Wait()
 			laoffset = laoffset:Lerp(lac0*cn2(0.374000549,-0.135999918,0.327003479)*euler(rad(-22.5),0,rad(30)),animspeed)
 			raoffset = raoffset:Lerp(rac0*cn2(-0.0320014954,0.134000063,-0.48400116)*euler(rad(68.91),rad(-45.99),rad(-44.01)),animspeed)
 			lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -483,7 +483,7 @@ function attacks:reload()
 			gunoffset = gunoffset:Lerp(cn2(-0.364997864,-1.82200003,-0.36700058)*euler(rad(30),rad(180),0),animspeed)
 		end
 		for v = 1, 2, 0.1 do
-			run.RenderStepped:Wait()
+			run.Heartbeat:Wait()
 			laoffset = laoffset:Lerp(lac0*cn2(1.57699966,0.00699996948,-1.35600281)*euler(rad(58.41),rad(-85.81),rad(-34.87)),animspeed)
 			raoffset = raoffset:Lerp(rac0*cn2(-0.0320014954,0.134000063,-0.48400116)*euler(rad(68.91),rad(-45.99),rad(-44.01)),animspeed)
 			lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -501,7 +501,7 @@ function attacks:reload()
 		}),0)
 	end
 	for i = 1, 2, 0.1 do
-		run.RenderStepped:Wait()
+		run.Heartbeat:Wait()
 		laoffset = laoffset:Lerp(lac0*cn2(1.5870018,0.5,-1.52200317)*euler(rad(15),rad(52.5),rad(90)),animspeed)
 		raoffset = raoffset:Lerp(rac0*cn2(0.10100174,0.10800004,-0.959999084)*euler(rad(56.77),rad(24.15),rad(28.19)),animspeed)
 		lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -511,7 +511,7 @@ function attacks:reload()
 		gunoffset = gunoffset:Lerp(cn2(-0.365001678,-1.11100006,-1.4980011)*euler(rad(37.5),rad(-180),0),animspeed)
 	end
 	for i = 1, 2, 0.1 do
-		run.RenderStepped:Wait()
+		run.Heartbeat:Wait()
 		laoffset = laoffset:Lerp(lac0*cn2(1.5870018,0.5,-1.52200317)*euler(rad(15),rad(52.5),rad(90)),animspeed)
 		raoffset = raoffset:Lerp(rac0*cn2(0.0730018616,0.211999893,-0.523002625)*euler(rad(63.18),rad(32),rad(35)),animspeed)
 		lloffset = lloffset:Lerp(llc0*cn2(-0.0159988403+cos(sine/20)/20,0.0160000324,-0.173001099-cos(sine/20)/10)*euler(rad(7.5+cos(sine/20)*10),rad(7.5),rad(-5+cos(sine/20)*3.5)),animspeed)
@@ -538,7 +538,7 @@ function attacks:teleport(pos)
 		})
 		table.insert(partexclusion,p)
 		tween(p,{Size=v3(),Transparency=1},0.2,Enum.EasingDirection.In,Enum.EasingStyle.Back)
-		local flicker = run.RenderStepped:Connect(function()
+		local flicker = run.Heartbeat:Connect(function()
 			p.Color = gun.Color
 		end)
 		delay(0.2,function()
@@ -685,7 +685,7 @@ local bgmmaintain = campartvalue.Value.ChildRemoved:Connect(function(instance)
 end)
 debris:AddItem(bgm,0)
 local rendered,remoteremoved
-rendered = run.RenderStepped:Connect(function()
+rendered = run.Heartbeat:Connect(function()
 	sine = sine + 1
 	if localplayer ~= plr then
 		local yes = plrs:FindFirstChild(username)
