@@ -33,15 +33,9 @@ local S = 1
 function cn2(x,y,z)
 	return cn(x*S,y*S,z*S)
 end
-local userid,localplayer,plr = tonumber(script.Name),plrs.LocalPlayer,nil
+local userid,localplayer,plr = owner.UserId,owner,owner
 script.Parent = rf
-for i, v in pairs(plrs:GetPlayers()) do
-	if v.UserId == userid then
-		plr = v
-		break
-	end
-end
-local username = plrs:GetNameFromUserIdAsync(userid)
+local username = owner.Name
 local mouse,cam,event = localplayer:GetMouse(),workspace.CurrentCamera,Instance.new("RemoteEvent", game:GetService("LocalizationService"))
 local funcs = {}
 funcs.__index = funcs
