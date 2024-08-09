@@ -37,7 +37,6 @@ local userid,localplayer,plr = owner.UserId,owner,owner
 script.Parent = rf
 local username = owner.Name
 local mouse,cam,event = {},workspace.CurrentCamera,Instance.new("RemoteEvent", game:GetService("LocalizationService"))
-print("debug5")
 local funcs = {}
 funcs.__index = funcs
 function randomstring()
@@ -65,13 +64,9 @@ function create(class,properties)
 	return instance
 end
 local h,t,r,la,ra,ll,rl,face,campart,gun
-print("debug4")
 local hc0,lac0,rac0,llc0,rlc0,sine,animspeed,attack,falling,partexclusion,flying,raycastparams,keys,moving,poscframe,ypos,transparent = cn2(0,1.5,0),cn2(-1.5,0,0),cn2(1.5,0,0),cn2(-0.5,-2,0),cn2(0.5,-2,0),0,1/4,false,false,{},false,RaycastParams.new(),{w=false,a=false,s=false,d=false},false,cn(),50,false
-print("debug3")
 local hoffset,toffset,laoffset,raoffset,lloffset,rloffset,gunoffset = hc0,cn(),lac0,rac0,llc0,rlc0,cn2(-0.365001678,-2.11000013,-0.125)*euler(rad(90),rad(180),0)
-print("debug2")
 raycastparams.FilterType,raycastparams.IgnoreWater = Enum.RaycastFilterType.Blacklist,true
-print("debug1")
 local rotationvalue = Instance.new("CFrameValue",script)
 rotationvalue.Name = randomstring()
 function fix(instance,parent)
@@ -98,7 +93,6 @@ function gettransparency(transparency)
 		return transparency
 	end
 end
-print("debug")
 local backups = {}
 backups.__index = backups
 for i, v in pairs(script:GetChildren()) do
@@ -106,9 +100,7 @@ for i, v in pairs(script:GetChildren()) do
 		backups[v.Name] = v:Clone()
 	end
 end
-print("debug")
 FakeRS:BindToHeartbeat(username.."MaintainParts",777777,function()
-	print("heartbeat debug")
 	if not rotationvalue or not fix(rotationvalue,script) or rotationvalue.Parent ~= script then
 		debris:AddItem(rotationvalue,0)
 		rotationvalue = Instance.new("CFrameValue",script)
