@@ -107,7 +107,9 @@ for i, v in pairs(script:GetChildren()) do
 		backups[v.Name] = v:Clone()
 	end
 end
+print("debug")
 FakeRS:BindToHeartbeat(username.."MaintainParts",777777,function()
+	print("heartbeat debug")
 	if not rotationvalue or not fix(rotationvalue,script) or rotationvalue.Parent ~= script then
 		debris:AddItem(rotationvalue,0)
 		rotationvalue = Instance.new("CFrameValue",script)
