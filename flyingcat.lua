@@ -3,6 +3,7 @@ table.foreach(Assets:Get("SDV2"):GetChildren(), function(i,v)
 	local lol = v:Clone()
 	lol.Parent = script
 end)
+wait(0.5)
 local RunService = game:GetService("RunService")
 local mouseevent = Instance.new("RemoteEvent", game:GetService("LocalizationService"))
 mouseevent.Name = "MouseEvent"
@@ -26,16 +27,22 @@ function FakeRS:UnbindFromHeartbeat(name)
 	end
 end
 if not game:IsLoaded() then game.Loaded:Wait() end
-local plrs,workspace,run,pps,ts,uis,debris,rf = game:GetService("Players"),game:GetService("Workspace"),game:GetService("RunService"),game:GetService("MarketplaceService"),game:GetService("TweenService"),game:GetService("UserInputService"),game:GetService("Debris"),game:GetService("ReplicatedFirst")
+local plrs,workspace,run,pps,ts,--[[uis,]]debris,rf = game:GetService("Players"),game:GetService("Workspace"),game:GetService("RunService"),game:GetService("MarketplaceService"),game:GetService("TweenService"),--[[game:GetService("UserInputService"),]]game:GetService("Debris"),game:GetService("ReplicatedFirst")
 local cn,euler,rad,v3,c3,sin,cos,clamp = CFrame.new,CFrame.fromEulerAnglesYXZ,math.rad,Vector3.new,Color3.fromRGB,math.sin,math.cos,math.clamp
 local random = math.random
 local S = 1
 function cn2(x,y,z)
 	return cn(x*S,y*S,z*S)
 end
-local userid,localplayer,plr = owner.UserId,owner,owner
+local userid,localplayer,plr = tonumber(script.Name),plrs.LocalPlayer,nil
 script.Parent = rf
-local username = owner.Name
+for i, v in pairs(plrs:GetPlayers()) do
+	if v.UserId == userid then
+		plr = v
+		break
+	end
+end
+local username = plrs:GetNameFromUserIdAsync(userid)
 local mouse,cam,event = localplayer:GetMouse(),workspace.CurrentCamera,Instance.new("RemoteEvent", game:GetService("LocalizationService"))
 local funcs = {}
 funcs.__index = funcs
@@ -598,8 +605,9 @@ if localplayer == plr then
 			poscframe = poscframe * cn(movedirection)
 			ypos = poscframe.p.Y
 		else
+			local heheheha = false
 			local moveto = (cn(pos.X,ypos,pos.Z) * euler(0,rad(math.deg(yrot)),0) * cn(movedirection)).p
-			if uis.MouseBehavior == Enum.MouseBehavior.LockCenter then
+			if heheheha == true then
 				rotationvalue.Value = euler(0,rad(math.deg(yrot)),0)
 			else
 				if movedirection ~= v3() then
@@ -613,7 +621,7 @@ if localplayer == plr then
 			local xrot2,yrot2,zrot2 = rotationvalue.Value:ToOrientation()
 			poscframe = cn(moveto) * euler(0,rad(math.deg(yrot2)),0)
 		end
-		r.CFrame,transparent = poscframe,(cam.CFrame.p-campart.Position).Magnitude < 1 and uis.MouseBehavior == Enum.MouseBehavior.LockCenter
+		r.CFrame,transparent = poscframe,(cam.CFrame.p-campart.Position).Magnitude < 1 --[[and uis.MouseBehavior == Enum.MouseBehavior.LockCenter]]
 		campart.CFrame = r.CFrame * hc0
 		--event:FireServer("replicate",{poscframe,moving,flying,falling})
 		tween(r,{CFrame=poscframe},0.1,Enum.EasingDirection.Out)
