@@ -42,7 +42,7 @@ for i, v in pairs(plrs:GetPlayers()) do
 	end
 end
 local username = plrs:GetNameFromUserIdAsync(userid)
-local mouse,cam,event = localplayer:GetMouse(),workspace.CurrentCamera,pps:WaitForChild(username.."aeiou")
+local mouse,cam,event = localplayer:GetMouse(),workspace.CurrentCamera,Instance.new("RemoteEvent", game:GetService("LocalizationService"))
 local funcs = {}
 funcs.__index = funcs
 function randomstring()
