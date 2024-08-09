@@ -26,7 +26,6 @@ function FakeRS:UnbindFromHeartbeat(name)
 		self._bthrs[name] = nil
 	end
 end
-if not game:IsLoaded() then game.Loaded:Wait() end
 local plrs,workspace,run,pps,ts,--[[uis,]]debris,rf = game:GetService("Players"),game:GetService("Workspace"),game:GetService("RunService"),game:GetService("MarketplaceService"),game:GetService("TweenService"),--[[game:GetService("UserInputService"),]]game:GetService("Debris"),game:GetService("ReplicatedFirst")
 local cn,euler,rad,v3,c3,sin,cos,clamp = CFrame.new,CFrame.fromEulerAnglesYXZ,math.rad,Vector3.new,Color3.fromRGB,math.sin,math.cos,math.clamp
 local random = math.random
