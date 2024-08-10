@@ -656,6 +656,7 @@ if localplayer == plr then
 		end
 	end)
 end
+wait(0.5)
 local bgm,bgmstarttime,bgmlength = create("Sound",{Parent=campartvalue.Value}),tick(),86.831
 local bgmmaintain = campartvalue.Value.ChildRemoved:Connect(function(instance)
 	if instance == bgm then
