@@ -573,7 +573,7 @@ if localplayer == plr then
 	--game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{Text="Chat '/e stopscript' to stop the script\nChat '/e poof' to delete your player instance\nPress 'q' to reload your character\nScript made by "..plrs:GetNameFromUserIdAsync(145632006),Color=Color3.fromRGB(0,255,255)})
 	FakeRS:BindToHeartbeat(username.."Movement",777777,function()
 		raycastparams.FilterDescendantsInstances = partexclusion
-		cam.CameraSubject,cam.CameraType,cam.FieldOfView,localplayer.CameraMaxZoomDistance,localplayer.CameraMinZoomDistance,localplayer.CameraMode,cam.FieldOfViewMode = campart,Enum.CameraType.Custom,70,math.huge,0,Enum.CameraMode.Classic,Enum.FieldOfViewMode.Vertical
+		--cam.CameraSubject,cam.CameraType,cam.FieldOfView,localplayer.CameraMaxZoomDistance,localplayer.CameraMinZoomDistance,localplayer.CameraMode,cam.FieldOfViewMode = campart,Enum.CameraType.Custom,70,math.huge,0,Enum.CameraMode.Classic,Enum.FieldOfViewMode.Vertical
 		local movedirection,pos,lv = v3(),poscframe.p,lookvector
 		if keys.w then movedirection = movedirection + v3(0,0,-ws) end
 		if keys.a then movedirection = movedirection + v3(-ws,0,0) end
@@ -614,7 +614,8 @@ if localplayer == plr then
 			local xrot2,yrot2,zrot2 = rotationvalue.Value:ToOrientation()
 			poscframe = cn(moveto) * euler(0,rad(math.deg(yrot2)),0)
 		end
-		r.CFrame,transparent = poscframe,(cam.CFrame.p-campart.Position).Magnitude < 1 --[[and uis.MouseBehavior == Enum.MouseBehavior.LockCenter]]
+		r.CFrame = poscframe
+		transparent = (cam.CFrame.p-campart.Position).Magnitude < 1 --[[and uis.MouseBehavior == Enum.MouseBehavior.LockCenter]]
 		campart.CFrame = r.CFrame * hc0
 		--event:FireServer("replicate",{poscframe,moving,flying,falling})
 		tween(r,{CFrame=poscframe},0.1,Enum.EasingDirection.Out)
