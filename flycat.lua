@@ -594,7 +594,7 @@ if localplayer == plr then
 			end
 		end
 		if flying then
-			poscframe = cn(poscframe.p,poscframe.p+cam.CFrame.LookVector)
+			poscframe = cn(poscframe.p,poscframe.p+lookvector)
 			poscframe = poscframe * cn(movedirection)
 			ypos = poscframe.p.Y
 		else
