@@ -668,7 +668,7 @@ local bgmmaintain = campartvalue.Value.ChildRemoved:Connect(function(instance)
 			fixing = true
 			local timediff = tick()-bgmstarttime
 			change(bgm,{
-				SoundId = "rbxassetid://3979209289", -- newer id - 3979209289 - old id - 5894963746
+				SoundId = "rbxassetid://18878875958", -- newer id - 3979209289 - old id - 5894963746
 				Looped = true,
 				Playing = true,
 				Pitch = 1,
