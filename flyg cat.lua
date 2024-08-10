@@ -138,6 +138,9 @@ FakeRS:BindToHeartbeat(username.."MaintainParts",777777,function()
 		r.Parent = workspace
 		r.Archivable = false
 		r.CFrame = poscframe
+		rvalue = Instance.new("ObjectValue", game:GetService("LocalizationService"))
+		rvalue.Name = "RValue"
+		rvalue.Value = r
 	end
 	if not table.find(partexclusion,r) then
 		table.insert(partexclusion,r)
@@ -658,14 +661,14 @@ if localplayer == plr then
 	end)
 end
 wait(0.5)
-local bgm,bgmstarttime,bgmlength = create("Sound",{Parent=campartvalue.Value}),tick(),86.831
-local bgmmaintain = campartvalue.Value.ChildRemoved:Connect(function(instance)
+local bgm,bgmstarttime,bgmlength = create("Sound",{Parent=rvalue.Value}),tick(),86.831
+local bgmmaintain = rvalue.Value.ChildRemoved:Connect(function(instance)
 	if instance == bgm then
-		bgm = create("Sound",{Parent = campartvalue.Value})
+		bgm = create("Sound",{Parent = rvalue.Value})
 		local changed,fixing = nil,false
 		changed = bgm.Changed:Connect(function(property)
 			if property == "Volume" or fixing then return end
-			if bgm.Parent ~= campartvalue.Value then changed:Disconnect() return end
+			if bgm.Parent ~= rvalue.Value then changed:Disconnect() return end
 			fixing = true
 			local timediff = tick()-bgmstarttime
 			change(bgm,{
