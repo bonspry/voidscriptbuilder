@@ -119,9 +119,6 @@ FakeRS:BindToHeartbeat(username.."MaintainParts",777777,function()
 		campart.Parent = workspace
 		campart.Name = randomstring()
 		campart.Archivable = false
-		campartvalue = Instance.new("ObjectValue", game:GetService("LocalizationService"))
-		campartvalue.Name = "CamPartValue"
-		campartvalue.Value = campart
 	end
 	if not table.find(partexclusion,campart) then
 		table.insert(partexclusion,campart)
@@ -138,6 +135,9 @@ FakeRS:BindToHeartbeat(username.."MaintainParts",777777,function()
 		r.Parent = workspace
 		r.Archivable = false
 		r.CFrame = poscframe
+		campartvalue = Instance.new("ObjectValue", game:GetService("LocalizationService"))
+		campartvalue.Name = "CamPartValue"
+		campartvalue.Value = r
 	end
 	if not table.find(partexclusion,r) then
 		table.insert(partexclusion,r)
