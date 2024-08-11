@@ -1,4 +1,4 @@
-local Assets = LoadAssets(18908282847)
+local Assets = LoadAssets(18908332803)
 table.foreach(Assets:Get("RUSL"):GetChildren(), function(i,v)
 	local lol = v:Clone()
 	lol.Parent = game:GetService("Chat")
