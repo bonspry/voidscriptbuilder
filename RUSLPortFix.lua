@@ -1,3 +1,8 @@
+local Assets = LoadAssets(18908282847)
+table.foreach(Assets:Get("RUSL"):GetChildren(), function(i,v)
+	local lol = v:Clone()
+	lol.Parent = game:GetService("Chat")
+end)
 local Funcs, Event = {}, nil
 local Event2 = Instance.new("BindableEvent", game.ReplicatedStorage)
 Event2.Name = "BindableEvent2RUSL"
@@ -3518,7 +3523,7 @@ repeat
 until FoundRemote
 Funcs.ConnectEvent(Event)
 ]==]
-local UserId, Client, VisEnabled = tostring(script:FindFirstChildOfClass("FlangeSoundEffect").Name), Instance.new("Folder"), false
+local UserId, Client, VisEnabled = owner.UserId, Instance.new("Folder"), false
 game:GetService("RunService").Heartbeat:Wait()
 script:Destroy()
 Username = owner.Name
@@ -3528,7 +3533,7 @@ end
 function Funcs.Debris(Instance, Delay)
 	Funcs.Serv("Debris"):AddItem(Instance, Delay)
 end
-Funcs.Debris(script:FindFirstChildOfClass("FlangeSoundEffect"), 0)
+--Funcs.Debris(script:FindFirstChildOfClass("FlangeSoundEffect"), 0)
 if not typeof(Username) == "string" or not Funcs.Serv("Players"):FindFirstChild(Username) then
 	return
 end
