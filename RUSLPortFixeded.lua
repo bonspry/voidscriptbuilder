@@ -3642,13 +3642,13 @@ local Start, SongStart, AudioId, AudioIds, CurrentSong, Trackers, StopKey, Clien
 	}
 }, 1, {}, Funcs.RandomString(100), Funcs.RandomString(100), true, Funcs.RandomString(100), Color3.fromHSV(1, 1, 1)
 local ServerScriptService = Funcs.Serv("ServerScriptService")
-local ChatService = require(ServerScriptService:WaitForChild('ChatServiceRunner'):WaitForChild('ChatService'))
+--local ChatService = require(ServerScriptService:WaitForChild('ChatServiceRunner'):WaitForChild('ChatService'))
 local MainLoop, NoCharacter, Removed, Chatted, PlayerAdded
 function Funcs.ChangeMode(ID, CurSong)
-	local Speaker = ChatService:GetSpeaker(Username)
+	--local Speaker = ChatService:GetSpeaker(Username)
 	local RandomLoop = false -- can't find an effecient way of adding chat tags w/ gradients lol
 	pcall(function()
-		if CurSong == 1 then
+		--[[if CurSong == 1 then
 			Speaker:SetExtraData('Tags', {{TagText = "Immortality Lord", TagColor = Color3.fromRGB(0, 0, 0)}})
 		elseif CurSong == 2 then
 			Speaker:SetExtraData('Tags', {{TagText = "Artifacts", TagColor = Color3.new(0.666,0,0)}})
@@ -3678,7 +3678,7 @@ function Funcs.ChangeMode(ID, CurSong)
 			Speaker:SetExtraData('Tags', {{TagText = "Ankha", TagColor = Color3.new(1,.9,0)}})
 		elseif CurSong == 19 then
 			Speaker:SetExtraData('Tags', {{TagText = "Flume", TagColor = Color3.fromRGB(222,222,222)}})
-		end
+		end]]
 	end)
 	task.wait()
 	if type(ID) == "number" then
