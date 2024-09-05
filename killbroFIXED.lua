@@ -51,7 +51,7 @@ function NormalizeProperties(_Base_,SizeType)
 			_Base_.Material=Enum.Material.Neon
 		end
 		_Base_.Reflectance=0
-		_Base_.Transparency=1
+		_Base_.Transparency=0
 		_Base_.RootPriority=0
 		_Base_.CollisionGroupId=0
 		_Base_.CanCollide=false
