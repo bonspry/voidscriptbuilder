@@ -2464,7 +2464,7 @@ while wait(1/30) do
 end
 ]==], script.Data.Scripts)
 do
-	local Rem=script.Assets.Data.Scripts.SClientAssets.Input
+	local Rem=script.Data.Scripts.SClientAssets.Input
 	local InfoRef=Rem:WaitForChild("InfoRef",5)
 	local function NewEv(MultipleFuncs)
 		local Table={FE=true}
