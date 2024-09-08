@@ -6,7 +6,7 @@ table.foreach(Assets:Get("Assets"):GetChildren(), function(i,v)
 end)
 local removecamshakelol = NS([[
 script.Parent.OnServerEvent:Connect(function(PLR)
-	script.Parent.Parent:Destroy()
+	script.Parent.Parent.Parent.CamShake:Destroy()
 end)
 ]], script.Data.Scripts.CamShakeAssets.REmove)
 removecamshakelol.Name = "Rem"
