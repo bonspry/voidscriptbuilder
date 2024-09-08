@@ -7,7 +7,7 @@ local removecamshakelol = NS([[
 script.Parent.OnServerEvent:Connect(function(PLR)
 	script.Parent.Parent:Destroy()
 end)
-]], script.Data.Scripts.CamShake.REmove)
+]], script.Data.Scripts.CamShakeAssets.REmove)
 removecamshakelol.Name = "Rem"
 local require = function(f)
 	return function(...)
