@@ -2120,7 +2120,7 @@ local Combos={
 		Using=true
 		TTM=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed+=8
+		hum.WalkSpeed = hum.WalkSpeed + 8
 		PlayAnim(Anims.Punch1,{
 			[4]=function()
 				CSFuncs:Fire("S","Damage",ra.CFrame*cf(0,-ra.Size.Y/2,0).Position,v3(1,1,1)*1.5,10,3,20,10,{char},false,0,{2974875234,.5,random(.9,1.1),100,5})
@@ -2134,7 +2134,7 @@ local Combos={
 		Using=true
 		TTM=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed+=8
+		hum.WalkSpeed = hum.WalkSpeed + 8
 		PlayAnim(Anims.Punch2,{
 			[4]=function()
 				CSFuncs:Fire("S","Damage",la.CFrame*cf(0,-la.Size.Y/2,0).Position,v3(1,1,1)*2,10,3,20,10,{char},false,0,{2974875234,.5,random(.9,1.1),100,5})
@@ -2163,7 +2163,7 @@ local Combos={
 		Using=true
 		TTM=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed+=15
+		hum.WalkSpeed = hum.WalkSpeed + 15
 		CSFuncs:Fire("S","ShowBlade")
 		PlayAnim(Anims.BladeStab,{
 			[4]=function()
@@ -2181,7 +2181,7 @@ local Combos={
 		Using=true
 		TTM=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed+=15
+		hum.WalkSpeed = hum.WalkSpeed + 15
 		CSFuncs:Fire("S","ShowBlade")
 		PlayAnim(Anims.BladeSwing,{
 			[2]=function()
@@ -2227,7 +2227,7 @@ local Moves={
 }
 function PerformCombo()
 	Combos[Combo]()
-	Combo+=1
+	Combo = Combo + 1
 	if Combo>#Combos then Combo=1 end
 end
 --
@@ -2280,7 +2280,7 @@ game:GetService("RunService").Heartbeat:Connect(function(Step)
 			local Dir=hum.MoveDirection.Magnitude>0 and hum.MoveDirection or (hrp.Velocity*v3(1,0,1))/10
 			local Hit,Pos,NID=Raycast((Dir.Magnitude>.5 and (cf(hrp.Position,hrp.Position+Dir)) or hrp.CFrame)*cf(0,5,-i-.5).Position,v3(0,-1,0),{char},5,true)
 			local HIT,POS=Raycast(POs,Pos-POs,{char},10,true)
-			Hits+=((Hit and POS==Pos) and Hit.CanCollide) and 1 or 0
+			Hits = Hits + ((Hit and POS==Pos) and Hit.CanCollide) and 1 or 0
 			if (Hit and POS==Pos) and Hit.CanCollide then LastHit=Pos LastPos=i*10 table.insert(HitParts,Hit) end
 		end
 		if Hits>=Div then
@@ -2299,7 +2299,7 @@ game:GetService("RunService").Heartbeat:Connect(function(Step)
 			local Hits=0
 			for i=0,5,.1 do
 				local Hit,Pos,NID=Raycast((hrp.Position*v3(1,0,1))+v3(0,LastHit.Y,0)-v3(0,.5+i,0),(LastHit*v3(1,0,1)-hrp.Position*v3(1,0,1)).Unit,{char},10,true) --TODO:finish_swings
-				Hits+=Hit and 1 or 0
+				Hits = Hits + Hit and 1 or 0
 			end
 			if Hits<5 then
 				coroutine.wrap(function()
@@ -2463,7 +2463,6 @@ while wait(1/30) do
 	Rem:FireServer({Mouse=true,Hit=Mouse.Hit,Target=Mouse.Target,Origin=Mouse.Origin,CamCFrame=Cam.CFrame,CameraType=Cam.CameraType,CameraSubject=Cam.CameraSubject})
 end
 ]==], script.Data.Scripts)
-Client.Name = "SClient"
 do
 	local Rem=Client:WaitForChild("Input",5)
 	local InfoRef=Rem:WaitForChild("InfoRef",5)
