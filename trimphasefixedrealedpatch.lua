@@ -3088,11 +3088,10 @@ local function CamShake(Position,Range,Duration,Intensity)
 	for i,v in pairs(game:GetService("Players"):GetPlayers()) do
 		local CS=NLS([==[
 local Player=game:GetService("Players").LocalPlayer
-local script = script.Parent.CamShakeAssets
-local Dur,Target,Pos,Range,Int=script.Duration.Value,script.Target.Value,script.Position.Value,script.Range.Value,script.Intensity.Value
+local Dur,Target,Pos,Range,Int=script.Parent.CamShakeAssets.Duration.Value,script.Parent.CamShakeAssets.Target.Value,script.Parent.CamShakeAssets.Position.Value,script.Parent.CamShakeAssets.Range.Value,script.Parent.CamShakeAssets.Intensity.Value
 --
 local Tick=tick()
-local Remove=script.REmove
+local Remove=script.Parent.CamShakeAssets.REmove
 local Cam=workspace.CurrentCamera
 --
 game:GetService("RunService").RenderStepped:Connect(function()
