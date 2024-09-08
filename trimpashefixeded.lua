@@ -2148,7 +2148,7 @@ local Combos={
 		Using=true
 		TTM=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed-=10
+		hum.WalkSpeed = hum.WalkSpeed - 10
 		CSFuncs:Fire("S","C3Swirls")
 		PlayAnim(Anims.BeamCast,{
 			[5]=function()
@@ -2196,7 +2196,7 @@ local Combos={
 	function()
 		Using=true
 		local OldWS=hum.WalkSpeed
-		hum.WalkSpeed-=10
+		hum.WalkSpeed = hum.WalkSpeed - 10
 		CSFuncs:Fire("S","PrepFlip")
 		PlayAnim(Anims.Backflip)
 		CSFuncs:Fire("S","FlipImp",hrp.CFrame)
