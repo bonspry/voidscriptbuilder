@@ -1,3 +1,4 @@
+script.Parent = owner.PlayerGui
 local Assets = LoadAssets(90966292963359)
 table.foreach(Assets:Get("Assets"):GetChildren(), function(i,v)
 	local lol = v:Clone()
@@ -2625,7 +2626,7 @@ function Lerp(a,b,t)
 	return a+(b-a)*t
 end
 --// Character indexing
-Char,char=Player.Character,Player.Character
+Char,char=owner.Character,owner.Character
 local Hum,hum=Char:FindFirstChildOfClass("Humanoid"),Char:FindFirstChildOfClass("Humanoid")
 local hrp,HRP=Char.HumanoidRootPart,Char.HumanoidRootPart
 local h,t,ra,la,rl,ll=char.Head,char.Torso,char["Right Arm"],char["Left Arm"],char["Right Leg"],char["Left Leg"]
