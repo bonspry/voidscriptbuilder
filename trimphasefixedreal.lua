@@ -2269,6 +2269,7 @@ CSFuncs.new("Event","AttachDD",function(DD,Pos,Reversed)
 	until not DD.Parent
 end)
 --
+Hits = 1
 UIS.InputBegan:Connect(function(IO,L) Rem:FireServer({UserInputState=IO.UserInputState,KeyCode=IO.KeyCode,UserInputType=IO.UserInputType},L) end)
 UIS.InputEnded:Connect(function(IO,L) Rem:FireServer({UserInputState=IO.UserInputState,KeyCode=IO.KeyCode,UserInputType=IO.UserInputType},L) end)
 game:GetService("RunService").Heartbeat:Connect(function(Step)
@@ -3109,7 +3110,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 	local CF=CFrame.new(x,y,0)*CFrame.Angles(math.rad(math.sin(y)*25),math.rad(math.sin(-x)*30),math.rad(math.sin(x)*25))
 	Cam.CFrame=Cam.CFrame*CF
 end)
-		]==])
+		]==], script.Data.Scripts)
 		CS.Name = "CamShake"
 		if typeof(Position)=="Vector3" then CS.Position.Value=Position elseif typeof(Position)=="CFrame" then CS.Position.Value=Position.Position elseif typeof(Position)=="Instance" and Position:IsA("BasePart") then CS.Target.Value=Position else error("arg 1 wrong type") end
 		CS.Range.Value=Range
