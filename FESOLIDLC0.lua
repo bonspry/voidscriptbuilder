@@ -1,9 +1,10 @@
+LoadAssets(116623894327540):Get("Folder").Parent = game.ReplicatedStorage
 local Remote = Instance.new("RemoteEvent", game.ReplicatedStorage)
 Remote.Name = "ReanimationRemote"
 Remote.OnServerEvent:Connect(function()
-local Char = script.Parent
+local Char = owner.Character
 Char:FindFirstChildOfClass("Humanoid").RequiresNeck = false	
-local Plr =  game.Players:GetPlayerFromCharacter(Char)
+local Plr = owner
 
 for i,v in pairs(Char:GetDescendants()) do
 	if v:IsA("Motor6D") or v:IsA("Weld") or v:IsA("HingeConstraint") then
@@ -18,7 +19,6 @@ for i,v in pairs(Char:GetDescendants()) do
 end)
 
 NLS([==[
-  --local loadstring = require(game.Workspace.Loadstring)
 game.TestService.IsSleepAllowed = false
 for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
 	if v:IsA("BasePart") then 
@@ -888,7 +888,7 @@ for stupidfucking, omfg in pairs(workspace.non:GetChildren()) do
 	end
 end
 
-local script = workspace.Folder
+local script = game.ReplicatedStorage.Folder
 local Name = game.Players.LocalPlayer.Name
 local Player,Backups,obamagaming = game:GetService("Players"):FindFirstChild(Name),{},{}
 for _,v in pairs(script:GetChildren()) do
