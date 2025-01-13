@@ -1,4 +1,4 @@
-LoadAssets(116623894327540):Get("Folder").Parent = game.ReplicatedStorage
+LoadAssets(80934899185942):Get("Folder").Parent = game.ReplicatedStorage
 local Remote = Instance.new("RemoteEvent", game.ReplicatedStorage)
 Remote.Name = "ReanimationRemote"
 Remote.OnServerEvent:Connect(function()
@@ -807,7 +807,7 @@ if Bypass == "death" then
 	bullet.Material = "Neon"
 	bullet.Massless = true
 
-	local Sphere = workspace.SphereHandleAdornment
+	local Sphere = game.ReplicatedStorage.Folder.SphereHandleAdornment
 	Sphere.Parent = nil
 	Sphere.Adornee = nil
 	Sphere.Color3 = Color3.fromRGB(0,0,0)
